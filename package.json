@@ -1,0 +1,24 @@
+{
+  "name": "codeconnect",
+  "version": "1.0.0",
+  "description": "Social media website for Programmers",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aakash-thedev/codeconnect.git"
+  },
+  "keywords": [
+    "Social",
+    "Media"
+  ],
+  "author": "Aakash Srivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aakash-thedev/codeconnect/issues"
+  },
+  "homepage": "https://github.com/aakash-thedev/codeconnect#readme"
+}
