@@ -4,6 +4,11 @@ const port = 5005;
 // create an express app
 const app = express();
 
+const routers = require('./routes/index');
+
+// adding an middleware to load routers first
+app.use('/', routers);
+
 
 // create a home route
 app.get('/', (req, res) => {
