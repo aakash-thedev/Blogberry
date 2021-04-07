@@ -13,8 +13,6 @@ router.get('/', homeController.home);
 router.use('/user', require('./user'));
 router.use('/feeds', require('./feeds'));
 
-router.get('/test', homeController.test);
-
 
 // export the routers to server
 module.exports = router;

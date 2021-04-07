@@ -6,14 +6,12 @@ const app = express();
 
 const routers = require('./routes/index');
 
-// adding an middleware to load routers first
+// accessing any router as per requests in routes folder
 app.use('/', routers);
 
-
-// create a home route
-app.get('/', (req, res) => {
-    return res.end('<h1> Server Running </h1>');
-});
+// set view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 
 // fire up the server on the port
