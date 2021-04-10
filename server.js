@@ -1,8 +1,21 @@
 const express = require('express');
-const port = 5000;
-
 // create an express app
 const app = express();
+const port = 5000;
+
+const expressLayouts = require('express-ejs-layouts');
+
+app.use('*/assets', express.static('./assets'));
+
+// const db = require('./config/mongoose');
+
+// to use layouts
+app.use(expressLayouts);
+
+// layouts ki styling ke alawa agar individual pages ki styling krni ho
+// tb style aur script tags ko unki respective sahi positions me hi rkhne ke liye
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 const routers = require('./routes/index');
 
