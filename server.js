@@ -7,7 +7,7 @@ const expressLayouts = require('express-ejs-layouts');
 
 app.use('*/assets', express.static('./assets'));
 
-// const db = require('./config/mongoose');
+const db = require('./config/mongoose');
 
 // to use layouts
 app.use(expressLayouts);
