@@ -5,12 +5,14 @@
 
     <div id="login-box">
         <div class="left">
+
+          <p id="error"></p>
           <h1>Sign up</h1>
           
           <input type="text" name="username" placeholder="Username" onclick="this.placeholder=''" onblur="this.placeholder='Username'" required/>
           <input type="text" name="email" placeholder="E-mail" onclick="this.placeholder=''" onblur="this.placeholder='E-mail'" required/>
-          <input type="password" name="password" placeholder="Password" onclick="this.placeholder=''" onblur="this.placeholder='Password'" required/>
-          <input type="password" name="password2" placeholder="Re-enter password" onclick="this.placeholder=''" onblur="this.placeholder='Re-enter Password'" required/>
+          <input  id="password" type="password" name="password" placeholder="Password" onclick="this.placeholder=''" onblur="this.placeholder='Password'" required/>
+          <input id="confirm-password" type="password" name="password2" placeholder="Re-enter Password" onclick="this.placeholder=''" onblur="this.placeholder='Re-enter Password'" onkeyup="checkPassword();" required/>
           
           <input type="submit" name="signup_submit" value="Sign up" />
 
@@ -30,3 +32,5 @@
     </div>
 
 </form>
+
+<script src="/assets/js/script.js"></script>

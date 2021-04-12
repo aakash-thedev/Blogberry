@@ -1,7 +1,11 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 // create an express app
 const app = express();
-const port = 5000;
+const port = 8000;
+
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 const expressLayouts = require('express-ejs-layouts');
 
@@ -18,6 +22,7 @@ app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
 const routers = require('./routes/index');
+const { urlencoded } = require('express');
 
 // accessing any router as per requests in routes folder
 app.use('/', routers);
