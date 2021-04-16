@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// to prevent this warning : DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead
+mongoose.set('useCreateIndex', true);
+
 // store it in a variable
 mongoose.connect('mongodb://localhost/codeconnect_db', { useNewUrlParser: true, useUnifiedTopology: true });
 

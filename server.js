@@ -1,17 +1,28 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
+const port = process.env.PORT || 8000;
 // create an express app
 const app = express();
-const port = 8000;
+// cookieParser is used to access to and modify cookies in browser
+const cookieParser = require('cookie-parser');
+// expressLayouts are from layout in front end
+const expressLayouts = require('express-ejs-layouts');
+// import database
+const db = require('./config/mongoose');
+
+// these three are used for our session cookie and will use the session middleware after views declaration down
+const session = require('express-session');
+const passport = require('passport');
+const PassportLocalStrategy = require('./config/passport-local-strategy');
+
+// import routers
+const routers = require('./routes/index');
+// import MongoStore to solve the user logged out after every server restart problem
+const MongoStore = require('connect-mongo')(session);
 
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-const expressLayouts = require('express-ejs-layouts');
-
 app.use('*/assets', express.static('./assets'));
-
-const db = require('./config/mongoose');
 
 // to use layouts
 app.use(expressLayouts);
@@ -21,16 +32,35 @@ app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-const routers = require('./routes/index');
-const { urlencoded } = require('express');
-
-// accessing any router as per requests in routes folder
-app.use('/', routers);
-
 // set view engine
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// session middleware
+// also mongoStore is used to store the session cookie in the db
+app.use(session({
+    // name is name of cookie
+    name : 'codeconnect',
+    // this secret field is the encrypted text which we will generate later during production / deployment
+    secret : 'th980kl91278jkloip@kloaakash123%22',
+    saveUninitialized : false,
+    resave : false,
+    cookie : {
+        // maxAge is in milliseconds
+        maxAge : (1000 * 60 * 100)
+    },
+    store : new MongoStore({
+        mongooseConnection : db,
+        autoRemove : 'disabled'
+    }, function(err) { console.log(err || 'connect-mongodb setup ok') } )
+
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// accessing any router as per requests in routes folder
+app.use('/', routers);
 
 // fire up the server on the port
 app.listen(port, (err)   => {
