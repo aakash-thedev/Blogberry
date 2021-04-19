@@ -3,22 +3,24 @@
 <header id="header">
 
     <div id="logo">
-        <img src="/assets/images/logo2.png" alt="logo"> Codemate
+        <a href="/user/profile">
+            <img src="/assets/images/logo2.png" alt="logo"> <span>Codemate</span>
+        </a>
     </div>
 
     <% if (locals.user) { %>
 
-        <li>
-            <a href="/user/profile"><%= user.name %> </a> 
-        </li>
+        <div class="right-section">
 
-        <li>
-            <a href="/user/sign-out">Sign Out</a>
-        </li>
+            <li id="logout">
+                <a href="/user/sign-out">Sign Out</a>
+            </li>
+            
+        </div>
 
     <% } else { %>
 
-        <div id="right-section">
+        <div class="right-section">
 
             <li>
                 <a href="/user/sign-in">Sign In</a>

@@ -9,22 +9,37 @@
     height: 100%;
     width: 100px;
     margin-top: 0.2%;
-    margin-left: 0.6%; }
-    #header #logo img {
-      height: 50px;
-      width: auto; }
-  #header #right-section {
+    margin-left: 0.6%;
+    position: relative; }
+    #header #logo a {
+      color: white;
+      text-decoration: none; }
+      #header #logo a img {
+        height: 50px;
+        width: auto; }
+      #header #logo a span {
+        position: absolute;
+        top: 19%;
+        left: 60%;
+        font-size: 25px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+    #header #logo a:visited {
+      color: white; }
+  #header .right-section {
     margin-right: 2%; }
-  #header li {
-    list-style: none;
-    display: inline-block;
-    width: 70px;
-    margin-top: 13%; }
-    #header li a {
-      color: white;
-      text-decoration: none;
-      font-size: large; }
-    #header li a:hover, #header li a:visited {
-      color: white;
-      text-decoration: underline;
-      transition: all 0.5s ease-in-out; }
+    #header .right-section li {
+      list-style: none;
+      display: inline-block;
+      width: 70px;
+      margin-top: 13%; }
+      #header .right-section li a {
+        color: white;
+        text-decoration: none;
+        font-size: large; }
+      #header .right-section li a:hover, #header .right-section li a:visited {
+        color: white;
+        text-decoration: underline;
+        transition: all 0.5s ease-in-out; }
+    #header .right-section #logout {
+      width: 100px;
+      margin-top: 19%; }

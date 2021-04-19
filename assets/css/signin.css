@@ -33,7 +33,7 @@ body {
   height: 100%; }
 
 h1 {
-  margin-left: 43%;
+  margin-left: 10%;
   margin-bottom: 10%;
   font-weight: 400;
   font-size: 28px;
@@ -62,7 +62,7 @@ input[type="password"]:focus {
 
 input[type="submit"] {
   margin-top: 28px;
-  margin-left: 42%;
+  margin-left: 8%;
   width: 20%;
   height: 40px;
   font-size: 15px;

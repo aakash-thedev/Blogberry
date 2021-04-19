@@ -11,33 +11,56 @@
         width: 100px;
         margin-top: 0.2%;
         margin-left: 0.6%;
-
-        img{
-            height: 50px;
-            width: auto;
-        }
-    }
-
-    #right-section{
-        margin-right: 2%;
-    }
-
-    li{
-        list-style: none;
-        display: inline-block;
-        width: 70px;
-        margin-top: 13%;
+        position: relative;
 
         a{
-            color: rgb(255, 255, 255);
-            text-decoration: none;
-            font-size: large;
-        }
-
-        a:hover, a:visited{
             color: white;
-            text-decoration: underline;
-            transition: all 0.5s ease-in-out;
+            text-decoration: none;
+
+            img{
+                height: 50px;
+                width: auto;
+            }
+    
+            span{
+                position: absolute;
+                top: 19%;
+                left: 60%;
+                font-size: 25px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+        }
+        
+        a:visited{
+            color: white;
+        }
+    }
+
+    .right-section{
+        margin-right: 2%;
+
+        li{
+            list-style: none;
+            display: inline-block;
+            width: 70px;
+            margin-top: 13%;
+    
+            a{
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+                font-size: large;
+            }
+    
+            a:hover, a:visited{
+                color: white;
+                text-decoration: underline;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    
+        #logout{
+            width: 100px;
+            margin-top: 19%;
         }
     }
 }
