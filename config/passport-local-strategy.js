@@ -38,7 +38,7 @@ passport.use(new LocalStrategy({usernameField : 'email'}, function(email, passwo
 // thats serializing
 passport.serializeUser(function(user, done){
     done(null, user._id);
-})
+});
 
 
 // opposite is deserializing the user from key(user id) in the cookie to establish identity

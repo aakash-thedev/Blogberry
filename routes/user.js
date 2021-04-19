@@ -9,7 +9,8 @@ router.get('/', function(req, res) {
     return res.end('<h1> USERS </h1>');
 });
 
-router.get('/profile', userController.profile);
+// only visit profile when user is logged in already for that we will use middleware
+router.get('/profile', passport.checkAuthentication , userController.profile);
 router.get('/posts', userController.posts);
 router.get('/sign-up', userController.signup);
 router.get('/sign-in', userController.signin);

@@ -6,6 +6,9 @@
     <title> <%= title %>  </title>
 
     <link rel="stylesheet" href="../assets/css/layouts.css">
+    <link rel="stylesheet" href="../assets/css/header.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+
     <%- style %> 
 </head>
 <body>
@@ -14,7 +17,11 @@
     <%- include('_header'); %> 
 
     <!-- between these the variable part is gonna be -->
-    <%- body %>
+    <main id="layout-main">
+
+        <%- body %>
+
+    </main>
 
     <!-- place partial footer here -->
     <%- include('_footer'); %> 

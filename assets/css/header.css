@@ -1,0 +1,30 @@
+#header {
+  background-color: #292a2c;
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
+  #header #logo {
+    height: 100%;
+    width: 100px;
+    margin-top: 0.2%;
+    margin-left: 0.6%; }
+    #header #logo img {
+      height: 50px;
+      width: auto; }
+  #header #right-section {
+    margin-right: 2%; }
+  #header li {
+    list-style: none;
+    display: inline-block;
+    width: 70px;
+    margin-top: 13%; }
+    #header li a {
+      color: white;
+      text-decoration: none;
+      font-size: large; }
+    #header li a:hover, #header li a:visited {
+      color: white;
+      text-decoration: underline;
+      transition: all 0.5s ease-in-out; }

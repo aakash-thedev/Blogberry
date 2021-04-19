@@ -18,6 +18,18 @@ const PassportLocalStrategy = require('./config/passport-local-strategy');
 const routers = require('./routes/index');
 // import MongoStore to solve the user logged out after every server restart problem
 const MongoStore = require('connect-mongo')(session);
+const sassMiddleware = require('node-sass-middleware');
+
+app.use(sassMiddleware({
+
+    src : './assets/scss',
+    dest : './assets/css',
+    debug : true,
+    outputStyle : 'extended',
+    // prefix means inside which folder should server look for css files
+    prefix : '/assets/css'
+
+}));
 
 app.use(express.urlencoded());
 app.use(cookieParser());
@@ -58,6 +70,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
 
 // accessing any router as per requests in routes folder
 app.use('/', routers);

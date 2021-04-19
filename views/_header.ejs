@@ -1,4 +1,11 @@
-<header>
+<!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
+
+<header id="header">
+
+    <div id="logo">
+        <img src="/assets/images/logo2.png" alt="logo"> Codemate
+    </div>
+
     <% if (locals.user) { %>
 
         <li>
@@ -11,13 +18,17 @@
 
     <% } else { %>
 
-        <li>
-            <a href="/user/sign-in">Sign In</a>
-        </li>
+        <div id="right-section">
 
-        <li>
-            <a href="/user/sign-up">Create an account</a>
-        </li>
+            <li>
+                <a href="/user/sign-in">Sign In</a>
+            </li>
+    
+            <li>
+                <a href="/user/sign-up">Sign Up</a>
+            </li>
+
+        </div>
         
     <% } %> 
 </header>
