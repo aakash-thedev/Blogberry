@@ -38,6 +38,18 @@ module.exports.profile = function(req, res) {
     
 }
 
+// when click on logo | if you are logged in then go no where but if you are at sign-in or sign-up page then go to home page
+
+module.exports.logoAction = function(req, res) {
+
+    if(req.isAuthenticated()){
+        return res.redirect('/user/profile');
+    }
+
+    return res.redirect('/');
+
+}
+
 module.exports.posts = function (req, res) {
 
     return res.end('<h1> Posts Fetched </h1>');

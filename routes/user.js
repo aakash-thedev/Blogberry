@@ -11,6 +11,9 @@ router.get('/', function(req, res) {
 
 // only visit profile when user is logged in already for that we will use middleware
 router.get('/profile', passport.checkAuthentication , userController.profile);
+
+router.get('/logo-action', userController.logoAction);
+
 router.get('/posts', userController.posts);
 router.get('/sign-up', userController.signup);
 router.get('/sign-in', userController.signin);

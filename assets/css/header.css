@@ -16,10 +16,11 @@
       text-decoration: none; }
       #header #logo a img {
         height: 50px;
-        width: auto; }
+        width: auto;
+        margin-top: 0.2em; }
       #header #logo a span {
         position: absolute;
-        top: 19%;
+        top: 23.5%;
         left: 60%;
         font-size: 25px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
