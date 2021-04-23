@@ -1,5 +1,5 @@
 #header {
-  background-color: #292a2c;
+  background-color: #082743;
   height: 60px;
   color: white;
   display: flex;
@@ -20,19 +20,24 @@
         margin-top: 0.2em; }
       #header #logo a span {
         position: absolute;
-        top: 23.5%;
+        top: 24.2%;
         left: 60%;
-        font-size: 25px;
+        font-size: 20px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
     #header #logo a:visited {
       color: white; }
   #header .right-section {
-    margin-right: 2%; }
+    margin-right: 2%;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    justify-content: space-between; }
     #header .right-section li {
       list-style: none;
       display: inline-block;
-      width: 70px;
-      margin-top: 13%; }
+      height: 100%;
+      width: auto;
+      margin-top: 11%; }
       #header .right-section li a {
         color: white;
         text-decoration: none;

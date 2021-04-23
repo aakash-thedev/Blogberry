@@ -3,12 +3,6 @@
 
 module.exports.home = function(req, res) {
 
-    // to access cookies
-    console.log(req.cookies);
-
-    // to modify cookies on browser
-    res.cookie('Aakash', 08);
-
     return res.render('home', {
         title : "Home"
     });

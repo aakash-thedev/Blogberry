@@ -5,7 +5,7 @@ module.exports.signup = function(req, res) {
     if(!req.isAuthenticated()) {
 
         return res.render('signup', {
-            title : "CodeConnect | Sign Up"
+            title : "Codemate | Sign Up"
         });
     }
 
@@ -16,7 +16,7 @@ module.exports.signin = function(req, res) {
 
     if(!req.isAuthenticated()) {
         return res.render('signin', {
-            title : "CodeConnect | Sign In"
+            title : "Codemate | Sign In"
         });
     }
 
@@ -29,7 +29,7 @@ module.exports.profile = function(req, res) {
 
     if(req.isAuthenticated()){
         return res.render('profile', {
-            title : "Aakash Srivastava | Profile",
+            title : "Aakash Srivastava",
             user : req.user
         });
     }

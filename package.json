@@ -1,5 +1,5 @@
 {
-  "name": "codeconnect",
+  "name": "codemate",
   "version": "1.0.0",
   "description": "Social media website for Programmers",
   "main": "server.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aakash-thedev/codeconnect.git"
+    "url": "git+https://github.com/aakash-thedev/codemate.git"
   },
   "keywords": [
     "Social",
@@ -18,9 +18,9 @@
   "author": "Aakash Srivastava",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aakash-thedev/codeconnect/issues"
+    "url": "https://github.com/aakash-thedev/codemate/issues"
   },
-  "homepage": "https://github.com/aakash-thedev/codeconnect#readme",
+  "homepage": "https://github.com/aakash-thedev/codemate#readme",
   "dependencies": {
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",

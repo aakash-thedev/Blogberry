@@ -2,6 +2,14 @@
 *:focus {
   outline: none; }
 
+img {
+  height: 100%;
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 14%;
+  z-index: -1; }
+
 body {
   margin: 0;
   padding: 0;

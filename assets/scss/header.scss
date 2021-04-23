@@ -1,5 +1,6 @@
 #header{
-    background-color: #292a2c;
+    // background-color: #292a2c;
+    background-color: rgb(8,39,67);
     height: 60px;
     color: white;
     display: flex;
@@ -25,9 +26,9 @@
     
             span{
                 position: absolute;
-                top: 23.5%;
+                top: 24.2%;
                 left: 60%;
-                font-size: 25px;
+                font-size: 20px;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
         }
@@ -39,12 +40,17 @@
 
     .right-section{
         margin-right: 2%;
+        height: 100%;
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
 
         li{
             list-style: none;
             display: inline-block;
-            width: 70px;
-            margin-top: 13%;
+            height: 100%;
+            width: auto;
+            margin-top: 11%;
     
             a{
                 color: rgb(255, 255, 255);

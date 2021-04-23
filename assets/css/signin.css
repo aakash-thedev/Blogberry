@@ -2,6 +2,14 @@
 *:focus {
   outline: none; }
 
+img {
+  height: 100%;
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 14%;
+  z-index: -1; }
+
 body {
   margin: 0;
   padding: 0;
@@ -10,13 +18,14 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   min-height: 450px;
-  min-width: 600px; }
+  min-width: 600px;
+  overflow-y: hidden; }
 
 #login-box {
   position: relative;
-  margin: 8% auto;
+  margin: 11% auto;
   width: 30%;
-  height: 40%;
+  height: 38%;
   min-height: 350px;
   min-width: 500px;
   background: #FFF;
@@ -33,14 +42,15 @@ body {
   height: 100%; }
 
 h1 {
-  margin-left: 10%;
+  margin: auto;
   margin-bottom: 10%;
   font-weight: 400;
   font-size: 28px;
-  color: grey; }
+  color: #292a2c; }
 
 input[type="email"],
 input[type="password"] {
+  color: #292a2c;
   display: block;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -61,12 +71,12 @@ input[type="password"]:focus {
   transition: 0.2s ease; }
 
 input[type="submit"] {
-  margin-top: 28px;
-  margin-left: 8%;
+  margin: auto;
+  margin-top: 7%;
   width: 20%;
   height: 40px;
   font-size: 15px;
-  background: #1481db;
+  background: #0d3e69;
   border: none;
   border-radius: 2px;
   color: #FFF;
@@ -87,12 +97,13 @@ input[type="submit"]:active {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
   transition: 0.1s ease; }
 
-#go-to-signup {
+#forget-password {
   font-size: 14px;
   position: absolute;
-  right: 1; }
+  right: 1%;
+  bottom: 3%; }
 
-#go-to-signup > a {
+#forget-password > a {
   text-decoration: none;
   font-weight: 500;
   color: #1481db; }
