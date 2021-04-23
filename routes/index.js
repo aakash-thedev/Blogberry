@@ -10,12 +10,17 @@ console.log('router loaded');
 
 router.get('/', homeController.home);
 
+router.get('/logo-action', userController.logoAction);
+
+router.get('/sign-in', userController.signin);
+router.get('/sign-up', userController.signup);
+
+// -------------- After logging in ------------------ //
+router.get('/home', userController.home);
+
 // ----------------- controlling other routes --------- //
 router.use('/user', require('./user'));
-router.use('/feeds', require('./feeds'));
-
-router.use('/sign-up', require('./user'));
-router.use('/sign-in', require('./user'));
+router.use('/posts', require('./posts'));
 
 
 // export the routers to server

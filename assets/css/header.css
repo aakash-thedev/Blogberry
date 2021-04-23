@@ -1,3 +1,6 @@
+body {
+  overflow: hidden; }
+
 #header {
   background-color: #082743;
   height: 60px;
@@ -5,26 +8,25 @@
   display: flex;
   justify-content: space-between;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-  #header #logo {
+  #header #logo-section {
     height: 100%;
-    width: 100px;
-    margin-top: 0.2%;
-    margin-left: 0.6%;
-    position: relative; }
-    #header #logo a {
+    width: 150px; }
+    #header #logo-section a {
       color: white;
-      text-decoration: none; }
-      #header #logo a img {
+      text-decoration: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      #header #logo-section a #logo {
         height: 50px;
         width: auto;
-        margin-top: 0.2em; }
-      #header #logo a span {
-        position: absolute;
-        top: 24.2%;
-        left: 60%;
+        margin-top: 2.5%;
+        z-index: 2; }
+      #header #logo-section a span {
         font-size: 20px;
+        margin-top: 1.5%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-    #header #logo a:visited {
+    #header #logo-section a:visited {
       color: white; }
   #header .right-section {
     margin-right: 2%;
@@ -42,10 +44,10 @@
         color: white;
         text-decoration: none;
         font-size: large; }
+      #header .right-section li #user-name {
+        margin-left: 65%;
+        text-transform: capitalize; }
       #header .right-section li a:hover, #header .right-section li a:visited {
         color: white;
         text-decoration: underline;
         transition: all 0.5s ease-in-out; }
-    #header .right-section #logout {
-      width: 100px;
-      margin-top: 19%; }

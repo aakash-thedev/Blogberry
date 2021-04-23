@@ -1,3 +1,11 @@
 <link rel="stylesheet" href="../assets/css/user_profile.css">
-<h1>Profile : <%= user.name %> </h1>
-<h2>Email : <%= user.email %> </h2>
+
+<!-- create a form for POSTS -->
+
+<section id="posts">
+    <h3>Post your thoughts</h3>
+    <form action="create-post" id="new-post" method="POST">
+        <textarea name="content" id="post-content" cols="60" rows="5"></textarea>
+        <input type="submit" value="Post">
+    </form>
+</section>

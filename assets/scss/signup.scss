@@ -3,7 +3,7 @@
   outline: none;
 }
 
-img{
+#bg{
   height: 100%;
   float: none;
   position: absolute;
@@ -21,6 +21,7 @@ body {
   font-weight: 300;
   min-height: 450px;
   min-width: 600px;
+  overflow-y: hidden;
 }
 
 #login-box {

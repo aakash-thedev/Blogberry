@@ -3,7 +3,7 @@
   outline: none;
 }
 
-img{
+#bg{
   height: 100%;
   float: none;
   position: absolute;
@@ -49,9 +49,10 @@ body {
 h1 {
   margin: auto;
   margin-bottom: 10%;
-  font-weight: 400;
-  font-size: 28px;
-  color: #292a2c;
+  // color: #292a2c;
+  color: rgb(13,62,105);
+  font-weight: 800;
+  font-size: 30px;
 }
 
 input[type="email"],

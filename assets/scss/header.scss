@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 #header{
     // background-color: #292a2c;
     background-color: rgb(8,39,67);
@@ -7,28 +11,27 @@
     justify-content: space-between;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
-    #logo{
+    #logo-section{
         height: 100%;
-        width: 100px;
-        margin-top: 0.2%;
-        margin-left: 0.6%;
-        position: relative;
+        width: 150px;
 
         a{
             color: white;
             text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            img{
+            #logo{
                 height: 50px;
                 width: auto;
-                margin-top: 0.2em;
+                margin-top: 2.5%;
+                z-index: 2;
             }
     
             span{
-                position: absolute;
-                top: 24.2%;
-                left: 60%;
                 font-size: 20px;
+                margin-top: 1.5%;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
         }
@@ -57,17 +60,17 @@
                 text-decoration: none;
                 font-size: large;
             }
+
+            #user-name{
+                margin-left: 65%;
+                text-transform: capitalize;
+            }
     
             a:hover, a:visited{
                 color: white;
                 text-decoration: underline;
                 transition: all 0.5s ease-in-out;
             }
-        }
-    
-        #logout{
-            width: 100px;
-            margin-top: 19%;
         }
     }
 }

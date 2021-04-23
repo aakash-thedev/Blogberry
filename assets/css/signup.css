@@ -2,7 +2,7 @@
 *:focus {
   outline: none; }
 
-img {
+#bg {
   height: 100%;
   float: none;
   position: absolute;
@@ -18,7 +18,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   min-height: 450px;
-  min-width: 600px; }
+  min-width: 600px;
+  overflow-y: hidden; }
 
 #login-box {
   position: relative;

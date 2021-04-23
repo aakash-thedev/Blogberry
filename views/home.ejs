@@ -1,1 +1,32 @@
-<h1>Codemate - A social media for programmers</h1>
+<!-- create a form for POSTS -->
+
+<section id="posts">
+
+    <h3>Post your thoughts</h3>
+
+    <form action="/posts/create-post" id="new-post" method="POST">
+        <textarea name="content" id="post-content" cols="60" rows="5" placeholder="Write down your thoughts here :)"></textarea>
+        <input type="submit" value="Post">
+    </form>
+
+    <h3>New Feeds</h3>
+
+    <ul style="list-style: none;">
+
+        <% for (let i=0; i<postsArray.length; i++) { %>
+
+            <li>
+                <p>
+
+                    <b><%= postsArray[i].user.name %> </b> -
+                    <%= postsArray[i].content %>
+
+                </p>
+            </li>
+        
+        <% } %> 
+
+
+    </ul>
+
+</section>

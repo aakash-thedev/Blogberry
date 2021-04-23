@@ -2,9 +2,9 @@
 
 <header id="header">
 
-    <div id="logo">
-        <a href="/user/logo-action">
-            <img src="../assets/images/logo2.png" alt="logo"> <span>Codemate</span>
+    <div id="logo-section">
+        <a href="/logo-action">
+            <img src="../assets/images/logo2.png" alt="logo" id="logo"> <span>Codemate</span>
         </a>
     </div>
 
@@ -12,6 +12,10 @@
 
         <div class="right-section">
 
+            <li>
+                <a href="/user/profile" id="user-name"> <%= locals.user.name %>   </a>
+            </li>
+            
             <li id="logout">
                 <a href="/user/sign-out">Sign Out</a>
             </li>
@@ -23,11 +27,11 @@
         <div class="right-section">
 
             <li>
-                <a href="/user/sign-in">Sign in</a>
+                <a href="/sign-in">Sign in</a>
             </li>
     
             <li>
-                <a href="/user/sign-up">Create Account</a>
+                <a href="/sign-up">Create Account</a>
             </li>
 
         </div>

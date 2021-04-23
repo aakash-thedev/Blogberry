@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Post = require('../models/post');
 
 module.exports.signup = function(req, res) {
 
@@ -9,7 +10,7 @@ module.exports.signup = function(req, res) {
         });
     }
 
-    return res.redirect('/user/profile');
+    return res.redirect('/home');
 }
 
 module.exports.signin = function(req, res) {
@@ -20,7 +21,39 @@ module.exports.signin = function(req, res) {
         });
     }
 
-    return res.redirect('/user/profile');
+    return res.redirect('/home');
+}
+
+// ----------------------------- Home action --------------------- //
+
+module.exports.home = function(req, res) {
+
+    // fetch posts from database
+    // Post.find({}, function(err, posts){
+        
+    //     if(err) { console.log("Error fetching posts from database"); return res.redirect('back'); }
+
+    //     return res.render('home', {
+    //         title : 'Codemate',
+    //         postsArray : posts
+    //     });
+    
+    // });
+
+    // now as we are storing user id as ref in post schema
+    // we have to fetch info corresponding that user id in User schema
+    // for that mongoose has populate function
+
+    Post.find({}).populate('user').exec((err, posts) => {
+
+        if(err) { console.log("Error fetching posts from database"); return res.redirect('back'); }
+
+        return res.render('home', {
+            title : 'Codemate',
+            postsArray : posts
+        });
+
+    });
 }
 
 module.exports.profile = function(req, res) {
@@ -34,7 +67,7 @@ module.exports.profile = function(req, res) {
         });
     }
 
-    return res.redirect('/user/sign-in');
+    return res.render('/sign-in');
     
 }
 
@@ -42,17 +75,11 @@ module.exports.profile = function(req, res) {
 
 module.exports.logoAction = function(req, res) {
 
-    if(req.isAuthenticated()){
-        return res.redirect('/user/profile');
+    if(!req.isAuthenticated()){
+        return res.redirect('/');
     }
 
-    return res.redirect('/');
-
-}
-
-module.exports.posts = function (req, res) {
-
-    return res.end('<h1> Posts Fetched </h1>');
+    return res.redirect('/home');
 }
 
 module.exports.create = function(req, res) {
@@ -92,7 +119,7 @@ module.exports.create = function(req, res) {
 
 module.exports.createSession = function(req, res) {
 
-    return res.redirect('/user/profile');
+    return res.redirect('/home');
 
 }
 
