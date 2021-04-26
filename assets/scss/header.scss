@@ -2,11 +2,21 @@ body{
     overflow: hidden;
 }
 
+a, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
 #header{
-    // background-color: #292a2c;
-    background-color: rgb(8,39,67);
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    // background-color: rgb(8,39,67);
+    // color: white;
+    background-color: white;
+    color: black;
     height: 60px;
-    color: white;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -14,9 +24,9 @@ body{
     #logo-section{
         height: 100%;
         width: 150px;
+        margin-left: 0.5%;
 
         a{
-            color: white;
             text-decoration: none;
             display: flex;
             justify-content: space-between;
@@ -36,9 +46,6 @@ body{
             }
         }
         
-        a:visited{
-            color: white;
-        }
     }
 
     .right-section{
@@ -48,7 +55,7 @@ body{
         display: flex;
         justify-content: space-between;
 
-        li{
+        span{
             list-style: none;
             display: inline-block;
             height: 100%;
@@ -56,7 +63,6 @@ body{
             margin-top: 11%;
     
             a{
-                color: rgb(255, 255, 255);
                 text-decoration: none;
                 font-size: large;
             }
@@ -67,7 +73,6 @@ body{
             }
     
             a:hover, a:visited{
-                color: white;
                 text-decoration: underline;
                 transition: all 0.5s ease-in-out;
             }

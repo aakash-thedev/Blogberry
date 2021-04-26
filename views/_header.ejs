@@ -12,13 +12,13 @@
 
         <div class="right-section">
 
-            <li>
-                <a href="/user/profile" id="user-name"> <%= locals.user.name %>   </a>
-            </li>
+            <span>
+                <a href="/user/profile" id="user-name"> <%= String(locals.user.name).indexOf(' ') == -1 ? String(locals.user.name) : String(locals.user.name).substring(0, String(locals.user.name).indexOf(' ') + 1) %>   </a>
+            </span>
             
-            <li id="logout">
+            <span id="logout">
                 <a href="/user/sign-out">Sign Out</a>
-            </li>
+            </span>
             
         </div>
 
@@ -26,13 +26,13 @@
 
         <div class="right-section">
 
-            <li>
+            <span>
                 <a href="/sign-in">Sign in</a>
-            </li>
+            </span>
     
-            <li>
+            <span>
                 <a href="/sign-up">Create Account</a>
-            </li>
+            </span>
 
         </div>
         

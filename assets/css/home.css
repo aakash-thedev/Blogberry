@@ -1,6 +1,20 @@
 *:focus {
   outline: none; }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden; }
+
+::-webkit-scrollbar {
+  width: 0;
+  /* Remove scrollbar space */
+  background: transparent;
+  /* Optional: just make scrollbar invisible */ }
+
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000; }
+
 main {
   height: 100%;
   width: 100%;
@@ -8,38 +22,45 @@ main {
   justify-content: space-evenly;
   align-items: center;
   scroll-behavior: smooth;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
   main #left-home-news {
     height: 100%;
     width: 15%;
     min-width: 200px;
-    box-shadow: 0 2px 3px 0px #b4b4b4; }
+    background-color: white;
+    padding-right: 10%; }
   main #middle-home-posts {
     height: 100%;
     width: 33%;
     min-width: 550px;
-    box-shadow: 0 2px 3px 0px #b4b4b4; }
+    overflow-x: hidden;
+    position: relative;
+    overflow-y: scroll; }
     main #middle-home-posts #heading {
       height: 40px;
       width: 100%;
+      border-bottom: 1px solid #ecebeb;
       box-shadow: 0px 1px 3px 0px #b4b4b4;
+      background-color: white;
       text-align: left;
       position: relative;
       display: flex;
-      align-items: center;
-      margin-bottom: 5px; }
+      align-items: center; }
       main #middle-home-posts #heading #heading-text {
         position: absolute;
-        font-size: 20px;
         left: 2%;
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        top: 9px;
+        font-size: 18px;
         font-weight: 600;
-        color: #1e277a; }
+        color: #1e277a;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
     main #middle-home-posts #new-post {
       height: 150px;
       width: 100%;
       position: relative;
-      box-shadow: 0px 1px 3px 0px #b4b4b4; }
+      background-color: white;
+      margin-bottom: 7px; }
       main #middle-home-posts #new-post #upper {
         display: flex;
         justify-content: space-between;
@@ -60,7 +81,6 @@ main {
             height: 100px;
             width: 100%;
             border: none;
-            box-shadow: 3px 0px 3px 0px #b4b4b4;
             padding-top: 7%;
             font-size: 17px; }
           main #middle-home-posts #new-post #upper form #post-button {
@@ -76,8 +96,121 @@ main {
             cursor: pointer;
             margin-left: 83%;
             margin-top: 1.5%; }
+    main #middle-home-posts #post-heading {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e277a;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-align: left; }
+    main #middle-home-posts #new-feeds {
+      height: auto;
+      width: 100%;
+      position: relative; }
+      main #middle-home-posts #new-feeds .post-container {
+        height: auto;
+        width: 100%;
+        border: 1px solid transparent;
+        box-shadow: 0px 1px 4px 0px #d1cece;
+        position: relative;
+        margin-bottom: 8px;
+        background-color: white; }
+        main #middle-home-posts #new-feeds .post-container .post-profile-photo {
+          position: absolute;
+          height: 35px;
+          width: 35px;
+          border: 1px solid black;
+          border-radius: 50%;
+          left: 1.5%;
+          top: 8px; }
+        main #middle-home-posts #new-feeds .post-container .post-author {
+          height: 40px;
+          text-align: left;
+          position: absolute;
+          left: 10%;
+          top: 16px;
+          font-size: 16px;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-weight: 600; }
+          main #middle-home-posts #new-feeds .post-container .post-author #post-time-date {
+            font-size: 11px;
+            color: grey;
+            margin-top: 1px;
+            font-weight: 400; }
+        main #middle-home-posts #new-feeds .post-container .post-content {
+          margin-top: 56px;
+          min-height: 40px;
+          margin-left: 2%;
+          text-align: left;
+          font-size: 17px; }
+        main #middle-home-posts #new-feeds .post-container .likes-comment-share {
+          height: 32px;
+          width: 100%;
+          border-top: 1px solid #dadada;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          color: grey;
+          font-size: 16.5px; }
+          main #middle-home-posts #new-feeds .post-container .likes-comment-share i {
+            cursor: pointer;
+            height: 90%;
+            width: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+          main #middle-home-posts #new-feeds .post-container .likes-comment-share i:hover {
+            background-color: #f0f0f0; }
+          main #middle-home-posts #new-feeds .post-container .likes-comment-share span {
+            font-weight: 400; }
+        main #middle-home-posts #new-feeds .post-container .display-comments {
+          border-top: 1px solid #dadada; }
+          main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
+            margin-left: 10%;
+            margin-top: 2.5%; }
+            main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-author {
+              font-size: 16px;
+              font-weight: bolder; }
+        main #middle-home-posts #new-feeds .post-container .post-comments {
+          height: 50px;
+          width: 100%;
+          position: relative; }
+          main #middle-home-posts #new-feeds .post-container .post-comments .comment-profile-photo {
+            position: absolute;
+            height: 25px;
+            width: 25px;
+            border: 1px solid black;
+            border-radius: 50%;
+            left: 1.5%;
+            top: 12px; }
+          main #middle-home-posts #new-feeds .post-container .post-comments .comment-content {
+            position: absolute;
+            left: 8%;
+            height: auto;
+            width: 88%;
+            height: 31px;
+            padding-left: 10px;
+            padding-top: 8px;
+            top: 8.5px;
+            resize: none;
+            border: none;
+            background: #f3f3f3;
+            border-radius: 12px; }
+          main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            right: 24px;
+            top: 12px;
+            width: 50px;
+            font-size: 20px;
+            color: #e73a3a; }
+            main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn .fa-paper-plane {
+              transform: rotate(45deg); }
   main #right-home-friends {
     height: 100%;
     width: 15%;
     min-width: 200px;
-    box-shadow: 0 2px 3px 0px #b4b4b4; }
+    background-color: white;
+    position: sticky;
+    padding-left: 10%; }

@@ -1,18 +1,26 @@
 body {
   overflow: hidden; }
 
+a, a:visited {
+  color: black;
+  text-decoration: none; }
+
 #header {
-  background-color: #082743;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+  color: black;
   height: 60px;
-  color: white;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   #header #logo-section {
     height: 100%;
-    width: 150px; }
+    width: 150px;
+    margin-left: 0.5%; }
     #header #logo-section a {
-      color: white;
       text-decoration: none;
       display: flex;
       justify-content: space-between;
@@ -26,28 +34,24 @@ body {
         font-size: 20px;
         margin-top: 1.5%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
-    #header #logo-section a:visited {
-      color: white; }
   #header .right-section {
     margin-right: 2%;
     height: 100%;
     width: 200px;
     display: flex;
     justify-content: space-between; }
-    #header .right-section li {
+    #header .right-section span {
       list-style: none;
       display: inline-block;
       height: 100%;
       width: auto;
       margin-top: 11%; }
-      #header .right-section li a {
-        color: white;
+      #header .right-section span a {
         text-decoration: none;
         font-size: large; }
-      #header .right-section li #user-name {
+      #header .right-section span #user-name {
         margin-left: 65%;
         text-transform: capitalize; }
-      #header .right-section li a:hover, #header .right-section li a:visited {
-        color: white;
+      #header .right-section span a:hover, #header .right-section span a:visited {
         text-decoration: underline;
         transition: all 0.5s ease-in-out; }

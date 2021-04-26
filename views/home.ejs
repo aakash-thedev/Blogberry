@@ -1,6 +1,7 @@
 <!-- create a form for POSTS -->
 
 <link rel="stylesheet" href="../assets/css/home.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
 <main>
 
@@ -30,57 +31,72 @@
             <section id="more-options"></section>
 
         </div>
-    
-        <h3>New Feeds</h3>
-    
-        <ul style="list-style: none;">
+
+        <!-- <span id="post-heading">Posts</span> -->
+
+        <div id="new-feeds">
     
             <% for (let i=0; i<postsArray.length; i++) { %>
     
-                <li>
-                    <p>
-    
-                        <b> <%= postsArray[i].user.name %> </b> -
+                <div class="post-container">
+
+                    <span class="post-profile-photo"></span>
+
+                    <span class="post-author">
+
+                        <%= postsArray[i].user.name %>
+
+                        <div id="post-time-date">
+                            <!-- String(postsArray[i].createdAt).substring(0, 16) + ", " + String(postsArray[i].createdAt).substring(16, 21) -->
+                            Just now
+                        </div>
+
+                    </span>
+
+                    <div class="post-content">
                         <%= postsArray[i].content %>
-    
-                    </p>
+                    </div>
+
+                    <div class="likes-comment-share">
+                        <i class="far fa-thumbs-up"> &nbsp; Like</i>
+                        <i class="far fa-comment"> &nbsp; Comment</i>
+                        <i class="fas fa-share"> &nbsp; <span>Share</span></i>
+                    </div>
+
+                    <div class="display-comments">
+
+                        <% for (let comment of postsArray[i].comments) { %>
+                            
+                            <div class="comment-section">
+
+                                <span class="comment-author"> <%= comment.user.name %> </span> - &nbsp;
+                                <span class="comment"> <%= comment.comment %> </span>
+                                
+                            </div>
+
+                        <% } %>
+
+                    </div>
 
                     <div class="post-comments">
 
                         <form method="POST" action="/comments/create-comment">
 
-                            <textarea name="comment" id="" cols="10" rows="2"></textarea>
+                            <span class="comment-profile-photo"></span>
+
+                            <textarea name="comment" class="comment-content" placeholder="Comment"></textarea>
                             <!-- we have to send id of the post to comments as well -->
                             <input type="hidden" name="post" value="<%=postsArray[i]._id%>">
-                            <input type="submit" value="comment">
+                            <button type="submit" class="comment-btn"> <i class="far fa-paper-plane"></i> </button>
     
                         </form>
 
                     </div>
 
-                    <div id="display-comments-<%= postsArray[i]._id %> ">
-
-                        <ul>
-                            <% for (let comment of postsArray[i].comments) { %>
-                                
-                                <li>
-
-                                    <b> <%= comment.user.name %> </b>
-                                    <small> <%= comment.comment %> </small>
-                                    
-                                </li>
-
-                            <% } %> 
-                        </ul>
-
-                    </div>
-
-                </li>
+                </div>
             
-            <% } %> 
-    
-    
-        </ul>
+            <% } %>
+        </div>
     
     </section>
     

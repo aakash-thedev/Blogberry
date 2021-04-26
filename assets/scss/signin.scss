@@ -3,6 +3,19 @@
   outline: none;
 }
 
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
 #bg{
   height: 100%;
   float: none;
@@ -21,7 +34,6 @@ body {
   font-weight: 300;
   min-height: 450px;
   min-width: 600px;
-  overflow-y: hidden;
 }
 
 #login-box {
