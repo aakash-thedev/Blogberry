@@ -46,6 +46,9 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// import routers
+const routers = require('./routes/index');
+
 // session middleware
 // also mongoStore is used to store the session cookie in the db
 app.use(session({
@@ -71,8 +74,6 @@ app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
 
-// import routers
-const routers = require('./routes/index');
 // accessing any router as per requests in routes folder
 app.use('/', routers);
 
@@ -84,7 +85,7 @@ app.listen(port, (err)   => {
             return;
         }
 
-        console.log(`codeconnet running on : ${port}`);;
+        console.log(`codemate running on : ${port}`);;
         return;
     }
 );

@@ -1,0 +1,83 @@
+*:focus {
+  outline: none; }
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  scroll-behavior: smooth;
+  overflow-x: hidden; }
+  main #left-home-news {
+    height: 100%;
+    width: 15%;
+    min-width: 200px;
+    box-shadow: 0 2px 3px 0px #b4b4b4; }
+  main #middle-home-posts {
+    height: 100%;
+    width: 33%;
+    min-width: 550px;
+    box-shadow: 0 2px 3px 0px #b4b4b4; }
+    main #middle-home-posts #heading {
+      height: 40px;
+      width: 100%;
+      box-shadow: 0px 1px 3px 0px #b4b4b4;
+      text-align: left;
+      position: relative;
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px; }
+      main #middle-home-posts #heading #heading-text {
+        position: absolute;
+        font-size: 20px;
+        left: 2%;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: 600;
+        color: #1e277a; }
+    main #middle-home-posts #new-post {
+      height: 150px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0px 1px 3px 0px #b4b4b4; }
+      main #middle-home-posts #new-post #upper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        main #middle-home-posts #new-post #upper #profile-logo {
+          height: 50px;
+          width: 50px;
+          border: 1px solid lightgray;
+          border-radius: 50%;
+          margin-top: -10%;
+          margin-left: 1%; }
+        main #middle-home-posts #new-post #upper form {
+          height: 100%;
+          width: 88%;
+          overflow-x: hidden; }
+          main #middle-home-posts #new-post #upper form #post-content {
+            resize: none;
+            height: 100px;
+            width: 100%;
+            border: none;
+            box-shadow: 3px 0px 3px 0px #b4b4b4;
+            padding-top: 7%;
+            font-size: 17px; }
+          main #middle-home-posts #new-post #upper form #post-button {
+            height: 35px;
+            width: 80px;
+            background: #e22e16;
+            color: white;
+            font-size: 18px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-weight: 600;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 83%;
+            margin-top: 1.5%; }
+  main #right-home-friends {
+    height: 100%;
+    width: 15%;
+    min-width: 200px;
+    box-shadow: 0 2px 3px 0px #b4b4b4; }

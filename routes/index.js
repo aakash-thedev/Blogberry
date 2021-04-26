@@ -21,6 +21,7 @@ router.get('/home', userController.home);
 // ----------------- controlling other routes --------- //
 router.use('/user', require('./user'));
 router.use('/posts', require('./posts'));
+router.use('/comments', require('./comments'));
 
 
 // export the routers to server

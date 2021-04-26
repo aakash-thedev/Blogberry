@@ -1,32 +1,91 @@
 <!-- create a form for POSTS -->
 
-<section id="posts">
+<link rel="stylesheet" href="../assets/css/home.css">
 
-    <h3>Post your thoughts</h3>
+<main>
 
-    <form action="/posts/create-post" id="new-post" method="POST">
-        <textarea name="content" id="post-content" cols="60" rows="5" placeholder="Write down your thoughts here :)"></textarea>
-        <input type="submit" value="Post">
-    </form>
+    <div id="left-home-news">
+        <%- include('_newsSection') %>
+    </div>
+    
+    <section id="middle-home-posts">
+    
+        <div id="heading">
+            <span id="heading-text">Home</span>
+        </div>
+    
+        <div id="new-post">
 
-    <h3>New Feeds</h3>
+            <div id="upper">
 
-    <ul style="list-style: none;">
+                <section id="profile-logo"></section>
 
-        <% for (let i=0; i<postsArray.length; i++) { %>
+                <form action="/posts/create-post" method="POST">
+                    <textarea name="content" id="post-content"" placeholder="What's Up ?"></textarea>
+                    <input type="submit" value="Post" id="post-button">
+                </form>
 
-            <li>
-                <p>
+            </div>
 
-                    <b><%= postsArray[i].user.name %> </b> -
-                    <%= postsArray[i].content %>
+            <section id="more-options"></section>
 
-                </p>
-            </li>
-        
-        <% } %> 
+        </div>
+    
+        <h3>New Feeds</h3>
+    
+        <ul style="list-style: none;">
+    
+            <% for (let i=0; i<postsArray.length; i++) { %>
+    
+                <li>
+                    <p>
+    
+                        <b> <%= postsArray[i].user.name %> </b> -
+                        <%= postsArray[i].content %>
+    
+                    </p>
 
+                    <div class="post-comments">
 
-    </ul>
+                        <form method="POST" action="/comments/create-comment">
 
-</section>
+                            <textarea name="comment" id="" cols="10" rows="2"></textarea>
+                            <!-- we have to send id of the post to comments as well -->
+                            <input type="hidden" name="post" value="<%=postsArray[i]._id%>">
+                            <input type="submit" value="comment">
+    
+                        </form>
+
+                    </div>
+
+                    <div id="display-comments-<%= postsArray[i]._id %> ">
+
+                        <ul>
+                            <% for (let comment of postsArray[i].comments) { %>
+                                
+                                <li>
+
+                                    <b> <%= comment.user.name %> </b>
+                                    <small> <%= comment.comment %> </small>
+                                    
+                                </li>
+
+                            <% } %> 
+                        </ul>
+
+                    </div>
+
+                </li>
+            
+            <% } %> 
+    
+    
+        </ul>
+    
+    </section>
+    
+    <div id="right-home-friends">
+        <%- include('_friendsSection') %>
+    </div>
+
+</main>

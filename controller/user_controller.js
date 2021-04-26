@@ -44,9 +44,20 @@ module.exports.home = function(req, res) {
     // we have to fetch info corresponding that user id in User schema
     // for that mongoose has populate function
 
-    Post.find({}).populate('user').exec((err, posts) => {
+    // nested population
 
-        if(err) { console.log("Error fetching posts from database"); return res.redirect('back'); }
+    Post.find({})
+    .populate('user')
+    .populate({
+        path : 'comments',
+        populate : {
+            // who has commented
+            path : 'user'
+        }
+    })
+    .exec((err, posts) => {
+
+        if(err) { console.log("Error fetching posts from database", err); return res.redirect('back'); }
 
         return res.render('home', {
             title : 'Codemate',
@@ -105,7 +116,7 @@ module.exports.create = function(req, res) {
                 console.log("User Created - ", user);
 
                 // if user is created successfully go to signin page
-                return res.redirect('/user/sign-in');
+                return res.redirect('/sign-in');
             });
 
         }

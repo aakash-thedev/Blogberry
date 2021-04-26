@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const User = require('./user');
 
 const postSchema = new mongoose.Schema({
 
@@ -12,14 +11,24 @@ const postSchema = new mongoose.Schema({
     user : {
         type : mongoose.Schema.Types.ObjectId,
         // ref here refers to which Schema you are talking about
-        ref : User
-    }
+        ref : 'User'
+    },
+
+    // it would be much better and faster if we store all the comments of posts in postSchema
+    // so that whenever we fetch a post we could fetch its comments as well
+
+    comments : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : 'Comment'
+        }
+    ]
 
 }, {
     // create time stamps here
     timestamps: true
 });
 
-const Post = mongoose.model('Post_collection', postSchema);
+const Post = mongoose.model('Post', postSchema);
 
 module.exports = Post;
