@@ -1,4 +1,4 @@
-<!-- <link rel="stylesheet" href="../assets/css/header.css"> -->
+<link rel="stylesheet" href="../assets/css/header.css">
 
 <header id="header">
 
@@ -13,7 +13,7 @@
         <div class="right-section">
 
             <span>
-                <a href="/user/profile" id="user-name"> <%= String(locals.user.name).indexOf(' ') == -1 ? String(locals.user.name) : String(locals.user.name).substring(0, String(locals.user.name).indexOf(' ') + 1) %>   </a>
+                <a href="/user/profile/<%= locals.user.id %> " id="user-name"> <%= String(locals.user.name).indexOf(' ') == -1 ? String(locals.user.name) : String(locals.user.name).substring(0, String(locals.user.name).indexOf(' ') + 1) %>   </a>
             </span>
             
             <span id="logout">

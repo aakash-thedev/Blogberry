@@ -83,7 +83,7 @@ main {
             width: 100%;
             border: none;
             padding-top: 7%;
-            font-size: 15px; }
+            font-size: 14px; }
           main #middle-home-posts #new-post #upper form #post-button {
             height: 35px;
             width: 80px;
@@ -106,7 +106,10 @@ main {
     main #middle-home-posts #new-feeds {
       height: auto;
       width: 100%;
-      position: relative; }
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse; }
       main #middle-home-posts #new-feeds .post-container {
         height: auto;
         width: 100%;
@@ -117,17 +120,19 @@ main {
         background-color: white; }
         main #middle-home-posts #new-feeds .post-container .dropdown {
           display: inline-block;
-          margin-top: 1%;
+          margin-top: 2%;
           position: absolute;
-          right: 0; }
+          right: 2%; }
           main #middle-home-posts #new-feeds .post-container .dropdown .dropbtn {
-            background-color: white;
+            background-color: transparent;
+            border-radius: 50%;
             color: #7a7a7a;
-            padding-left: 16px;
-            padding-right: 16px;
-            font-size: 16px;
+            padding: 8px;
+            font-size: 14px;
             border: none;
             cursor: pointer; }
+          main #middle-home-posts #new-feeds .post-container .dropdown .dropbtn:hover {
+            background-color: #f3f0f0; }
           main #middle-home-posts #new-feeds .post-container .dropdown .dropdown-content {
             display: none;
             position: absolute;
@@ -167,6 +172,8 @@ main {
             margin-top: 1px;
             font-weight: 400; }
         main #middle-home-posts #new-feeds .post-container .post-content {
+          width: 94%;
+          overflow-wrap: break-word;
           margin-top: 64px;
           margin-bottom: 2%;
           min-height: 40px;
@@ -177,6 +184,7 @@ main {
           height: 32px;
           width: 100%;
           border-top: 1px solid #dadada;
+          border-bottom: 1px solid #dadada;
           display: flex;
           align-items: center;
           justify-content: space-around;
@@ -194,11 +202,13 @@ main {
           main #middle-home-posts #new-feeds .post-container .likes-comment-share span {
             font-weight: 400; }
         main #middle-home-posts #new-feeds .post-container .display-comments {
-          border-top: 1px solid #dadada;
           position: relative; }
           main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
             margin-left: 10%;
-            margin-top: 2.5%; }
+            margin-top: 2.5%;
+            width: 80%;
+            height: auto;
+            overflow-wrap: break-word; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-author {
               font-size: 16px;
               font-weight: bolder; }
@@ -223,23 +233,27 @@ main {
             position: absolute;
             left: 8%;
             height: auto;
-            width: 88%;
+            width: 81%;
             height: 31px;
             padding-left: 10px;
-            padding-top: 8px;
             top: 8.5px;
             resize: none;
             border: none;
             background: #f3f3f3;
-            border-radius: 12px; }
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            overflow-wrap: break-word; }
           main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn {
-            background: transparent;
+            height: 31px;
+            width: 50px;
+            background-color: #f3f3f3;
             border: none;
             cursor: pointer;
             position: absolute;
-            right: 24px;
-            top: 12px;
-            width: 50px;
+            right: 21px;
+            border-top-right-radius: 12px;
+            border-bottom-right-radius: 12px;
+            top: 8.5px;
             font-size: 20px;
             color: #e73a3a; }
             main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn .fa-paper-plane {

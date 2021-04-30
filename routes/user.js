@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 });
 
 // only visit profile when user is logged in already for that we will use middleware
-router.get('/profile', passport.checkAuthentication , userController.profile);
+router.get('/profile/:id', passport.checkAuthentication , userController.profile);
 
 // create user
 router.post('/create', userController.create);

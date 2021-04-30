@@ -59,13 +59,20 @@ module.exports.home = function(req, res) {
             path : 'user'
         }
     })
-    .exec((err, posts) => {
+    .exec((err1, posts) => {
 
-        if(err) { console.log("Error fetching posts from database", err); return res.redirect('back'); }
+        if(err1) { console.log("Error fetching posts from database", err1); return res.redirect('back'); }
 
-        return res.render('home', {
-            title : 'Codemate',
-            postsArray : posts
+        User.find({}, function(err2, users) {
+
+            if(err2) { console.log("Error fetching users from database", err2); return res.redirect('back'); }
+
+            return res.render('home', {
+                title : 'Codemate',
+                postsArray : posts,
+                all_users : users
+            });
+
         });
 
     });
@@ -73,17 +80,17 @@ module.exports.home = function(req, res) {
 
 module.exports.profile = function(req, res) {
 
-    console.log(req.user);
+    // find the user
+    User.findById(req.params.id, function(err, user) {
 
-    if(req.isAuthenticated()){
+        if(err) { console.log("Error fetching posts from database", err); return res.redirect('back'); }
+
         return res.render('profile', {
             title : "Aakash Srivastava",
-            user : req.user
+            profile_user : user
         });
-    }
 
-    return res.render('/sign-in');
-    
+    }); 
 }
 
 // when click on logo | if you are logged in then go no where but if you are at sign-in or sign-up page then go to home page
