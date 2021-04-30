@@ -1,5 +1,45 @@
 body {
-  margin: 4% 0;
+  margin: 65px auto;
   padding: 0;
-  color: #3a3a3d;
-}
+  color: #3a3a3d; }
+  body .profile-cover {
+    position: relative;
+    height: 60%;
+    width: 100%;
+    background: linear-gradient(#acd1e9, white, white, white, white);
+    box-shadow: 2px 2px 1px 0px #d8e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    body .profile-cover .profile-cover-photo {
+      position: relative;
+      height: 55%;
+      width: 50%;
+      min-height: 200px;
+      min-width: 400px;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      border: 1px solid #adadad;
+      border-top: none;
+      background-color: white; }
+    body .profile-cover .profile-display-photo {
+      position: relative;
+      height: 140px;
+      width: 140px;
+      border-radius: 50%;
+      margin-top: -4%;
+      z-index: 2;
+      background-color: white; }
+      body .profile-cover .profile-display-photo img {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%; }
+    body .profile-cover .utilities {
+      height: 10%;
+      width: 43%;
+      margin-top: 5px;
+      border-top: 1px solid #bdbbbb;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }

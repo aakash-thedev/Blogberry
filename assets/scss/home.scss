@@ -15,6 +15,10 @@ html {
     background: #FF0000;
 }
 
+body{
+    margin-top: 70px;
+}
+
 main{
     height: 100%;
     width: 100%;
@@ -82,8 +86,8 @@ main{
                 #profile-logo{
                     height: 50px;
                     width: 50px;
-                    background: url('../images/user_default.png');
-                    background-size: contain;
+                    background: url('../images/Profile-pic.jpg');
+                    background-size: cover;
                     border-radius: 50%;
                     margin-top: -10%;
                     margin-left: 1%;
@@ -107,8 +111,8 @@ main{
                     #post-button{
                         height: 35px;
                         width: 80px;
-                        // background: rgb(38, 137, 202);
-                        background: rgb(226, 46, 22);
+                        // background: rgb(226, 46, 22);
+                        background-color: rgb(18, 106, 179);
                         color: white;
                         font-size: 18px;
                         font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -195,8 +199,9 @@ main{
                 }
 
                 .post-profile-photo{
-                    background: url('../images/user_default.png');
-                    background-size: contain;
+                    background: url('../images/Profile-pic.jpg');
+                    background-size: cover;
+                    background-repeat: no-repeat;
                     position: absolute;
                     height: 35px;
                     width: 35px;
@@ -336,7 +341,8 @@ main{
                         border-bottom-right-radius: 12px;
                         top: 8.5px;
                         font-size: 20px;
-                        color: rgb(231, 58, 58);
+                        // color: rgb(231, 58, 58);
+                        color: rgb(18, 106, 179);
                         
                         .fa-paper-plane{
                             transform: rotate(45deg);

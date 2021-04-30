@@ -29,7 +29,8 @@ a, a:visited {
         height: 50px;
         width: auto;
         margin-top: 2.5%;
-        z-index: 2; }
+        z-index: 2;
+        filter: hue-rotate(234deg); }
       #header #logo-section a span {
         font-size: 20px;
         margin-top: 1.5%;

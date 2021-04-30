@@ -85,9 +85,18 @@ module.exports.profile = function(req, res) {
 
         if(err) { console.log("Error fetching posts from database", err); return res.redirect('back'); }
 
-        return res.render('profile', {
-            title : "Aakash Srivastava",
-            profile_user : user
+        // find all the posts that user has made
+
+        Post.find({user : req.params.id}, function(errP, posts) {
+            
+            if(errP) { console.log("Error fetching posts from database", errP); return res.redirect('back'); }
+
+            return res.render('profile', {
+                title : `${user.name} | Profile`,
+                profile_user : user,
+                postsArray : posts
+            });
+
         });
 
     }); 

@@ -23,10 +23,10 @@ html {
   top: 0;
   left: 14%;
   z-index: -1;
+  filter: brightness(1.2) contrast(1.4) blur(4px);
 }
 
 body {
-  margin: 0;
   padding: 0;
   font-size: 16px;
   color: rgb(255, 255, 255);
@@ -34,6 +34,7 @@ body {
   font-weight: 300;
   min-height: 450px;
   min-width: 600px;
+  margin-top: 70px;
 }
 
 #login-box {

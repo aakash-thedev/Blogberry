@@ -15,6 +15,9 @@ html {
 ::-webkit-scrollbar-thumb {
   background: #FF0000; }
 
+body {
+  margin-top: 70px; }
+
 main {
   height: 100%;
   width: 100%;
@@ -68,8 +71,8 @@ main {
         main #middle-home-posts #new-post #upper #profile-logo {
           height: 50px;
           width: 50px;
-          background: url("../images/user_default.png");
-          background-size: contain;
+          background: url("../images/Profile-pic.jpg");
+          background-size: cover;
           border-radius: 50%;
           margin-top: -10%;
           margin-left: 1%; }
@@ -87,7 +90,7 @@ main {
           main #middle-home-posts #new-post #upper form #post-button {
             height: 35px;
             width: 80px;
-            background: #e22e16;
+            background-color: #126ab3;
             color: white;
             font-size: 18px;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -149,8 +152,9 @@ main {
           main #middle-home-posts #new-feeds .post-container .dropdown .show {
             display: block; }
         main #middle-home-posts #new-feeds .post-container .post-profile-photo {
-          background: url("../images/user_default.png");
-          background-size: contain;
+          background: url("../images/Profile-pic.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
           position: absolute;
           height: 35px;
           width: 35px;
@@ -255,7 +259,7 @@ main {
             border-bottom-right-radius: 12px;
             top: 8.5px;
             font-size: 20px;
-            color: #e73a3a; }
+            color: #126ab3; }
             main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn .fa-paper-plane {
               transform: rotate(45deg); }
   main #right-home-friends {
