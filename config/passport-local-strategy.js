@@ -59,7 +59,7 @@ passport.checkAuthentication = function(req, res, next) {
         return next();
     }
 
-    return res.redirect('/user/sign-in');
+    return res.redirect('/sign-in');
 
 }
 

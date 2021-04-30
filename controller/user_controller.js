@@ -29,7 +29,7 @@ module.exports.signin = function(req, res) {
 module.exports.home = function(req, res) {
 
     if(!req.isAuthenticated()){
-        return res.redirect('app_home');
+        return res.redirect('/');
     }
 
     // fetch posts from database

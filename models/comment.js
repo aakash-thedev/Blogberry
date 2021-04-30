@@ -7,10 +7,14 @@ const commentSchema = new mongoose.Schema({
         required : true
     },
 
+    // kis user ne comment kiya !!
+
     user : {
         type : mongoose.Schema.Types.ObjectId,
         ref : 'User'
     },
+
+    // kis post pe comment kiya !!
 
     post : {
         type : mongoose.Schema.Types.ObjectId,

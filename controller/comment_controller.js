@@ -38,3 +38,40 @@ module.exports.createComment = function(req, res) {
     });
 
 }
+
+// -------------------------- delete a comment --------------------------- //
+
+// do cheeze hain ek to kisi bnde ne kisi aur ki post pe comment kiya hoga vo khud use delete kr skta hai
+// dusri cheez jis bnde ka post hai vo bhi apni post ke andar kisi aur ke comment ko delete kr skta hai
+
+module.exports.destroy = function(req, res) {
+
+    // find the comment
+    Comment.findById(req.params.id).populate('post').exec(function(err, comment) {
+
+        if(err) { console.log(`error finding comment in database - ${err}`); return res.redirect('back'); }
+
+        // assuming that we found the comment
+        if(comment.user == req.user.id || comment.post.user == req.user.id) {
+
+            comment.remove();
+
+            // also remove the comment id from post database
+            let index = comment.post.comments.find((comm) => {return comm == req.params.id });
+
+            comment.post.comments.splice(index, 1);
+
+            comment.post.save();
+
+            return res.redirect('back');
+
+        }
+
+        else{
+
+            return res.redirect('back');
+        }
+
+    });
+
+}

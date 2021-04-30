@@ -22,7 +22,7 @@
                 <section id="profile-logo"></section>
 
                 <form action="/posts/create-post" method="POST">
-                    <textarea name="content" id="post-content"" placeholder="What's Up ?"></textarea>
+                    <textarea name="content" id="post-content"" placeholder="Write your post"></textarea>
                     <input type="submit" value="Post" id="post-button">
                 </form>
 
@@ -39,6 +39,23 @@
             <% for (let i=0; i<postsArray.length; i++) { %>
     
                 <div class="post-container">
+
+                    <!-- create option menu for delete and etc options-->
+                    <div class="dropdown">
+
+                        <span class="dropbtn" onclick="displayMenu( '<%= i %> ' )"> <i class="fas fa-ellipsis-h"></i> </span>
+
+                        <div class="dropdown-content">
+
+                            <% if ( locals.user && locals.user.id == postsArray[i].user.id ) { %>
+
+                                <a href="/posts/destroy/<%= postsArray[i].id %>">Delete</a>
+                                
+                            <% } %> 
+
+                        </div>
+
+                    </div>
 
                     <span class="post-profile-photo"></span>
 
@@ -71,6 +88,12 @@
 
                                 <span class="comment-author"> <%= comment.user.name %> </span> - &nbsp;
                                 <span class="comment"> <%= comment.comment %> </span>
+
+                                <% if (comment.user.id == locals.user.id || postsArray[i].user.id == locals.user.id) { %>
+
+                                    <a href="/comments/destroy/<%= comment.id %>" class="delete-comment"><i class="fas fa-trash"></i></a>
+
+                                <% } %> 
                                 
                             </div>
 
@@ -105,3 +128,5 @@
     </div>
 
 </main>
+
+<script src="../assets/js/homeScript.js"></script>
