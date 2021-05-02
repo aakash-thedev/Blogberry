@@ -33,7 +33,7 @@ a, a:visited {
         filter: hue-rotate(234deg); }
       #header #logo-section a span {
         font-size: 20px;
-        margin-top: 1.5%;
+        margin-top: 3%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   #header .right-section {
     margin-right: 2%;

@@ -102,6 +102,32 @@ module.exports.profile = function(req, res) {
     }); 
 }
 
+// ---------------------- Update User -------------------- //
+
+module.exports.updateUser = function(req, res) {
+    
+    // only logged in user can edit his/her profile
+    if(req.params.id == req.user.id) {
+
+        // update the profile
+        User.findByIdAndUpdate(req.params.id, req.body, function(err, updatedUser) {
+
+            if(err) { console.log("Error updating user", err); return res.redirect('back'); }
+
+            console.log(`User Updated - ${updatedUser}`);
+
+            return res.redirect('back');
+
+        });
+
+    }
+    
+    else{
+
+        return res.status(401).send("Unauthorized");
+    }
+}
+
 // when click on logo | if you are logged in then go no where but if you are at sign-in or sign-up page then go to home page
 
 module.exports.logoAction = function(req, res) {
