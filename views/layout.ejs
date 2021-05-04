@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="/assets/css/layouts.css">
     <link rel="stylesheet" href="/assets/css/header.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
 
     <%- style %>
 </head>
@@ -30,6 +33,44 @@
     <%- include('_footer'); %> 
 
     <%- script %>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <!-- show flash messages -->
+
+    <% if(flash.success && flash.success.length > 0) { %>
+
+        <script>
+
+            new Noty({
+                theme : 'light',
+                text: "<%= flash.success %>",
+                type : 'info',
+                layout : 'bottomLeft',
+                timeout : 1500
+            }).show();
+
+        </script>
+
+    <% } %>
+
+    <% if (flash.error && flash.error.length > 0) { %>
+
+        <script>
+
+            new Noty({
+                theme : 'metroui',
+                text: "<%= flash.error %>",
+                type : 'error',
+                layout : 'topRight',
+                timeout : 1500
+            }).show();
+
+        </script>
+        
+    <% } %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
 </body>
 </html>

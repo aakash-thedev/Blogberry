@@ -2,20 +2,6 @@
 *:focus {
   outline: none; }
 
-html {
-  overflow: scroll;
-  overflow-x: hidden; }
-
-::-webkit-scrollbar {
-  width: 0;
-  /* Remove scrollbar space */
-  background: transparent;
-  /* Optional: just make scrollbar invisible */ }
-
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-  background: #FF0000; }
-
 #bg {
   height: 100%;
   float: none;
@@ -37,7 +23,7 @@ body {
 
 #login-box {
   position: relative;
-  margin: 14% auto;
+  margin: 10% auto;
   width: 30%;
   height: 38%;
   min-height: 350px;
@@ -92,7 +78,7 @@ input[type="submit"] {
   font-size: 15px;
   background: #0d3e69;
   border: none;
-  border-radius: 2px;
+  border-radius: 10px;
   color: #FFF;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;

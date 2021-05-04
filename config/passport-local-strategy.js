@@ -7,7 +7,8 @@ const User = require('../models/user');
 
 //-------------------Authentication Using Passport.js ----------------------------------------- //
 // here this usernameField is the 'name' attribute of input at sign-in page
-passport.use(new LocalStrategy({usernameField : 'email'}, function(email, password, done) {
+// -----------------------------------------------------passReqToCallback is used to pass req arguement in callback fn ----------- //
+passport.use(new LocalStrategy({usernameField : 'email', passReqToCallback : true}, function(req, email, password, done) {
 
 
     // now inside this function we have to find the user of email as in argument
@@ -21,6 +22,7 @@ passport.use(new LocalStrategy({usernameField : 'email'}, function(email, passwo
         if(!user || user.password != password){
             
             console.log("Invalid username/passsword");
+            req.flash('error', 'Invalid Username/Password');
             return done(null, false);
         }
 

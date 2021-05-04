@@ -19,7 +19,7 @@ a, a:visited{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 
     #logo-section{
         height: 100%;
@@ -65,7 +65,8 @@ a, a:visited{
     
             a{
                 text-decoration: none;
-                font-size: large;
+                font-size: larger;
+                font-weight: 400;
             }
 
             #user-name{

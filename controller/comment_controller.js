@@ -1,41 +1,32 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
 
-module.exports.createComment = function(req, res) {
+module.exports.createComment = async function(req, res) {
 
-    console.log(req.body.post);
+    // we are getting req.body.post because we have given corresponding post id in an input field in _postContainer view
     // find the post in Post database
-    Post.findById(req.body.post, function(err, post) {
+    let post = await Post.findById(req.body.post);
 
-        if(err) { console.log(`Error finding post in database : ${err}`); return res.redirect('back'); }
+    if(post) {
 
-        if(post) {
+        let comment = await Comment.create({
+            comment : req.body.comment,
+            user : req.user._id,
+            post : req.body.post
+        });
 
-            Comment.create({
-                comment : req.body.comment,
-                user : req.user._id,
-                post : req.body.post
+        // so new comment has been created
+        // update post by pushing this new comment
+        post.comments.push(comment);
+        post.save();
 
-            }, function(err, comment) {
+        console.log(`new comment - ${comment}`);
 
-                if(err) { console.log(`Error creating comment : ${err}`); return res.redirect('back'); }
-
-                // so new comment has been created
-                // update post by pushing this new comment
-                post.comments.push(comment);
-                post.save();
-
-                console.log(`new comment - ${comment}`);
-
-            });
-
-            return res.redirect('back');
-        }
-
-        console.log(`cannot find post !`);
         return res.redirect('back');
+    }
 
-    });
+    console.log(`cannot find post !`);
+    return res.redirect('back');
 
 }
 
@@ -62,6 +53,8 @@ module.exports.destroy = function(req, res) {
             comment.post.comments.splice(index, 1);
 
             comment.post.save();
+
+            req.flash('success', 'Comment Deleted !');
 
             return res.redirect('back');
 
