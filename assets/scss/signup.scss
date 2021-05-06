@@ -4,16 +4,16 @@
 }
 
 body {
-  margin: 5% auto;
+  margin-top: 100px;
   padding: 0;
 }
 
 #signup-box{
   position: relative;
-  height: 80%;
+  height: auto;
   width: 40%;
-  min-height: 600px;
-  min-width: 500px;
+  min-height: 650px;
+  min-width: 600px;
   margin: auto;
   background: #FFF;
   border-radius: 2px;
@@ -21,22 +21,21 @@ body {
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.4);
 
   #heading{
+    margin: auto;
     margin-bottom: 5%;
-    margin-left: 2.5%;
     color: rgb(13,62,105);
     font-weight: 800;
     font-size: 30px;
   }
 
   form{
-    height: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: space-evenly;
+    // align-items: center;
 
     .credential{
-      width: 45%;
+      min-width: 300px;
       height: 75px;
 
       label{
@@ -45,39 +44,44 @@ body {
 
       input{
         height: 40px;
-        width: 100%;
-        margin-top: 2.5%;
+        width: 98%;
+        margin-top: 1%;
+        margin-bottom: 3%;
         border: none;
         border-bottom: 1px solid rgb(204, 204, 204);
+        color: rgb(13,62,105);
+        font-size: 14px;
       }
     }
 
     #birthday-wrapper{
 
-      margin-top: 5%;
+      margin-top: 2%;
+      margin-bottom: 2%;
       position: relative;
       height: 42px;
+      min-width: 320px;
 
       select{
-        height: 100%;
-        width: 32.5%;
+        height: 90%;
+        width: 14%;
         background-color: white;
         border: 1px solid rgb(185, 185, 185);
         border-radius: 10px;
-
-        option{
-          text-align: center;
-        }
+        text-align: center;
+        padding-left: 2%;
       }
 
     }
 
     #gender-container{
-      border: 1px solid rgb(185, 185, 185);
+      // border: 1px solid rgb(185, 185, 185);
       border-radius: 10px;
       height: 42px;
-      width: 100%;
-      margin-top: 5%;
+      width: 50%;
+      margin-top: 2%;
+      margin-left: -2%;
+      margin-bottom: 1.5%;
 
       section{
 
@@ -87,6 +91,11 @@ body {
         justify-content: space-around;
         align-items: center;
 
+        label{
+          color: rgb(87, 87, 87);
+          font-size: medium;
+        }
+
         input[type=radio] {
           width: 20%;
         }
@@ -94,10 +103,11 @@ body {
     }
 
     button {
-      margin-left: 2%;
-      margin-bottom: -2.5%;
+      position: absolute;
+      bottom: 2%;
+      left: 5%;
       height: 42px;
-      width: 120px;
+      width: 90%;
       font-size: 15px;
       background: rgb(13,62,105);
       border: none;

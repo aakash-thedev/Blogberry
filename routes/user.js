@@ -5,10 +5,6 @@ const passport = require('passport');
 
 const userController = require('../controller/user_controller');
 
-router.get('/', function(req, res) {
-    return res.end('<h1> USERS </h1>');
-});
-
 // only visit profile when user is logged in already for that we will use middleware
 router.get('/profile/:id', passport.checkAuthentication , userController.profile);
 

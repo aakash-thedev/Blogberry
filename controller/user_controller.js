@@ -42,6 +42,7 @@ module.exports.home = async function(req, res) {
     try{
         // success from await Post.find({}).... will be stored in posts variable that will be all the posts
         let posts = await Post.find({})
+        .sort('-createdAt')
         .populate('user')
         .populate({
             path : 'comments',
@@ -55,10 +56,20 @@ module.exports.home = async function(req, res) {
 
         let users = await User.find({});
 
+        if(req.xhr) {
+
+            return res.status(200).json({
+                data : {
+                    posts : posts,
+                    users : users
+                }
+            });
+        }
+
         // then we will return when both of above async fn will be executed
 
         return res.render('home', {
-            title : 'Codemate',
+            title : 'Codemate | Home',
             postsArray : posts,
             all_users : users
         });

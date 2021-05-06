@@ -5,28 +5,45 @@ module.exports.createComment = async function(req, res) {
 
     // we are getting req.body.post because we have given corresponding post id in an input field in _postContainer view
     // find the post in Post database
-    let post = await Post.findById(req.body.post);
+    try{
 
-    if(post) {
+        let post = await Post.findById(req.body.post);
 
-        let comment = await Comment.create({
-            comment : req.body.comment,
-            user : req.user._id,
-            post : req.body.post
-        });
+        if(post) {
 
-        // so new comment has been created
-        // update post by pushing this new comment
-        post.comments.push(comment);
-        post.save();
+            let comment = await Comment.create({
+                comment : req.body.comment,
+                user : req.user._id,
+                post : req.body.post
+            });
 
-        console.log(`new comment - ${comment}`);
+            // so new comment has been created
+            // update post by pushing this new comment
+            post.comments.push(comment);
+            post.save();
 
+            console.log(`new comment - ${comment}`);
+
+            if(req.xhr) {
+
+                return res.status(200).json({
+                    data : {
+                        comment : comment,
+                        userCommented : req.user.name
+                    }
+                });
+            }
+
+            return res.redirect('back');
+        }
+
+        console.log(`cannot find post !`);
         return res.redirect('back');
     }
 
-    console.log(`cannot find post !`);
-    return res.redirect('back');
+    catch(err){
+        console.log('Error- ', err);
+    }
 
 }
 
@@ -55,6 +72,18 @@ module.exports.destroy = function(req, res) {
             comment.post.save();
 
             req.flash('success', 'Comment Deleted !');
+
+            if(req.xhr) {
+
+                return res.status(200).json({
+
+                    data : {
+                        comment_id : req.params.id
+                    }
+
+                });
+
+            }
 
             return res.redirect('back');
 

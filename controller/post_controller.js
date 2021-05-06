@@ -2,25 +2,32 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 
 // ------------------------------- Create Post ----------------------------------- //
-module.exports.createPost =  function(req, res) {
+module.exports.createPost = async function(req, res) {
 
-    Post.create({
+    let post = await Post.create({
+
         content : req.body.content,
         user : req.user._id
 
-    }, function(err, newPost){
-
-        if(err){
-            req.flash('error', err);
-            return res.redirect('back');
-        }
-
-        console.log('New Post - ', newPost);
-
-        req.flash('success', 'Your post published successfully');
-        return res.redirect('back');
-
     });
+
+    console.log('New Post - ', post);
+
+    // now instead of using 'return res.redirect('back');' use ajax request so that page do not get refreshed
+    if(req.xhr) {
+        // return JSON from here
+        return res.status(200).json({
+            data : {
+                user : req.user.name,
+                post : post
+            },
+            
+            message : "Post Created Successfully !"
+        });
+    }
+
+    req.flash('success', 'Your post published successfully');
+    return res.redirect('back');
 }
 
 // ---------------------------------------Delete any post --------------------------------------- //
@@ -42,6 +49,17 @@ module.exports.destroy = async function(req, res) {
 
         // also remove all comments from the post
         await Comment.deleteMany({post : req.params.id});
+
+        // check if there is any xhr request
+        if(req.xhr) {
+
+            return res.status(200).json({
+                data : {
+                    post_id : req.params.id
+                }
+            });
+
+        }
 
         req.flash('success', 'Post Deleted Successfully');
         return res.redirect('back');
