@@ -12,6 +12,7 @@ const db = require('./config/mongoose');
 // these three are used for our session cookie and will use the session middleware after views declaration down
 const session = require('express-session');
 const passport = require('passport');
+const JWTStratgey = require('./config/passport-jwt-strategy');
 const PassportLocalStrategy = require('./config/passport-local-strategy');
 
 // import MongoStore to solve the user logged out after every server restart problem
@@ -51,6 +52,8 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // import routers
+app.use('/uploads', express.static(__dirname + '/uploads'));
+
 const routers = require('./routes/index');
 
 // session middleware

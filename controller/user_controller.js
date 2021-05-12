@@ -112,9 +112,32 @@ module.exports.updateUser = async function(req, res) {
         // update the profile
         let updatedUser = await User.findByIdAndUpdate(req.params.id, req.body);
 
-        console.log(`User Updated - ${updatedUser}`);
+        // now because we have added enctype="multipart/form-data" in our form
+        // thats we we will not be able to fetch our info just by req.something
+        // body parser will not allow it
+        // thats we multer is used
+        User.uploadAvatar(req, res, function(err) {
 
-        return res.redirect('back');
+            if(err) { console.log(`******Multer Error - ${err} `); }
+
+            console.log(req.file);
+
+            // now set up the user schema values 
+            updatedUser.name = req.body.name;
+            updatedUser.email = req.body.email;
+
+            // if file is chosen then
+            if (req.file) {
+                updatedUser.avatar = User.avatarPath + '/' + req.file.filename;
+            }
+
+            updatedUser.save();
+
+            console.log(`User Updated - ${updatedUser}`);
+
+            return res.redirect('back');
+
+        });
 
     }
     

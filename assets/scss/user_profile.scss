@@ -161,6 +161,39 @@ body{
                     margin-bottom: 4%;
                 }
 
+                .profile-pic-upload-container{
+                    position: relative;
+                    display: flex;
+                    justify-content: space-around;
+                    height: 50px;
+                    width: 250px;
+                    cursor: pointer;
+                    border-radius: 50%;
+
+                    .profile-input-label{
+                        display: flex;
+                        justify-content: center;
+                        margin-top: 10%;
+
+                        .file-input{
+                            display: none;
+                        }
+
+                        .fa-plus-circle{
+                            font-size: 40px;
+                            margin-top: 10%;
+                            cursor: pointer;
+                            color: rgb(36, 131, 219);
+                        }
+                    }
+
+                    .profile-photo-preview{
+                        height: 120px;
+                        width: auto;
+                        box-shadow: -1px 2px 6px -4px rgb(223, 223, 223);
+                    }
+                }
+
                 #update-btn {
                     position: absolute;
                     bottom: 3%;

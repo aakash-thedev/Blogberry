@@ -10,7 +10,9 @@
         </div>
     
         <div class="profile-display-photo">
-            <img src="/assets/images/Profile-pic.jpg" alt="">
+            <!-- Important point to notice profile_user.avatar is something like this /uploads/users/avatars/.... this will act as a route
+                 so we have to create a route for it brooo !! -->
+            <img src="<%= profile_user.avatar %>" alt="Profile Pic">
         </div>
     
         <div class="user-name">
@@ -54,13 +56,23 @@
             <!-- Modal content -->
             <div class="modal-content">
 
-                <form action="/user/update/<%= user.id %>" method="POST">
+                <form action="/user/update/<%= user.id %>" method="POST" enctype="multipart/form-data">
 
                     <label for="name">Name</label> <br>
                         <input type="text" name="name" id="name" value="<%= user.name %>" placeholder="Your Name"> <br>
 
                     <label for="email">Email</label> <br>
                         <input type="email" name="email" id="email" value="<%= user.email %>" placeholder="Your Email"> <br>
+                    
+                    <label for="profile-pic">Profile Pic</label> <br>
+                        <div class="profile-pic-upload-container">
+                            <label class="profile-input-label">
+                                <input type="file" name="avatar" class="file-input" id="file-input">
+                                <i class="fas fa-plus-circle"></i>
+                            </label>
+                            <img src="<%= user.avatar %>" alt="" class="profile-photo-preview" id="profile-img-tag">
+                        </div>
+
 
                     <button type="submit" id="update-btn">Update</button>
                 

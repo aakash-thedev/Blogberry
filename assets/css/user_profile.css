@@ -129,6 +129,29 @@ body {
           border: 1px solid #d8d8d8;
           width: 70%;
           margin-bottom: 4%; }
+        body main .modal .modal-content .profile-pic-upload-container {
+          position: relative;
+          display: flex;
+          justify-content: space-around;
+          height: 50px;
+          width: 250px;
+          cursor: pointer;
+          border-radius: 50%; }
+          body main .modal .modal-content .profile-pic-upload-container .profile-input-label {
+            display: flex;
+            justify-content: center;
+            margin-top: 10%; }
+            body main .modal .modal-content .profile-pic-upload-container .profile-input-label .file-input {
+              display: none; }
+            body main .modal .modal-content .profile-pic-upload-container .profile-input-label .fa-plus-circle {
+              font-size: 40px;
+              margin-top: 10%;
+              cursor: pointer;
+              color: #2483db; }
+          body main .modal .modal-content .profile-pic-upload-container .profile-photo-preview {
+            height: 120px;
+            width: auto;
+            box-shadow: -1px 2px 6px -4px #dfdfdf; }
         body main .modal .modal-content #update-btn {
           position: absolute;
           bottom: 3%;

@@ -16,16 +16,40 @@
 
             <div id="upper">
 
-                <section id="profile-logo"></section>
+                <section id="profile-logo" style="position: relative; border-radius: 50%;">
+                    <img src="<%= locals.user.avatar %>" alt="" height="100%" width="100%" style="border-radius: 50%;">
+                </section>
 
-                <form action="/posts/create-post" method="POST" id="new-post-form">
-                    <textarea name="content" id="post-content"" placeholder="Write your post"></textarea>
+                <form action="/posts/create-post" method="POST" id="new-post-form" enctype="multipart/form-data">
+                    <textarea name="content" id="post-content" placeholder="Write your post" onkeypress="postButtonStatus();"></textarea>
+
+                    <section id="more-utilities">
+
+                        <label for="post-attatchment-file" id="post-attatchment-file-label">
+                            <img src="/assets/images/icon-photo.png" alt="">
+                            <input type="file" name="media" id="post-attatchment-file">
+                        </label>
+    
+                        <label for="" id="emoji-attatchment-container">
+                            <span id="smiley">😃</span>
+                            <emoji-picker display="hidden" id="emoji-picker"></emoji-picker>
+                        </label>
+    
+                        <label for="" id="user-location">
+                            <img src="/assets/images/free-location-icon-2955-thumb.png" alt="">
+                        </label>
+
+                    </section>
+
                     <input type="submit" value="Post" id="post-button">
                 </form>
 
-            </div>
+                <label for="" id="preview-container">
+                    <span id="close-preview">&times;</span>
+                    <img src="" alt="" id="post-attatchment-preview">
+                </label>
 
-            <section id="more-options"></section>
+            </div>
 
         </div>
 
@@ -43,4 +67,4 @@
 
 </main>
 
-<script src="../assets/js/homeScript.js"></script>
+<!-- <script src="../assets/js/homeScript.js"></script> -->

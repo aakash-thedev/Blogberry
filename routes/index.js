@@ -17,12 +17,19 @@ router.get('/sign-in', userController.signin);
 router.get('/sign-up', userController.signup);
 
 // -------------- After logging in ------------------ //
+
 router.get('/home', userController.home);
 
 // ----------------- controlling other routes --------- //
 router.use('/user', require('./user'));
 router.use('/posts', require('./posts'));
 router.use('/comments', require('./comments'));
+
+
+
+// ---------------------------- set api listener -------------------------- //
+// ./api will automatically go to index.js in it
+router.use('/api', require('./api'));
 
 
 // export the routers to server

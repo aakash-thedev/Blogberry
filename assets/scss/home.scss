@@ -5,6 +5,9 @@
 html {
     overflow: scroll;
     overflow-x: hidden;
+    .show{
+        display: show;
+    }
 }
 ::-webkit-scrollbar {
     width: 0;  /* Remove scrollbar space */
@@ -70,8 +73,10 @@ main{
         }
 
         #new-post{
-            height: 150px;
+            height: auto;
+            min-height: 150px;
             width: 100%;
+            padding-bottom: 8%;
             position: relative;
             background-color: white;
             margin-bottom: 12px;
@@ -79,17 +84,17 @@ main{
 
             #upper{
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-between;
-                align-items: center;
 
                 #profile-logo{
+                    margin-top: 4%;
+                    margin-left: 2%;
                     height: 50px;
                     width: 50px;
                     background: url('../images/Profile-pic.jpg');
                     background-size: cover;
                     border-radius: 50%;
-                    margin-top: -10%;
-                    margin-left: 1%;
                 }
 
                 form{
@@ -99,15 +104,87 @@ main{
 
                     #post-content{
                         resize: none;
-                        height: 100px;
+                        height: 150px;
                         width: 100%;
                         border: none;
-                        // box-shadow: 3px 0px 3px 0px rgb(180, 180, 180);
                         padding-top: 7%;
                         font-size: 14px;
                     }
 
+                    #more-utilities{
+                        width: 22.5%;
+                        min-width: 80px;
+                        position: absolute;
+                        left: 3%;
+                        bottom: 5%;
+                        display: flex;
+                        justify-content: space-between;
+
+                        #post-attatchment-file-label{
+                            cursor: pointer;
+                            height: 30px;
+                            width: 30px;
+                            padding: 5px;
+                            border-radius: 50%;
+                            background-color: rgb(251, 251, 251);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            img{
+                                height: 25px;
+                                width: 25px;
+                            }
+    
+                            #post-attatchment-file{
+                                display: none;
+                            }
+                        }
+    
+                        #user-location{
+                            cursor: pointer;
+                            height: 30px;
+                            width: 30px;
+                            padding: 5px;
+                            border-radius: 50%;
+                            background-color: rgb(251, 251, 251);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            img{
+                                height: 25px;
+                                width: 25px;
+                            }
+                        }
+    
+                        #emoji-attatchment-container{
+                            position: relative;
+                            cursor: pointer;
+                            height: 30px;
+                            width: 30px;
+                            padding: 5px;
+                            border-radius: 50%;
+                            background-color: rgb(251, 251, 251);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+    
+                            #smiley{
+                                font-size: 21px;
+                            }
+    
+                            #emoji-picker{
+                                position: absolute;
+                                top: 100%;
+                                left: 10%;
+                                z-index: 99;
+                            }
+                        }
+                    }
+
                     #post-button{
+                        position: absolute;
                         height: 35px;
                         width: 80px;
                         // background: rgb(226, 46, 22);
@@ -119,9 +196,32 @@ main{
                         border: none;
                         border-radius: 20px;
                         cursor: pointer;
-                        margin-left: 83%;
-                        margin-top: 1.5%;
+                        right: 2%;
+                        bottom: 5%;
         
+                    }
+                }
+
+                #preview-container{
+                    height: 90px;
+                    width: 100px;
+                    margin-left: 7%;
+                    margin-bottom: 8%;
+                    position: relative;
+
+                    span{
+                        position: absolute;
+                        top: -10%;
+                        left: -18%;
+                        color: rgb(238, 17, 17);
+                        font-weight: 700;
+                        font-size: 26px;
+                        cursor: pointer;
+                    }
+
+                    #post-attatchment-preview{
+                        height: 80px;
+                        width: auto;
                     }
                 }
             }
@@ -158,21 +258,24 @@ main{
                 .delete-post-btn{
                     position: absolute;
                     right: 3%;
-                    top: 6%;
+                    top: 15px;
                     color: red;
                     font-size: 1.1em;
                 }
 
                 .post-profile-photo{
-                    background: url('../images/Profile-pic.jpg');
-                    background-size: cover;
-                    background-repeat: no-repeat;
                     position: absolute;
                     height: 35px;
                     width: 35px;
                     border-radius: 50%;
-                    left: 1.5%;
-                    top: 8px;
+                    left: 2%;
+                    top: 12px;
+
+                    img{
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                    }
                 }
 
                 .post-author{
@@ -242,15 +345,32 @@ main{
                     position: relative;
 
                     .comment-section{
-                        margin-left: 10%;
+                        margin-left: 14%;
                         margin-top: 2.5%;
                         width: 80%;
                         height: auto;
                         overflow-wrap: break-word;
 
+                        .comment-profile-photo{
+                            position: absolute;
+                            height: 25px;
+                            border: none;
+                            left: 8%;
+
+                            img{
+                                height: 100%;
+                                width: 25px;
+                                border-radius: 50%;
+                            }
+                        }
+
                         .comment-author{
-                            font-size: 16px;
+                            font-size: 15px;
                             font-weight: bolder;
+                        }
+
+                        .comment{
+                            font-size: 14.5px;
                         }
 
                         .delete-comment{

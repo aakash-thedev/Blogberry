@@ -32,3 +32,27 @@ window.onclick = function(event) {
     document.getElementsByClassName('user-posts')[0].classList.remove('blur');
   }
 }
+
+// ---------------------- profile pic selector image preview ------------------------- //
+function displayPreview(input) {
+
+  // input type files have .files function which is selected by users and have all the information in it
+  if (input.files && input.files[0]) {
+
+    // reader object reads the input type = files
+    var reader = new FileReader();
+
+    reader.readAsDataURL(input.files[0]);
+
+    reader.onload = function (e) {
+
+        $('#profile-img-tag').attr('src', e.target.result);
+    }
+  }
+}
+
+$("#file-input").change(function(){
+
+  displayPreview(this);
+
+});

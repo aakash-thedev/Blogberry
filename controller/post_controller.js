@@ -2,32 +2,42 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 
 // ------------------------------- Create Post ----------------------------------- //
-module.exports.createPost = async function(req, res) {
+module.exports.createPost = function(req, res) {
 
-    let post = await Post.create({
 
-        content : req.body.content,
-        user : req.user._id
+    // as we are using multer
+    Post.uploadMedia(req, res, function(err){
+
+        if(err) { console.log(`******Multer Error - ${err} `); }
+
+        Post.create({
+
+            content : req.body.content,
+            media : req.file ? Post.mediaPath + "/" + req.file.filename : null,
+            user : req.user._id
+    
+        }, function(err, post) {
+            
+            console.log('New Post - ', post);
+        });
+
+        req.flash('success', 'Your post published successfully');
+        return res.redirect('back');
 
     });
 
-    console.log('New Post - ', post);
-
     // now instead of using 'return res.redirect('back');' use ajax request so that page do not get refreshed
-    if(req.xhr) {
-        // return JSON from here
-        return res.status(200).json({
-            data : {
-                user : req.user.name,
-                post : post
-            },
+    // if(req.xhr) {
+    //     // return JSON from here
+    //     return res.status(200).json({
+    //         data : {
+    //             user : req.user.name,
+    //             post : post
+    //         },
             
-            message : "Post Created Successfully !"
-        });
-    }
-
-    req.flash('success', 'Your post published successfully');
-    return res.redirect('back');
+    //         message : "Post Created Successfully !"
+    //     });
+    // }
 }
 
 // ---------------------------------------Delete any post --------------------------------------- //

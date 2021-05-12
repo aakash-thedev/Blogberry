@@ -4,6 +4,8 @@
 html {
   overflow: scroll;
   overflow-x: hidden; }
+  html .show {
+    display: show; }
 
 ::-webkit-scrollbar {
   width: 0;
@@ -58,35 +60,92 @@ main {
         font-weight: 600;
         color: #1e277a; }
     main #middle-home-posts #new-post {
-      height: 150px;
+      height: auto;
+      min-height: 150px;
       width: 100%;
+      padding-bottom: 8%;
       position: relative;
       background-color: white;
       margin-bottom: 12px; }
       main #middle-home-posts #new-post #upper {
         display: flex;
-        justify-content: space-between;
-        align-items: center; }
+        flex-wrap: wrap;
+        justify-content: space-between; }
         main #middle-home-posts #new-post #upper #profile-logo {
+          margin-top: 4%;
+          margin-left: 2%;
           height: 50px;
           width: 50px;
           background: url("../images/Profile-pic.jpg");
           background-size: cover;
-          border-radius: 50%;
-          margin-top: -10%;
-          margin-left: 1%; }
+          border-radius: 50%; }
         main #middle-home-posts #new-post #upper form {
           height: 100%;
           width: 88%;
           overflow-x: hidden; }
           main #middle-home-posts #new-post #upper form #post-content {
             resize: none;
-            height: 100px;
+            height: 150px;
             width: 100%;
             border: none;
             padding-top: 7%;
             font-size: 14px; }
+          main #middle-home-posts #new-post #upper form #more-utilities {
+            width: 22.5%;
+            min-width: 80px;
+            position: absolute;
+            left: 3%;
+            bottom: 5%;
+            display: flex;
+            justify-content: space-between; }
+            main #middle-home-posts #new-post #upper form #more-utilities #post-attatchment-file-label {
+              cursor: pointer;
+              height: 30px;
+              width: 30px;
+              padding: 5px;
+              border-radius: 50%;
+              background-color: #fbfbfb;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              main #middle-home-posts #new-post #upper form #more-utilities #post-attatchment-file-label img {
+                height: 25px;
+                width: 25px; }
+              main #middle-home-posts #new-post #upper form #more-utilities #post-attatchment-file-label #post-attatchment-file {
+                display: none; }
+            main #middle-home-posts #new-post #upper form #more-utilities #user-location {
+              cursor: pointer;
+              height: 30px;
+              width: 30px;
+              padding: 5px;
+              border-radius: 50%;
+              background-color: #fbfbfb;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              main #middle-home-posts #new-post #upper form #more-utilities #user-location img {
+                height: 25px;
+                width: 25px; }
+            main #middle-home-posts #new-post #upper form #more-utilities #emoji-attatchment-container {
+              position: relative;
+              cursor: pointer;
+              height: 30px;
+              width: 30px;
+              padding: 5px;
+              border-radius: 50%;
+              background-color: #fbfbfb;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              main #middle-home-posts #new-post #upper form #more-utilities #emoji-attatchment-container #smiley {
+                font-size: 21px; }
+              main #middle-home-posts #new-post #upper form #more-utilities #emoji-attatchment-container #emoji-picker {
+                position: absolute;
+                top: 100%;
+                left: 10%;
+                z-index: 99; }
           main #middle-home-posts #new-post #upper form #post-button {
+            position: absolute;
             height: 35px;
             width: 80px;
             background-color: #126ab3;
@@ -97,8 +156,25 @@ main {
             border: none;
             border-radius: 20px;
             cursor: pointer;
-            margin-left: 83%;
-            margin-top: 1.5%; }
+            right: 2%;
+            bottom: 5%; }
+        main #middle-home-posts #new-post #upper #preview-container {
+          height: 90px;
+          width: 100px;
+          margin-left: 7%;
+          margin-bottom: 8%;
+          position: relative; }
+          main #middle-home-posts #new-post #upper #preview-container span {
+            position: absolute;
+            top: -10%;
+            left: -18%;
+            color: #ee1111;
+            font-weight: 700;
+            font-size: 26px;
+            cursor: pointer; }
+          main #middle-home-posts #new-post #upper #preview-container #post-attatchment-preview {
+            height: 80px;
+            width: auto; }
     main #middle-home-posts #post-heading {
       font-size: 18px;
       font-weight: 600;
@@ -124,19 +200,20 @@ main {
         main #middle-home-posts #new-feeds .post-container .delete-post-btn {
           position: absolute;
           right: 3%;
-          top: 6%;
+          top: 15px;
           color: red;
           font-size: 1.1em; }
         main #middle-home-posts #new-feeds .post-container .post-profile-photo {
-          background: url("../images/Profile-pic.jpg");
-          background-size: cover;
-          background-repeat: no-repeat;
           position: absolute;
           height: 35px;
           width: 35px;
           border-radius: 50%;
-          left: 1.5%;
-          top: 8px; }
+          left: 2%;
+          top: 12px; }
+          main #middle-home-posts #new-feeds .post-container .post-profile-photo img {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%; }
         main #middle-home-posts #new-feeds .post-container .post-author {
           height: 40px;
           text-align: left;
@@ -184,14 +261,25 @@ main {
         main #middle-home-posts #new-feeds .post-container .display-comments {
           position: relative; }
           main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
-            margin-left: 10%;
+            margin-left: 14%;
             margin-top: 2.5%;
             width: 80%;
             height: auto;
             overflow-wrap: break-word; }
+            main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-profile-photo {
+              position: absolute;
+              height: 25px;
+              border: none;
+              left: 8%; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-profile-photo img {
+                height: 100%;
+                width: 25px;
+                border-radius: 50%; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-author {
-              font-size: 16px;
+              font-size: 15px;
               font-weight: bolder; }
+            main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment {
+              font-size: 14.5px; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .delete-comment {
               position: absolute;
               right: 3%;

@@ -10,7 +10,9 @@
             
         <% } %> 
 
-        <span class="post-profile-photo"></span>
+        <span class="post-profile-photo">
+            <img src="<%= post.user.avatar %>" alt="Profile-pic">
+        </span>
 
         <span class="post-author">
 
@@ -24,7 +26,17 @@
         </span>
 
         <div class="post-content">
-            <%= post.content %>
+            <span style="display: block;"><%= post.content %></span>
+
+            <div style="width: 100%; display: flex; justify-content: center;">
+
+                <% if(post.media) { %>
+
+                    <img src="<%= post.media %> " alt="" style="height: 500px; width: auto; margin-top: 1%;">
+                    
+                <% } %> 
+
+            </div>
         </div>
 
         <div class="likes-comment-share">
@@ -33,12 +45,15 @@
             <i class="fas fa-share"> &nbsp; <span>Share</span></i>
         </div>
 
-        <div class="display-comments">
+        <div class="display-comments" style="position: relative;">
 
             <% for (let comment of post.comments) { %>
                 
                 <div class="comment-section" id="comment-<%= comment.id %>">
 
+                    <span class="comment-profile-photo">
+                        <img src="<%= comment.user.avatar %>" alt="">
+                    </span>
                     <span class="comment-author"> <%= comment.user.name %> </span> - &nbsp;
                     <span class="comment"> <%= comment.comment %> </span>
 
@@ -56,9 +71,11 @@
 
         <div class="post-comments">
 
-            <form method="POST" action="/comments/create-comment" autocomplete="off" id="new-comment-form">
+            <span class="comment-profile-photo" style="border: none;">
+                <img src="<%= locals.user.avatar %>" alt="" style="height: 100%; width: 100%; border-radius: 50%;">
+            </span>
 
-                <span class="comment-profile-photo"></span>
+            <form method="POST" action="/comments/create-comment" autocomplete="off" id="new-comment-form">
 
                 <input type="text" name="comment" class="comment-content" placeholder="Comment" required></input>
                 <!-- we have to send id of the post to comments as well -->
