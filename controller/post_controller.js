@@ -25,19 +25,6 @@ module.exports.createPost = function(req, res) {
         return res.redirect('back');
 
     });
-
-    // now instead of using 'return res.redirect('back');' use ajax request so that page do not get refreshed
-    // if(req.xhr) {
-    //     // return JSON from here
-    //     return res.status(200).json({
-    //         data : {
-    //             user : req.user.name,
-    //             post : post
-    //         },
-            
-    //         message : "Post Created Successfully !"
-    //     });
-    // }
 }
 
 // ---------------------------------------Delete any post --------------------------------------- //
@@ -80,3 +67,14 @@ module.exports.destroy = async function(req, res) {
         return res.redirect('back');
     }
 }
+
+ // --------------- fetch all the posts from the database for discover section ------------------ //
+ module.exports.discoverAll = async function(req, res) {
+
+    let posts = await Post.find({}).populate('user');
+
+    return res.render('discover', {
+        title: 'Blog Berry | Discover',
+        posts: posts
+    });
+ }

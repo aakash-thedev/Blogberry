@@ -20,7 +20,7 @@ body {
   #signup-box #heading {
     margin: auto;
     margin-bottom: 5%;
-    color: #0d3e69;
+    color: #221e1f;
     font-weight: 800;
     font-size: 30px; }
   #signup-box form .credential {
@@ -76,7 +76,7 @@ body {
     height: 42px;
     width: 90%;
     font-size: 15px;
-    background: #0d3e69;
+    background-color: #221e1f;
     border: none;
     border-radius: 10px;
     color: #FFF;

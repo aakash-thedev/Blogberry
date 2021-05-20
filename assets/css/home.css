@@ -24,21 +24,152 @@ main {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: relative; }
-  main #left-home-news {
-    height: 100%;
-    width: 15%;
-    min-width: 200px;
-    background-color: white;
-    padding-right: 10%; }
+  main #left-home-create-post {
+    min-height: 60%;
+    height: auto;
+    width: 25%;
+    min-width: 350px;
+    padding-right: 10%;
+    border: 1px solid blue;
+    background-color: #221e1f;
+    padding-bottom: 1.5%;
+    margin-right: 1.5%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    main #left-home-create-post #create-heading {
+      font-size: 35px;
+      color: white;
+      padding: 0.7%;
+      margin-left: 8%; }
+    main #left-home-create-post #new-post {
+      height: auto;
+      min-height: 400px;
+      min-width: 300px;
+      width: 120%;
+      padding-bottom: 8%;
+      position: relative;
+      background-color: white;
+      border: 3px solid rgba(161, 161, 161, 0.2);
+      margin-left: 9.4%; }
+      main #left-home-create-post #new-post #upper #profile-logo {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        margin-left: 2%;
+        height: 50px;
+        width: 50px;
+        background: url("../images/Profile-pic.jpg");
+        background-size: cover;
+        border-radius: 50%; }
+      main #left-home-create-post #new-post #upper form {
+        height: 98%;
+        width: 88%;
+        overflow-x: hidden;
+        margin: auto;
+        margin-bottom: 1.5%; }
+        main #left-home-create-post #new-post #upper form #post-content {
+          resize: none;
+          height: 290px;
+          width: 100%;
+          border: none;
+          border-top: 1px solid #e4e4e4;
+          border-bottom: 1px solid #e4e4e4;
+          padding-top: 5%;
+          font-size: 14px; }
+        main #left-home-create-post #new-post #upper form #more-utilities {
+          width: 22.5%;
+          min-width: 80px;
+          position: absolute;
+          left: 3%;
+          bottom: 1%;
+          display: flex;
+          justify-content: space-between; }
+          main #left-home-create-post #new-post #upper form #more-utilities #post-attatchment-file-label {
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            padding: 5px;
+            border-radius: 50%;
+            background-color: #fbfbfb;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            main #left-home-create-post #new-post #upper form #more-utilities #post-attatchment-file-label img {
+              height: 25px;
+              width: 25px; }
+            main #left-home-create-post #new-post #upper form #more-utilities #post-attatchment-file-label #post-attatchment-file {
+              display: none; }
+          main #left-home-create-post #new-post #upper form #more-utilities #user-location {
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            padding: 5px;
+            border-radius: 50%;
+            background-color: #fbfbfb;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            main #left-home-create-post #new-post #upper form #more-utilities #user-location img {
+              height: 25px;
+              width: 25px; }
+          main #left-home-create-post #new-post #upper form #more-utilities #emoji-attatchment-container {
+            position: relative;
+            cursor: pointer;
+            height: 30px;
+            width: 30px;
+            padding: 5px;
+            border-radius: 50%;
+            background-color: #fbfbfb;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            main #left-home-create-post #new-post #upper form #more-utilities #emoji-attatchment-container #smiley {
+              font-size: 21px; }
+            main #left-home-create-post #new-post #upper form #more-utilities #emoji-attatchment-container #emoji-picker {
+              position: absolute;
+              top: 100%;
+              left: 10%;
+              z-index: 99; }
+        main #left-home-create-post #new-post #upper form #post-button {
+          position: absolute;
+          height: 35px;
+          width: 80px;
+          background-color: #221e1f;
+          color: white;
+          font-size: 18px;
+          font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+          font-weight: 600;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          right: 2%;
+          bottom: 2%; }
+      main #left-home-create-post #new-post #upper #preview-container {
+        height: 100px;
+        width: 100px;
+        margin-left: 5%;
+        position: relative; }
+        main #left-home-create-post #new-post #upper #preview-container #close-preview {
+          position: absolute;
+          right: -13%;
+          color: black;
+          font-weight: 700;
+          font-size: 26px;
+          cursor: pointer; }
+        main #left-home-create-post #new-post #upper #preview-container #post-attatchment-preview {
+          height: 80px;
+          width: auto; }
   main #middle-home-posts {
     height: 100%;
-    width: 33%;
+    width: 38%;
     min-width: 550px;
+    border: 1px solid lightgray;
     overflow-x: hidden;
     position: relative;
     overflow-y: scroll; }
@@ -59,122 +190,6 @@ main {
         font-size: 18px;
         font-weight: 600;
         color: #1e277a; }
-    main #middle-home-posts #new-post {
-      height: auto;
-      min-height: 150px;
-      width: 100%;
-      padding-bottom: 8%;
-      position: relative;
-      background-color: white;
-      margin-bottom: 12px; }
-      main #middle-home-posts #new-post #upper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between; }
-        main #middle-home-posts #new-post #upper #profile-logo {
-          margin-top: 4%;
-          margin-left: 2%;
-          height: 50px;
-          width: 50px;
-          background: url("../images/Profile-pic.jpg");
-          background-size: cover;
-          border-radius: 50%; }
-        main #middle-home-posts #new-post #upper form {
-          height: 100%;
-          width: 88%;
-          overflow-x: hidden; }
-          main #middle-home-posts #new-post #upper form #post-content {
-            resize: none;
-            height: 150px;
-            width: 100%;
-            border: none;
-            padding-top: 7%;
-            font-size: 14px; }
-          main #middle-home-posts #new-post #upper form #more-utilities {
-            width: 22.5%;
-            min-width: 80px;
-            position: absolute;
-            left: 3%;
-            bottom: 5%;
-            display: flex;
-            justify-content: space-between; }
-            main #middle-home-posts #new-post #upper form #more-utilities #post-attatchment-file-label {
-              cursor: pointer;
-              height: 30px;
-              width: 30px;
-              padding: 5px;
-              border-radius: 50%;
-              background-color: #fbfbfb;
-              display: flex;
-              justify-content: center;
-              align-items: center; }
-              main #middle-home-posts #new-post #upper form #more-utilities #post-attatchment-file-label img {
-                height: 25px;
-                width: 25px; }
-              main #middle-home-posts #new-post #upper form #more-utilities #post-attatchment-file-label #post-attatchment-file {
-                display: none; }
-            main #middle-home-posts #new-post #upper form #more-utilities #user-location {
-              cursor: pointer;
-              height: 30px;
-              width: 30px;
-              padding: 5px;
-              border-radius: 50%;
-              background-color: #fbfbfb;
-              display: flex;
-              justify-content: center;
-              align-items: center; }
-              main #middle-home-posts #new-post #upper form #more-utilities #user-location img {
-                height: 25px;
-                width: 25px; }
-            main #middle-home-posts #new-post #upper form #more-utilities #emoji-attatchment-container {
-              position: relative;
-              cursor: pointer;
-              height: 30px;
-              width: 30px;
-              padding: 5px;
-              border-radius: 50%;
-              background-color: #fbfbfb;
-              display: flex;
-              justify-content: center;
-              align-items: center; }
-              main #middle-home-posts #new-post #upper form #more-utilities #emoji-attatchment-container #smiley {
-                font-size: 21px; }
-              main #middle-home-posts #new-post #upper form #more-utilities #emoji-attatchment-container #emoji-picker {
-                position: absolute;
-                top: 100%;
-                left: 10%;
-                z-index: 99; }
-          main #middle-home-posts #new-post #upper form #post-button {
-            position: absolute;
-            height: 35px;
-            width: 80px;
-            background-color: #126ab3;
-            color: white;
-            font-size: 18px;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            font-weight: 600;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            right: 2%;
-            bottom: 5%; }
-        main #middle-home-posts #new-post #upper #preview-container {
-          height: 90px;
-          width: 100px;
-          margin-left: 7%;
-          margin-bottom: 8%;
-          position: relative; }
-          main #middle-home-posts #new-post #upper #preview-container span {
-            position: absolute;
-            top: -10%;
-            left: -18%;
-            color: #ee1111;
-            font-weight: 700;
-            font-size: 26px;
-            cursor: pointer; }
-          main #middle-home-posts #new-post #upper #preview-container #post-attatchment-preview {
-            height: 80px;
-            width: auto; }
     main #middle-home-posts #post-heading {
       font-size: 18px;
       font-weight: 600;
@@ -326,10 +341,3 @@ main {
             color: #126ab3; }
             main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn .fa-paper-plane {
               transform: rotate(45deg); }
-  main #right-home-friends {
-    height: 100%;
-    width: 15%;
-    min-width: 200px;
-    background-color: white;
-    position: sticky;
-    padding-left: 10%; }

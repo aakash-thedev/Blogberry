@@ -1,7 +1,7 @@
 {
-  "name": "codemate",
+  "name": "blogberry",
   "version": "1.0.0",
-  "description": "Social media website for Programmers",
+  "description": "Blogging Application | Read | Create | Share |",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aakash-thedev/codemate.git"
+    "url": "git+https://github.com/aakash-thedev/blogberry.git"
   },
   "keywords": [
     "Social",
@@ -18,9 +18,9 @@
   "author": "Aakash Srivastava",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aakash-thedev/codemate/issues"
+    "url": "https://github.com/aakash-thedev/blogberry/issues"
   },
-  "homepage": "https://github.com/aakash-thedev/codemate#readme",
+  "homepage": "https://github.com/aakash-thedev/blogberry#readme",
   "dependencies": {
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
@@ -37,6 +37,7 @@
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.1.1"
   }
 }

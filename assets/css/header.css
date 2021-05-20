@@ -9,18 +9,22 @@ a, a:visited {
   position: fixed;
   top: 0;
   z-index: 5;
-  background-color: white;
-  color: black;
   height: 60px;
   width: 100%;
+  border-bottom: 1px solid #221e1f;
   display: flex;
   justify-content: space-between;
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  background-color: white; }
   #header #logo-section {
     height: 100%;
-    width: 150px;
+    min-width: 170px;
+    width: auto;
+    display: flex;
+    align-items: center;
     margin-left: 0.5%; }
     #header #logo-section a {
+      width: 100%;
       text-decoration: none;
       display: flex;
       justify-content: space-between;
@@ -28,29 +32,28 @@ a, a:visited {
       #header #logo-section a #logo {
         height: 50px;
         width: auto;
-        margin-top: 2.5%;
-        z-index: 2;
-        filter: hue-rotate(234deg); }
+        z-index: 2; }
       #header #logo-section a span {
         font-size: 20px;
-        margin-top: 3%;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
   #header .right-section {
     margin-right: 2%;
     height: 100%;
-    width: 200px;
+    min-width: 205px;
+    width: auto;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
     #header .right-section span {
       list-style: none;
-      display: inline-block;
+      display: flex;
+      align-items: center;
       height: 100%;
-      width: auto;
-      margin-top: 11%; }
+      width: auto; }
       #header .right-section span a {
         text-decoration: none;
         font-size: larger;
-        font-weight: 400; }
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
       #header .right-section span #user-name {
         margin-left: 65%;
         text-transform: capitalize; }

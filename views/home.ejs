@@ -4,14 +4,10 @@
 
 <main>
 
-    <%- include('_newsSection') %>
-    
-    <section id="middle-home-posts">
-    
-        <div id="heading">
-            <span id="heading-text">Home</span>
-        </div>
-    
+    <section id="left-home-create-post">
+
+        <span id="create-heading"> Create Your Blog </span>
+
         <div id="new-post">
 
             <div id="upper">
@@ -21,7 +17,7 @@
                 </section>
 
                 <form action="/posts/create-post" method="POST" id="new-post-form" enctype="multipart/form-data">
-                    <textarea name="content" id="post-content" placeholder="Write your post" onkeypress="postButtonStatus();"></textarea>
+                    <textarea name="content" id="post-content" placeholder="Write Something..." onkeypress="postButtonStatus();"></textarea>
 
                     <section id="more-utilities">
 
@@ -53,6 +49,14 @@
 
         </div>
 
+    </section>
+    
+    <section id="middle-home-posts">
+    
+        <div id="heading">
+            <span id="heading-text">Home</span>
+        </div>
+
         <!-- <span id="post-heading">Posts</span> -->
 
         <div id="new-feeds">
@@ -63,8 +67,8 @@
     
     </section>
 
-    <%- include('_friendsSection') %>
-
 </main>
 
 <!-- <script src="../assets/js/homeScript.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+<script src="/assets/js/chat_engine.js"></script>

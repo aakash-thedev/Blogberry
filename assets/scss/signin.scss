@@ -49,8 +49,8 @@ body {
 h1 {
   margin: auto;
   margin-bottom: 10%;
-  // color: #292a2c;
-  color: rgb(13,62,105);
+  // color: rgb(13,62,105);
+  color: rgb(34,30,31);
   font-weight: 800;
   font-size: 30px;
 }
@@ -85,7 +85,8 @@ input[type="submit"] {
   width: 20%;
   height: 40px;
   font-size: 15px;
-  background: rgb(13,62,105);
+  // background: rgb(13,62,105);
+  background-color: rgb(34,30,31);
   border: none;
   border-radius: 10px;
   color: #FFF;

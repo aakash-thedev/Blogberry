@@ -6,6 +6,7 @@ const passport = require('passport');
 const router = express.Router();
 const homeController = require('../controller/home_controller');
 const userController = require('../controller/user_controller');
+const postController = require('../controller/post_controller');
 
 console.log('router loaded');
 
@@ -19,6 +20,7 @@ router.get('/sign-up', userController.signup);
 // -------------- After logging in ------------------ //
 
 router.get('/home', userController.home);
+router.get('/discover', postController.discoverAll);
 
 // ----------------- controlling other routes --------- //
 router.use('/user', require('./user'));

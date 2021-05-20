@@ -11,22 +11,24 @@ a, a:visited{
     position: fixed;
     top: 0;
     z-index: 5;
-    // background-color: rgb(8,39,67);
-    // color: white;
-    background-color: white;
-    color: black;
     height: 60px;
     width: 100%;
+    border-bottom: 1px solid rgb(34,30,31);
     display: flex;
     justify-content: space-between;
     font-family: 'Roboto', sans-serif;
+    background-color: white;
 
     #logo-section{
         height: 100%;
-        width: 150px;
+        min-width: 170px;
+        width: auto;
+        display: flex;
+        align-items: center;
         margin-left: 0.5%;
 
         a{
+            width: 100%;
             text-decoration: none;
             display: flex;
             justify-content: space-between;
@@ -35,14 +37,12 @@ a, a:visited{
             #logo{
                 height: 50px;
                 width: auto;
-                margin-top: 2.5%;
                 z-index: 2;
-                filter: hue-rotate(234deg);
+                // border-radius: 50%;
             }
     
             span{
                 font-size: 20px;
-                margin-top: 3%;
                 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
         }
@@ -52,21 +52,23 @@ a, a:visited{
     .right-section{
         margin-right: 2%;
         height: 100%;
-        width: 200px;
+        min-width: 205px;
+        width: auto;
         display: flex;
         justify-content: space-between;
+        align-items: center;
 
         span{
             list-style: none;
-            display: inline-block;
+            display: flex;
+            align-items: center;
             height: 100%;
             width: auto;
-            margin-top: 11%;
     
             a{
                 text-decoration: none;
                 font-size: larger;
-                font-weight: 400;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             }
 
             #user-name{

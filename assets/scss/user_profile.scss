@@ -22,8 +22,8 @@ body{
             position: relative;
             height: 60%;
             width: 100%;
-            // background-color: rgb(251, 251, 251);
-            background: linear-gradient(rgb(172, 209, 233), white, white, white, white);
+            // background: linear-gradient(rgb(34,30,31), white, white, white, white);
+            background-color: rgb(34,30,31);
             box-shadow: 2px 2px 1px 0px rgb(216, 224, 224);
             display: flex;
             flex-direction: column;
@@ -57,6 +57,14 @@ body{
                     border-radius: 50%;
                 }
             }
+
+            .user-name{
+                color: white;
+            }
+
+            .profile-bio{
+                color: white;
+            }
     
             .utilities{
                 margin-top: 1%;
@@ -68,9 +76,11 @@ body{
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                background-color: white;
 
                 .edit-profile{
-                    background: rgb(35, 127, 189);
+                    // background: rgb(35, 127, 189);
+                    background-color: rgb(34,30,31);
                     color: white;
                     font-size: 18px;
                     border: none;
@@ -116,7 +126,8 @@ body{
 
                 // modal heading
                 h3{
-                    color: rgb(36, 131, 219);
+                    // color: rgb(36, 131, 219);
+                    color: rgb(34,30,31);
                     margin-top: 2%;
                     margin-left: 2%;
                 }
@@ -183,7 +194,8 @@ body{
                             font-size: 40px;
                             margin-top: 10%;
                             cursor: pointer;
-                            color: rgb(36, 131, 219);
+                            // color: rgb(36, 131, 219);
+                            color: rgb(34,30,31);
                         }
                     }
 
@@ -202,7 +214,8 @@ body{
                     width: 120px;
                     color: white;
                     border: none;
-                    background-color: rgb(36, 131, 219);
+                    // background-color: rgb(36, 131, 219);
+                    background-color: rgb(34,30,31);
                     border-radius: 10px;
                 }
             }

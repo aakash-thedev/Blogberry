@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="/assets/css/discover.css">
+
+<span id="recent-blog-heading">Recent Blogs</span>
+
+<main id="discover-page">
+
+    <% for (let post of posts) { %>
+
+        <div class="dis-post">
+
+            <span class="username">
+                <%= post.user.name %>
+            </span>
+
+            <span class="blog-content">
+
+                <span class="blog-content-text">
+
+                    <%= post.content %>
+
+                </span>
+
+                <% if(post.media) { %>
+
+                    <img src="<%= post.media %> " style="height: 80%; width: auto;" class="blog-media"/>
+                    
+                <% } %> 
+
+            </span>
+
+            <span class="blog-date-wrapper">
+
+                <span class="blog-date"> <%= String(post.createdAt).substring(4, 16) + 'at ' + String(post.createdAt).substring(16, 21) %> </span>
+
+            </span>
+
+        </div>
+        
+    <% } %> 
+
+</main>

@@ -18,7 +18,7 @@ body {
       position: relative;
       height: 60%;
       width: 100%;
-      background: linear-gradient(#acd1e9, white, white, white, white);
+      background-color: #221e1f;
       box-shadow: 2px 2px 1px 0px #d8e0e0;
       display: flex;
       flex-direction: column;
@@ -46,6 +46,10 @@ body {
           height: 140px;
           width: 140px;
           border-radius: 50%; }
+      body main .profile-cover .user-name {
+        color: white; }
+      body main .profile-cover .profile-bio {
+        color: white; }
       body main .profile-cover .utilities {
         margin-top: 1%;
         padding-top: 0.5%;
@@ -55,9 +59,10 @@ body {
         border-top: 1px solid #bdbbbb;
         display: flex;
         justify-content: space-between;
-        align-items: center; }
+        align-items: center;
+        background-color: white; }
         body main .profile-cover .utilities .edit-profile {
-          background: #237fbd;
+          background-color: #221e1f;
           color: white;
           font-size: 18px;
           border: none;
@@ -98,7 +103,7 @@ body {
         justify-content: space-between;
         /* The Close Button */ }
         body main .modal .update-header h3 {
-          color: #2483db;
+          color: #221e1f;
           margin-top: 2%;
           margin-left: 2%; }
         body main .modal .update-header .close {
@@ -147,7 +152,7 @@ body {
               font-size: 40px;
               margin-top: 10%;
               cursor: pointer;
-              color: #2483db; }
+              color: #221e1f; }
           body main .modal .modal-content .profile-pic-upload-container .profile-photo-preview {
             height: 120px;
             width: auto;
@@ -160,7 +165,7 @@ body {
           width: 120px;
           color: white;
           border: none;
-          background-color: #2483db;
+          background-color: #221e1f;
           border-radius: 10px; }
     body main .util-content {
       position: sticky;
