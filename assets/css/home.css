@@ -1,5 +1,5 @@
 *:focus {
-  outline: none; }
+  outline: none !important; }
 
 html {
   overflow: scroll;
@@ -26,63 +26,64 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   scroll-behavior: smooth;
   overflow-x: hidden;
   position: relative; }
   main #left-home-create-post {
-    min-height: 60%;
+    min-height: 50%;
     height: auto;
-    width: 25%;
-    min-width: 350px;
-    padding-right: 10%;
-    border: 1px solid blue;
-    background-color: #221e1f;
-    padding-bottom: 1.5%;
+    width: 30%;
+    min-width: 450px;
+    border-radius: 20px;
+    background-color: #eeeeee;
     margin-right: 1.5%;
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around; }
-    main #left-home-create-post #create-heading {
-      font-size: 35px;
-      color: white;
-      padding: 0.7%;
-      margin-left: 8%; }
-    main #left-home-create-post #new-post {
+    justify-content: center;
+    padding: 1.6%; }
+    main #left-home-create-post #new-post-container {
+      position: relative;
       height: auto;
       min-height: 400px;
-      min-width: 300px;
-      width: 120%;
+      min-width: 350px;
+      width: 100%;
       padding-bottom: 8%;
-      position: relative;
-      background-color: white;
-      border: 3px solid rgba(161, 161, 161, 0.2);
-      margin-left: 9.4%; }
-      main #left-home-create-post #new-post #upper #profile-logo {
-        margin-top: 2%;
-        margin-bottom: 2%;
-        margin-left: 2%;
-        height: 50px;
-        width: 50px;
-        background: url("../images/Profile-pic.jpg");
-        background-size: cover;
-        border-radius: 50%; }
-      main #left-home-create-post #new-post #upper form {
-        height: 98%;
+      background-color: white; }
+      main #left-home-create-post #new-post-container #upper #profile-logo-wrapper {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center; }
+        main #left-home-create-post #new-post-container #upper #profile-logo-wrapper #profile-logo {
+          margin-left: 2%;
+          margin-right: 18%;
+          height: 50px;
+          width: 50px;
+          background: url("../images/Profile-pic.jpg");
+          background-size: cover;
+          border-radius: 50%; }
+        main #left-home-create-post #new-post-container #upper #profile-logo-wrapper #create-heading {
+          font-size: 24px;
+          color: #221e1f;
+          font-weight: 500;
+          text-transform: uppercase; }
+      main #left-home-create-post #new-post-container #upper form {
         width: 88%;
         overflow-x: hidden;
         margin: auto;
         margin-bottom: 1.5%; }
-        main #left-home-create-post #new-post #upper form #post-content {
+        main #left-home-create-post #new-post-container #upper form #post-content {
           resize: none;
-          height: 290px;
+          min-height: 60%;
+          height: auto;
           width: 100%;
           border: none;
           border-top: 1px solid #e4e4e4;
           border-bottom: 1px solid #e4e4e4;
           padding-top: 5%;
           font-size: 14px; }
-        main #left-home-create-post #new-post #upper form #more-utilities {
+        main #left-home-create-post #new-post-container #upper form #more-utilities {
           width: 22.5%;
           min-width: 80px;
           position: absolute;
@@ -90,7 +91,7 @@ main {
           bottom: 1%;
           display: flex;
           justify-content: space-between; }
-          main #left-home-create-post #new-post #upper form #more-utilities #post-attatchment-file-label {
+          main #left-home-create-post #new-post-container #upper form #more-utilities #post-attatchment-file-label {
             cursor: pointer;
             height: 30px;
             width: 30px;
@@ -100,12 +101,12 @@ main {
             display: flex;
             justify-content: center;
             align-items: center; }
-            main #left-home-create-post #new-post #upper form #more-utilities #post-attatchment-file-label img {
+            main #left-home-create-post #new-post-container #upper form #more-utilities #post-attatchment-file-label img {
               height: 25px;
               width: 25px; }
-            main #left-home-create-post #new-post #upper form #more-utilities #post-attatchment-file-label #post-attatchment-file {
+            main #left-home-create-post #new-post-container #upper form #more-utilities #post-attatchment-file-label #post-attatchment-file {
               display: none; }
-          main #left-home-create-post #new-post #upper form #more-utilities #user-location {
+          main #left-home-create-post #new-post-container #upper form #more-utilities #user-location {
             cursor: pointer;
             height: 30px;
             width: 30px;
@@ -115,10 +116,10 @@ main {
             display: flex;
             justify-content: center;
             align-items: center; }
-            main #left-home-create-post #new-post #upper form #more-utilities #user-location img {
+            main #left-home-create-post #new-post-container #upper form #more-utilities #user-location img {
               height: 25px;
               width: 25px; }
-          main #left-home-create-post #new-post #upper form #more-utilities #emoji-attatchment-container {
+          main #left-home-create-post #new-post-container #upper form #more-utilities #emoji-attatchment-container {
             position: relative;
             cursor: pointer;
             height: 30px;
@@ -129,14 +130,14 @@ main {
             display: flex;
             justify-content: center;
             align-items: center; }
-            main #left-home-create-post #new-post #upper form #more-utilities #emoji-attatchment-container #smiley {
+            main #left-home-create-post #new-post-container #upper form #more-utilities #emoji-attatchment-container #smiley {
               font-size: 21px; }
-            main #left-home-create-post #new-post #upper form #more-utilities #emoji-attatchment-container #emoji-picker {
+            main #left-home-create-post #new-post-container #upper form #more-utilities #emoji-attatchment-container #emoji-picker {
               position: absolute;
               top: 100%;
               left: 10%;
               z-index: 99; }
-        main #left-home-create-post #new-post #upper form #post-button {
+        main #left-home-create-post #new-post-container #upper form #post-button {
           position: absolute;
           height: 35px;
           width: 80px;
@@ -150,26 +151,26 @@ main {
           cursor: pointer;
           right: 2%;
           bottom: 2%; }
-      main #left-home-create-post #new-post #upper #preview-container {
+      main #left-home-create-post #new-post-container #upper #preview-container {
         height: 100px;
         width: 100px;
         margin-left: 5%;
-        position: relative; }
-        main #left-home-create-post #new-post #upper #preview-container #close-preview {
+        position: absolute; }
+        main #left-home-create-post #new-post-container #upper #preview-container #close-preview {
           position: absolute;
-          right: -13%;
+          right: -44%;
+          top: -8%;
           color: black;
           font-weight: 700;
           font-size: 26px;
           cursor: pointer; }
-        main #left-home-create-post #new-post #upper #preview-container #post-attatchment-preview {
+        main #left-home-create-post #new-post-container #upper #preview-container #post-attatchment-preview {
           height: 80px;
           width: auto; }
   main #middle-home-posts {
     height: 100%;
     width: 38%;
     min-width: 550px;
-    border: 1px solid lightgray;
     overflow-x: hidden;
     position: relative;
     overflow-y: scroll; }
@@ -189,7 +190,7 @@ main {
         top: 9px;
         font-size: 18px;
         font-weight: 600;
-        color: #1e277a; }
+        color: #221e1f; }
     main #middle-home-posts #post-heading {
       font-size: 18px;
       font-weight: 600;
@@ -215,9 +216,19 @@ main {
         main #middle-home-posts #new-feeds .post-container .delete-post-btn {
           position: absolute;
           right: 3%;
-          top: 15px;
-          color: red;
-          font-size: 1.1em; }
+          top: 15px; }
+          main #middle-home-posts #new-feeds .post-container .delete-post-btn .btn {
+            transition: none !important; }
+          main #middle-home-posts #new-feeds .post-container .delete-post-btn .btn:focus {
+            box-shadow: none !important;
+            background-color: white !important;
+            outline: 0 !important; }
+          main #middle-home-posts #new-feeds .post-container .delete-post-btn .btn-secondary {
+            color: black !important;
+            background-color: white !important;
+            border-color: #ffffff !important;
+            padding: 0 !important;
+            outline: none; }
         main #middle-home-posts #new-feeds .post-container .post-profile-photo {
           position: absolute;
           height: 35px;
@@ -233,8 +244,8 @@ main {
           height: 40px;
           text-align: left;
           position: absolute;
-          left: 10%;
-          top: 16px;
+          left: 9%;
+          top: 9px;
           font-size: 16px;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
           font-weight: 600; }

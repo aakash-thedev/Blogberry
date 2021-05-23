@@ -71,7 +71,7 @@ module.exports.destroy = async function(req, res) {
  // --------------- fetch all the posts from the database for discover section ------------------ //
  module.exports.discoverAll = async function(req, res) {
 
-    let posts = await Post.find({}).populate('user');
+    let posts = await Post.find({}).populate('user').sort('-createdAt');
 
     return res.render('discover', {
         title: 'Blog Berry | Discover',

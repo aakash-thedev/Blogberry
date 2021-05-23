@@ -6,14 +6,18 @@
 
     <section id="left-home-create-post">
 
-        <span id="create-heading"> Create Your Blog </span>
-
-        <div id="new-post">
+        <div id="new-post-container">
 
             <div id="upper">
 
-                <section id="profile-logo" style="position: relative; border-radius: 50%;">
-                    <img src="<%= locals.user.avatar %>" alt="" height="100%" width="100%" style="border-radius: 50%;">
+                <section id="profile-logo-wrapper">
+
+                    <section id="profile-logo" style="position: relative; border-radius: 50%;">
+                        <img src="<%= locals.user.avatar %>" alt="" height="100%" width="100%" style="border-radius: 50%;">
+                    </section>
+
+                    <span id="create-heading"> Create a new blog </span>
+
                 </section>
 
                 <form action="/posts/create-post" method="POST" id="new-post-form" enctype="multipart/form-data">

@@ -1,5 +1,5 @@
 *:focus{
-    outline: none;
+    outline: none !important;
 }
 
 html {
@@ -28,59 +28,63 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     scroll-behavior: smooth;
     overflow-x: hidden;
     position: relative;
 
 
     #left-home-create-post{
-        min-height: 60%;
+        min-height: 50%;
         height: auto;
-        width: 25%;
-        min-width: 350px;
-        padding-right: 10%;
-        border: 1px solid blue;
-        background-color: rgb(34,30,31);
-        padding-bottom: 1.5%;
+        width: 30%;
+        min-width: 450px;
+        border-radius: 20px;
+        background-color: rgb(238, 238, 238);
         margin-right: 1.5%;
         position: relative;
         display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
+        padding: 1.6%;
 
-        #create-heading{
-            font-size: 35px;
-            color: white;
-            padding: 0.7%;
-            margin-left: 8%;
-        }
-
-        #new-post{
+        #new-post-container{
+            position: relative;
             height: auto;
             min-height: 400px;
-            min-width: 300px;
-            width: 120%;
+            min-width: 350px;
+            width: 100%;
             padding-bottom: 8%;
-            position: relative;
             background-color: white;
-            border: 3px solid rgba(161, 161, 161, 0.2);
-            margin-left: 9.4%;
+            // border-radius: 20px;
 
             #upper{
 
-                #profile-logo{
-                    margin-top: 2%;
-                    margin-bottom: 2%;
-                    margin-left: 2%;
-                    height: 50px;
-                    width: 50px;
-                    background: url('../images/Profile-pic.jpg');
-                    background-size: cover;
-                    border-radius: 50%;
+                #profile-logo-wrapper{
+
+                    height: 60px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+
+                    #profile-logo{
+                        margin-left: 2%;
+                        margin-right: 18%;
+                        height: 50px;
+                        width: 50px;
+                        background: url('../images/Profile-pic.jpg');
+                        background-size: cover;
+                        border-radius: 50%;
+                    }
+
+                    #create-heading{
+                        font-size: 24px;
+                        color: rgb(34,30,31);
+                        font-weight: 500;
+                        text-transform: uppercase;
+                    }
                 }
 
                 form{
-                    height: 98%;
                     width: 88%;
                     overflow-x: hidden;
                     margin: auto;
@@ -88,7 +92,8 @@ main{
 
                     #post-content{
                         resize: none;
-                        height: 290px;
+                        min-height: 60%;
+                        height: auto;
                         width: 100%;
                         border: none;
                         border-top: 1px solid rgb(228, 228, 228);
@@ -191,11 +196,12 @@ main{
                     height: 100px;
                     width: 100px;
                     margin-left: 5%;
-                    position: relative;
+                    position: absolute;
 
                     #close-preview{
                         position: absolute;
-                        right: -13%;
+                        right: -44%;
+                        top: -8%;
                         color: rgb(0, 0, 0);
                         font-weight: 700;
                         font-size: 26px;
@@ -215,7 +221,6 @@ main{
         height: 100%;
         width: 38%;
         min-width: 550px;
-        border: 1px solid rgb(211, 211, 211);
         overflow-x: hidden;
         position: relative;
         overflow-y: scroll;
@@ -237,7 +242,7 @@ main{
                 top: 9px;
                 font-size: 18px;
                 font-weight: 600;
-                color: rgb(30, 39, 122);
+                color: rgb(34,30,31);
             }
         }
 
@@ -273,8 +278,25 @@ main{
                     position: absolute;
                     right: 3%;
                     top: 15px;
-                    color: red;
-                    font-size: 1.1em;
+
+                    .btn{
+                        transition: none !important;
+                    }
+
+                    .btn:focus{
+                        box-shadow: none !important;
+                        background-color: white !important;
+                        outline: 0 !important;
+
+                    }
+
+                    .btn-secondary {
+                        color: black !important;
+                        background-color:white !important;
+                        border-color: #ffffff !important;
+                        padding: 0 !important;
+                        outline: none;
+                    }
                 }
 
                 .post-profile-photo{
@@ -294,11 +316,10 @@ main{
 
                 .post-author{
                     height: 40px;
-                    // width: 100%;
                     text-align: left;
                     position: absolute;
-                    left: 10%;
-                    top: 16px;
+                    left: 9%;
+                    top: 9px;
                     font-size: 16px;
                     font-family: Verdana, Geneva, Tahoma, sans-serif;
                     font-weight: 600;

@@ -6,7 +6,7 @@ module.exports.signup = function(req, res) {
     if(!req.isAuthenticated()) {
 
         return res.render('signup', {
-            title : "Codemate | Sign Up"
+            title : "Blog Berry | Sign Up"
         });
     }
 
@@ -17,7 +17,7 @@ module.exports.signin = function(req, res) {
 
     if(!req.isAuthenticated()) {
         return res.render('signin', {
-            title : "Codemate | Sign In"
+            title : "Blog Berry | Sign In"
         });
     }
 
@@ -69,7 +69,7 @@ module.exports.home = async function(req, res) {
         // then we will return when both of above async fn will be executed
 
         return res.render('home', {
-            title : 'Codemate | Home',
+            title : 'Blog Berry | Home',
             postsArray : posts,
             all_users : users
         });

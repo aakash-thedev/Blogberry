@@ -6,7 +6,15 @@
 
         <% if ( locals.user && locals.user.id == post.user.id ) { %>
 
-            <a href="/posts/destroy/<%= post.id %>" class="delete-post-btn"><i class="far fa-trash-alt"></i></a>
+            <div class="dropdown delete-post-btn">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a href="/posts/destroy/<%= post.id %>" class="dropdown-item">Delete</a></li>
+                  <li><a class="dropdown-item" href="#">Edit Blog</a></li>
+                </ul>
+              </div>
             
         <% } %> 
 
@@ -17,10 +25,10 @@
         <span class="post-author">
 
             <%= post.user.name %>
-
+            
             <div id="post-time-date">
-                <!-- String(postsArray[i].createdAt).substring(0, 16) + ", " + String(postsArray[i].createdAt).substring(16, 21) -->
-                Just now
+                <%= String(post.createdAt).substring(4, 16) + " at " + String(post.createdAt).substring(16, 21)  %>
+                <!-- Just now -->
             </div>
 
         </span>

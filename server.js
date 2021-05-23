@@ -106,7 +106,7 @@ app.listen(port, (err)   => {
             return;
         }
 
-        console.log(`codemate running on : ${port}`);;
+        console.log(`Blog Berry Running on : ${port}`);;
         return;
     }
 );

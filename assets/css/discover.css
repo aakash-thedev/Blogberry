@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 16%;
+  margin-left: 15%;
   font-size: 32px;
   width: 250px;
   background-color: #221e1f;
@@ -13,12 +13,14 @@
 #discover-page {
   margin: auto;
   height: auto;
-  width: 70vw;
+  width: 72vw;
   border: 1px solid whitesmoke;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: center; }
+  justify-content: center;
+  padding: 1%;
+  background-color: #221e1f; }
   #discover-page .dis-post {
     display: inline-flex;
     flex-direction: column;
@@ -34,7 +36,8 @@
     padding: 1%;
     overflow: hidden;
     cursor: pointer;
-    transition: all .2s ease-in-out; }
+    transition: all .2s ease-in-out;
+    background-color: white; }
     #discover-page .dis-post .username {
       height: 35px;
       width: 100%;
@@ -52,7 +55,10 @@
       margin: auto; }
       #discover-page .dis-post .blog-content .blog-content-text {
         width: 100%;
-        line-height: 24px; }
+        line-height: 24px;
+        max-height: 23%;
+        overflow: hidden;
+        margin-bottom: 2%; }
     #discover-page .dis-post .blog-date-wrapper .blog-date {
       color: grey;
       font-size: 15px; }
