@@ -372,6 +372,10 @@ main{
                     span{
                         font-weight: 400;
                     }
+
+                    .liked{
+                        color: blue;
+                    }
                 }
 
                 // Comment display division
@@ -382,7 +386,7 @@ main{
                     .comment-section{
                         margin-left: 14%;
                         margin-top: 2.5%;
-                        width: 80%;
+                        width: 73%;
                         height: auto;
                         overflow-wrap: break-word;
 
@@ -405,7 +409,30 @@ main{
                         }
 
                         .comment{
+                            height: auto;
+                            width: 100%;
                             font-size: 14.5px;
+                        }
+
+                        .like-comment{
+                            position: absolute;
+                            min-width: 30px;
+                            width: auto;
+                            right: 6.5%;
+                            font-size: smaller;
+                            color: grey;
+                            display: inline-flex;
+                            justify-content: space-between;
+                            cursor: pointer;
+
+                            .comment-likes-count{
+                                font-size: 14px;
+                                margin-top: -10%;
+                            }
+                        }
+
+                        .liked{
+                            color: blue;
                         }
 
                         .delete-comment{

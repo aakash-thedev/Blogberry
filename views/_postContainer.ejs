@@ -48,9 +48,14 @@
         </div>
 
         <div class="likes-comment-share">
-            <i class="far fa-thumbs-up"> &nbsp; Like</i>
-            <i class="far fa-comment"> &nbsp; Comment</i>
-            <i class="fas fa-share"> &nbsp; <span>Share</span></i>
+            <span data-bs-toggle="/like/toggle/?id=<%= post._id %>&type=Post" onclick="handlePostLike(this)" class="<%= post.likes.some(ele => ele.user == locals.user.id) ? 'liked' : 'not-liked'%>">
+                <i class="far fa-thumbs-up"> &nbsp;
+                    Like &nbsp;
+                    <span><%= post.likes.length %></span>
+                </i>
+            </span>
+            <a href="#"><i class="far fa-comment"> &nbsp; Comment</i> </a>
+            <a href="#"><i class="fas fa-share"> &nbsp; <span>Share</span></i> </a>
         </div>
 
         <div class="display-comments" style="position: relative;">
@@ -63,11 +68,18 @@
                         <img src="<%= comment.user.avatar %>" alt="">
                     </span>
                     <span class="comment-author"> <%= comment.user.name %> </span> - &nbsp;
-                    <span class="comment"> <%= comment.comment %> </span>
+                    <span class="comment">
+                        <%= comment.comment %>
+                    </span>
+
+                    <span data-bs-toggle="/like/toggle/?id=<%= comment._id %>&type=Comment" onclick="handleCommentLike(this)" class="like-comment <%= comment.likes.some(ele => ele.user == locals.user.id) ? 'liked' : 'not-liked'%>">
+                        <span class="comment-likes-count"><%= comment.likes.length %> </span>
+                        <i class="far fa-thumbs-up"></i>
+                    </span>
 
                     <% if (comment.user.id == locals.user.id || post.user.id == locals.user.id) { %>
                         
-                        <a href="/comments/destroy/<%= comment.id %>" class="delete-comment" id="comment-<%= comment.id %> "><i class="fas fa-trash"></i></a>
+                        <a href="/comments/destroy/<%= comment._id %>" class="delete-comment" id="comment-<%= comment.id %> "><i class="fas fa-trash"></i></a>
 
                     <% } %> 
                     
@@ -97,3 +109,80 @@
     </div>
 
 <% } %>
+
+<script>
+
+    function handlePostLike(link) {
+
+        // make an ajax call
+        $.ajax({
+
+            type : 'get',
+            url : $(link).attr('data-bs-toggle'),
+            success : function(data) {
+
+                let likedCount = Number($(link).children().children()[0].innerHTML);
+                
+                if(data.data.deleted === false){
+                    likedCount += 1;
+                }
+
+                else{
+                    likedCount -= 1;
+                }
+
+                $(link).children().children()[0].innerHTML = likedCount;
+                toggleColor(link, data.data.deleted);
+            },
+
+            error : function(err) {
+                console.log("&&&&&&&&", err);
+            }
+        });
+    }
+
+    function handleCommentLike(link) {
+
+        // make an ajax call
+        $.ajax({
+
+            type : 'get',
+            url : $(link).attr('data-bs-toggle'),
+            success : function(data) {
+
+                let likedCount = Number($(link).children()[0].innerText);
+                
+                if(data.data.deleted === false){
+                    likedCount += 1;
+                }
+
+                else{
+                    likedCount -= 1;
+                }
+
+                $(link).children()[0].innerText = likedCount;
+                toggleColor(link, data.data.deleted);
+            },
+
+            error : function(err) {
+                console.log("&&&&&&&&", err);
+            }
+        });
+    }
+
+    function toggleColor(link, status){
+
+        if(status === false){
+            $(link).css({
+                'color': 'blue'
+            });
+        }
+
+        else{
+            $(link).css({
+                'color': 'grey'
+            });
+        }
+    }
+
+</script>

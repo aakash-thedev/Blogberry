@@ -63,6 +63,8 @@ $('#emoji-attatchment-container').click(function(){
 
 });
 
+// ------------------------ Likes AJAX calls ----------------------- //
+
 
 // {
 //     // ------------------------------------ Create Post Data using AJAX req----------------------------------- //

@@ -284,12 +284,14 @@ main {
             background-color: #f0f0f0; }
           main #middle-home-posts #new-feeds .post-container .likes-comment-share span {
             font-weight: 400; }
+          main #middle-home-posts #new-feeds .post-container .likes-comment-share .liked {
+            color: blue; }
         main #middle-home-posts #new-feeds .post-container .display-comments {
           position: relative; }
           main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
             margin-left: 14%;
             margin-top: 2.5%;
-            width: 80%;
+            width: 73%;
             height: auto;
             overflow-wrap: break-word; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-profile-photo {
@@ -305,7 +307,24 @@ main {
               font-size: 15px;
               font-weight: bolder; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment {
+              height: auto;
+              width: 100%;
               font-size: 14.5px; }
+            main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .like-comment {
+              position: absolute;
+              min-width: 30px;
+              width: auto;
+              right: 6.5%;
+              font-size: smaller;
+              color: grey;
+              display: inline-flex;
+              justify-content: space-between;
+              cursor: pointer; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .like-comment .comment-likes-count {
+                font-size: 14px;
+                margin-top: -10%; }
+            main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .liked {
+              color: blue; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .delete-comment {
               position: absolute;
               right: 3%;

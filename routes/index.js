@@ -26,8 +26,7 @@ router.get('/discover', postController.discoverAll);
 router.use('/user', require('./user'));
 router.use('/posts', require('./posts'));
 router.use('/comments', require('./comments'));
-
-
+router.use('/like', require('./likes'));
 
 // ---------------------------- set api listener -------------------------- //
 // ./api will automatically go to index.js in it

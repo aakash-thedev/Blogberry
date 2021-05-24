@@ -52,48 +52,30 @@ module.exports.createComment = async function(req, res) {
 // do cheeze hain ek to kisi bnde ne kisi aur ki post pe comment kiya hoga vo khud use delete kr skta hai
 // dusri cheez jis bnde ka post hai vo bhi apni post ke andar kisi aur ke comment ko delete kr skta hai
 
-module.exports.destroy = function(req, res) {
+module.exports.destroy = async function(req, res) {
 
     // find the comment
-    Comment.findById(req.params.id).populate('post').exec(function(err, comment) {
+    let comment = await Comment.findById(req.params.id).populate('post').populate({path: 'post', populate : { path: 'comments' }});
 
-        if(err) { console.log(`error finding comment in database - ${err}`); return res.redirect('back'); }
+    // assuming that we found the comment
+    if(comment.user == req.user.id || comment.post.user == req.user.id) {
 
-        // assuming that we found the comment
-        if(comment.user == req.user.id || comment.post.user == req.user.id) {
+        console.log("yeaahhh happening");
 
-            comment.remove();
+        // also remove the comment id from post database
+        comment.post.comments.pull(comment._id)
 
-            // also remove the comment id from post database
-            let index = comment.post.comments.find((comm) => {return comm == req.params.id });
+        comment.remove();
 
-            comment.post.comments.splice(index, 1);
+        comment.post.save();
 
-            comment.post.save();
+        req.flash('success', 'Comment Deleted !');
 
-            req.flash('success', 'Comment Deleted !');
+        return res.redirect('back');
 
-            if(req.xhr) {
+    }
 
-                return res.status(200).json({
-
-                    data : {
-                        comment_id : req.params.id
-                    }
-
-                });
-
-            }
-
-            return res.redirect('back');
-
-        }
-
-        else{
-
-            return res.redirect('back');
-        }
-
-    });
-
+    else{
+        return res.redirect('back');
+    }
 }

@@ -44,13 +44,18 @@ module.exports.home = async function(req, res) {
         let posts = await Post.find({})
         .sort('-createdAt')
         .populate('user')
-        .populate({
+        .populate([{
             path : 'comments',
             populate : {
-                // who has commented
                 path : 'user'
             }
-        });
+        }, {
+            path: 'comments',
+            populate: {
+                path: 'likes'
+            }
+        }])
+        .populate('likes');
 
         // success from await User.find({}); will be stored in users variable
 
