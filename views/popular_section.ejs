@@ -1,0 +1,61 @@
+<link rel="stylesheet" href='/assets/css/popular_section.css'>
+
+<div id="popular_section_container">
+
+    <section id="popular-pages">
+
+        <h3 class="popular-section-heading">
+            Suggested Blog Pages
+        </h3>
+
+        <section id="popular-pages-list">
+
+            <ul style="list-style: none;">
+                <% for (let user of all_users) { %>
+
+                    <% if (user.id !== locals.user.id) { %>
+
+                        <li class="popular-page-item-card">
+                            <img src="<%= user.avatar %>" alt="dp" class="card-img">
+                            <%= user.name %>
+                            <a href="/user/profile/<%= user.id %> ">
+                                <button>Visit</button>
+                            </a>
+                        </li>
+
+                    <% } %>
+                    
+                <% } %> 
+            </ul>
+
+        </section>
+
+    </section>
+
+    <section id="popular-blogs">
+
+        <h3 class="popular-section-heading">
+            Popular Blogs
+        </h3>
+
+        <section id="popular-blogs-list">
+
+            <ul style="list-style: none;">
+                <% for (let post of postsArray) { %>
+
+                    <li class="popular-blog-item-card">
+
+                        <a href="" class="blog-link">
+                            <small><%= post.user.name %>-</small> 
+                            <span><%= String(post.content).substring(0, 39) + '....' %></span>
+                        </a>
+                    </li>
+                    
+                <% } %> 
+            </ul>
+
+        </section>
+
+    </section>
+
+</div>

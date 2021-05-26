@@ -1,0 +1,97 @@
+#popular_section_container {
+  height: 94%;
+  width: 32%;
+  min-width: 450px;
+  border: 1px solid #ececec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 2%;
+  border-radius: 12px; }
+  #popular_section_container #popular-pages {
+    flex: 1;
+    width: 100%;
+    border-bottom: 1px solid #ececec; }
+    #popular_section_container #popular-pages .popular-section-heading {
+      height: 35px;
+      font-size: 20px;
+      font-weight: 400 !important;
+      border-bottom: 1px solid #ececec;
+      display: flex;
+      align-items: center;
+      margin-bottom: 3%;
+      margin-left: 2%; }
+    #popular_section_container #popular-pages #popular-pages-list {
+      width: 100%;
+      height: 90%;
+      overflow-y: scroll; }
+      #popular_section_container #popular-pages #popular-pages-list .popular-page-item-card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1%;
+        padding: 2%;
+        height: 50px;
+        width: 90%;
+        box-sizing: border-box;
+        box-shadow: -1px 1px 4px 0px #e6e4e4; }
+        #popular_section_container #popular-pages #popular-pages-list .popular-page-item-card .card-img {
+          height: 40px;
+          width: 40px;
+          border-radius: 50%;
+          margin-right: 7%; }
+        #popular_section_container #popular-pages #popular-pages-list .popular-page-item-card a {
+          position: absolute;
+          right: 2; }
+          #popular_section_container #popular-pages #popular-pages-list .popular-page-item-card a button {
+            height: 30px;
+            width: 60px;
+            background-color: #f55959;
+            border: none;
+            color: white;
+            font-size: small;
+            font-weight: 500;
+            border-radius: 10px; }
+  #popular_section_container #popular-blogs {
+    height: 50%;
+    width: 100%;
+    position: relative; }
+    #popular_section_container #popular-blogs .popular-section-heading {
+      height: 35px;
+      font-size: 20px;
+      font-weight: 400 !important;
+      border-bottom: 1px solid #ececec;
+      display: flex;
+      align-items: center; }
+    #popular_section_container #popular-blogs #popular-blogs-list {
+      height: 90%;
+      width: 100%;
+      position: relative;
+      overflow-y: scroll;
+      box-sizing: border-box; }
+      #popular_section_container #popular-blogs #popular-blogs-list ul {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-start; }
+        #popular_section_container #popular-blogs #popular-blogs-list ul .popular-blog-item-card {
+          height: 35px;
+          overflow: hidden;
+          width: 95%;
+          margin-bottom: 2.5%;
+          margin-left: -2%;
+          overflow-wrap: break-word;
+          box-shadow: -1px 1px 4px 0px #e6e4e4;
+          padding-top: 2%;
+          padding-bottom: 1%; }
+          #popular_section_container #popular-blogs #popular-blogs-list ul .popular-blog-item-card .blog-link:hover {
+            text-decoration: underline; }
+          #popular_section_container #popular-blogs #popular-blogs-list ul .popular-blog-item-card small {
+            color: red;
+            font-size: 16px;
+            margin-right: 1%; }
+          #popular_section_container #popular-blogs #popular-blogs-list ul .popular-blog-item-card span {
+            font-size: 14.5px; }

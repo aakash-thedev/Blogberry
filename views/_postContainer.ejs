@@ -54,8 +54,8 @@
                     <span><%= post.likes.length %></span>
                 </i>
             </span>
-            <a href="#"><i class="far fa-comment"> &nbsp; Comment</i> </a>
-            <a href="#"><i class="fas fa-share"> &nbsp; <span>Share</span></i> </a>
+            <i class="far fa-comment"> &nbsp; Comment</i>
+            <i class="fas fa-share"> &nbsp; <span>Share</span></i>
         </div>
 
         <div class="display-comments" style="position: relative;">
@@ -174,7 +174,7 @@
 
         if(status === false){
             $(link).css({
-                'color': 'blue'
+                'color': 'red'
             });
         }
 

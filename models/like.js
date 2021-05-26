@@ -10,6 +10,7 @@ const LikeSchema = new mongoose.Schema({
     },
 
     // this field will define the objectId of liked object | Post ID or Comment ID |
+    
     likeable: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,

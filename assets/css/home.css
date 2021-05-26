@@ -18,27 +18,27 @@ html {
   background: #FF0000; }
 
 body {
-  margin-top: 70px; }
+  margin-top: 60px; }
 
 main {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
   scroll-behavior: smooth;
   overflow-x: hidden;
-  position: relative; }
+  position: relative;
+  background-color: #f1f1f1; }
   main #left-home-create-post {
     min-height: 50%;
     height: auto;
     width: 30%;
     min-width: 450px;
     border-radius: 20px;
-    background-color: #eeeeee;
-    margin-right: 1.5%;
-    position: relative;
+    background-color: #cecece;
+    position: sticky;
+    top: 24%;
     display: flex;
     justify-content: center;
     padding: 1.6%; }
@@ -171,15 +171,10 @@ main {
     height: 100%;
     width: 38%;
     min-width: 550px;
-    overflow-x: hidden;
-    position: relative;
-    overflow-y: scroll; }
+    position: relative; }
     main #middle-home-posts #heading {
       height: 40px;
       width: 100%;
-      border-bottom: 1px solid #ecebeb;
-      box-shadow: 0px 1px 3px 0px #b4b4b4;
-      background-color: white;
       text-align: left;
       position: relative;
       display: flex;
@@ -212,7 +207,8 @@ main {
         position: relative;
         margin-bottom: 14px;
         border-radius: 12px;
-        background-color: white; }
+        background-color: white;
+        overflow-x: hidden; }
         main #middle-home-posts #new-feeds .post-container .delete-post-btn {
           position: absolute;
           right: 3%;
@@ -285,7 +281,7 @@ main {
           main #middle-home-posts #new-feeds .post-container .likes-comment-share span {
             font-weight: 400; }
           main #middle-home-posts #new-feeds .post-container .likes-comment-share .liked {
-            color: blue; }
+            color: red; }
         main #middle-home-posts #new-feeds .post-container .display-comments {
           position: relative; }
           main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
@@ -371,3 +367,7 @@ main {
             color: #126ab3; }
             main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn .fa-paper-plane {
               transform: rotate(45deg); }
+  main #popular-section {
+    position: sticky;
+    top: 3%;
+    box-sizing: border-box; }
