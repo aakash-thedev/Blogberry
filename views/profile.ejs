@@ -88,7 +88,23 @@
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
     
                 <section class="about-section card">
-                    <span>About</span>
+                    <span style="display: block; border-bottom: 1px solid rgb(226, 226, 226);">About</span>
+
+                    <div class="about-info-icon">
+                        <img src="/assets/images/icons8-mail-50.png"> &nbsp; <small>Email</small>
+                        <span class="about-info"> <%= profile_user.email %>  </span>
+                    </div>
+
+                    <div class="about-info-icon">
+                        <img src="/assets/images/icons8-planner-50.png"> &nbsp; <small>DOB</small>
+                        <span class="about-info"> <%= String(profile_user.dob).replace("'/'", " / ").replace("'/'", " / ") %>  </span>
+                    </div>
+
+                    <div class="about-info-icon">
+                        <img src="/assets/images/icons8-new-job-50.png"> &nbsp; <small>Occupation</small>
+                        <span class="about-info"> Not Added  </span>
+                    </div>
+                    
                 </section>
     
             </div>
@@ -97,6 +113,9 @@
     </section>
 
     <section class="user-posts">
+
+        <%- include('_postContainer') %>
+
     </section>
 
 </main>

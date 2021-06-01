@@ -36,13 +36,18 @@ function displayPreview(input) {
   // ----------------- disable post button if there is nothing ---------------- //
 let postButton = $('#post-button');
 let postContent = $('#post-content');
+let inputFile = $('#post-attatchment-file');
 
 postButton.attr('disabled', true);
 
 function postButtonStatus(){
-  if(postContent.val().length > 0) {
+  if(postContent.val().length > 0 || inputFile.files[0]) {
     postButton.attr('disabled', false);
   }
+}
+
+function enablePostButton(){
+  postButton.attr('disabled', false);
 }
 
 postButtonStatus();

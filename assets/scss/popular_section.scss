@@ -107,20 +107,20 @@
                     margin-left: -2%;
                     overflow-wrap: break-word;
                     box-shadow: -1px 1px 4px 0px rgb(230, 228, 228);
-                    padding-top: 2%;
-                    padding-bottom: 1%;
+                    
 
                     .blog-link:hover{
                         text-decoration: underline;
                     }
     
                     small{
-                        color: red;
-                        font-size: 16px;
+                        // color: red;
+                        font-size: 15px;
                         margin-right: 1%;
                     }
 
                     span{
+                        color: grey;
                         font-size: 14.5px;
                     }
                 }

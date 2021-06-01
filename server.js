@@ -9,6 +9,11 @@ const expressLayouts = require('express-ejs-layouts');
 // import database
 const db = require('./config/mongoose');
 
+// make an log of all the activities
+const logger = require('morgan');
+
+const environment = require('./config/environment');
+
 // these three are used for our session cookie and will use the session middleware after views declaration down
 const session = require('express-session');
 const passport = require('passport');
@@ -23,31 +28,26 @@ const sassMiddleware = require('node-sass-middleware');
 const flash = require('connect-flash');
 const customMiddleware = require('./config/customMiddleware');
 
-// ------------------------------ creating a chat server to connet with socket.io --------------------------- //
+// for production we need to manage these hard coded paths into general
+const path = require('path');
 
-const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chats_sockets').chatSockets(chatServer);
-chatServer.listen(5000);
+if(environment.name == 'development'){
+    app.use(sassMiddleware({
 
-console.log("Chat Server Listening on port 5000");
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-app.use(sassMiddleware({
-
-    src : './assets/scss',
-    dest : './assets/css',
-    debug : true,
-    outputStyle : 'extended',
-    // prefix means inside which folder should server look for css files
-    prefix : '/assets/css'
-
-}));
+        src : path.join(__dirname, environment.assets_path, 'scss'),
+        dest : path.join(__dirname, environment.assets_path, 'css'),
+        debug : true,
+        outputStyle : 'extended',
+        // prefix means inside which folder should server look for css files
+        prefix : '/assets/css'
+    
+    }));
+}
 
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use('*/assets', express.static('./assets'));
+app.use('*/assets', express.static(environment.assets_path));
 
 // to use layouts
 app.use(expressLayouts);
@@ -63,8 +63,10 @@ app.set('views', './views');
 
 // import routers
 app.use('/uploads', express.static(__dirname + '/uploads'));
+app.use(logger(environment.morgan.mode, environment.morgan.options));
 
 const routers = require('./routes/index');
+const { env } = require('process');
 
 // session middleware
 // also mongoStore is used to store the session cookie in the db
@@ -72,7 +74,7 @@ app.use(session({
     // name is name of cookie
     name : 'codeconnect',
     // this secret field is the encrypted text which we will generate later during production / deployment
-    secret : 'th980kl91278jkloip@kloaakash123%22',
+    secret : environment.session_cookie_key,
     saveUninitialized : false,
     resave : false,
     cookie : {

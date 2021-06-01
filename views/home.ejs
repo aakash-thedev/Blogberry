@@ -10,10 +10,10 @@
 
             <div id="upper">
 
-                <section id="profile-logo-wrapper">
+                <section id="profile-logo-wrapper" style=" border: none; border-radius: 50%;">
 
-                    <section id="profile-logo" style="position: relative; border-radius: 50%;">
-                        <img src="<%= locals.user.avatar %>" alt="" height="100%" width="100%" style="border-radius: 50%;">
+                    <section id="profile-logo" style="position: relative; border: none; border-radius: 50%;">
+                        <img src="<%= locals.user.avatar %>" alt="" height="100%" width="100%" style="border-radius: 50%; border: none;">
                     </section>
 
                     <span id="create-heading"> Create a new blog </span>
@@ -21,18 +21,18 @@
                 </section>
 
                 <form action="/posts/create-post" method="POST" id="new-post-form" enctype="multipart/form-data">
-                    <textarea name="content" id="post-content" placeholder="Write Something..." onkeypress="postButtonStatus();"></textarea>
+                    <textarea name="content" id="post-content" placeholder="Write Something..." onkeypress="postButtonStatus();" required></textarea>
 
                     <section id="more-utilities">
 
                         <label for="post-attatchment-file" id="post-attatchment-file-label">
                             <img src="/assets/images/icon-photo.png" alt="">
-                            <input type="file" name="media" id="post-attatchment-file">
+                            <input type="file" name="media" id="post-attatchment-file" onchange="enablePostButton()">
                         </label>
     
                         <label for="" id="emoji-attatchment-container">
                             <span id="smiley">😃</span>
-                            <emoji-picker display="hidden" id="emoji-picker"></emoji-picker>
+                            <!-- <emoji-picker display="hidden" id="emoji-picker"></emoji-picker> -->
                         </label>
     
                         <label for="" id="user-location">
@@ -79,6 +79,6 @@
 
 </main>
 
-<!-- <script src="../assets/js/homeScript.js"></script> -->
+<script src="../assets/js/homeScript.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
 <script src="/assets/js/chat_engine.js"></script>

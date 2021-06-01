@@ -61,16 +61,6 @@ module.exports.home = async function(req, res) {
 
         let users = await User.find({});
 
-        if(req.xhr) {
-
-            return res.status(200).json({
-                data : {
-                    posts : posts,
-                    users : users
-                }
-            });
-        }
-
         // then we will return when both of above async fn will be executed
 
         return res.render('home', {
@@ -95,7 +85,21 @@ module.exports.profile = async function(req, res) {
         // find the user
         let user = await User.findById(req.params.id); 
 
-        let posts = await Post.find({user : req.params.id});
+        let posts = await Post.find({user : req.params.id})
+        .sort('-createdAt')
+        .populate('user')
+        .populate([{
+            path : 'comments',
+            populate : {
+                path : 'user'
+            }
+        }, {
+            path: 'comments',
+            populate: {
+                path: 'likes'
+            }
+        }])
+        .populate('likes');
 
         return res.render('profile', {
             title : `${user.name} | Profile`,
@@ -125,9 +129,9 @@ module.exports.updateUser = async function(req, res) {
 
             if(err) { console.log(`******Multer Error - ${err} `); }
 
-            console.log(req.file);
+            console.log(req);
 
-            // now set up the user schema values 
+            // // now set up the user schema values 
             updatedUser.name = req.body.name;
             updatedUser.email = req.body.email;
 
@@ -181,6 +185,7 @@ module.exports.create = async function(req, res) {
         let newUser = await User.create({
             name : req.body.username,
             email : req.body.email,
+            avatar: 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png',
             gender : req.body.gender,
             dob : `${req.body.birth_date}'/'${req.body.birth_month}'/'${req.body.birth_year}`,
             password : req.body.password
