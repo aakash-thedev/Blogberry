@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "prod_start": "NODE_ENV=production nodemon server.js"
   },
   "repository": {
@@ -49,5 +49,8 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }

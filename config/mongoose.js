@@ -1,11 +1,10 @@
 const mongoose = require('mongoose');
-const environment = require('./environment');
 
 // to prevent this warning : DeprecationWarning: collection.ensureIndex is deprecated. Use createIndexes instead
 mongoose.set('useCreateIndex', true);
 
 // store it in a variable
-mongoose.connect(`mongodb://localhost/${environment.db}`, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://aakash:Aakash22@cluster0.rmts6.mongodb.net/blogberrydb?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 

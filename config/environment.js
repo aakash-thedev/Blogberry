@@ -21,15 +21,16 @@ const development = {
     }
 };
 
-const production = {
-    name: 'production',
-    assets_path: process.env.BLOGBERRY_ASSET_PATH,
-    session_cookie_key: process.env.BLOGBERRY_SESSION_COOKIE_KEY,
-    db: process.env.BLOGBERRY_DB,
-    morgan: {
-        mode: 'combined',
-        options: {stream: accessLogStream}
-    }
-}
+// const production = {
+//     name: 'production',
+//     assets_path: process.env.BLOGBERRY_ASSET_PATH,
+//     session_cookie_key: process.env.BLOGBERRY_SESSION_COOKIE_KEY,
+//     db: process.env.BLOGBERRY_DB,
+//     morgan: {
+//         mode: 'combined',
+//         options: {stream: accessLogStream}
+//     }
+// }
 
-module.exports = eval(process.env.BLOGBERRY_ENVIRONMENT) == undefined ? development : eval(process.env.BLOGBERRY_ENVIRONMENT);
+// module.exports = eval(process.env.BLOGBERRY_ENVIRONMENT) == undefined ? development : eval(process.env.BLOGBERRY_ENVIRONMENT);
+module.exports = development;
