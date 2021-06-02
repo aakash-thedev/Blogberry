@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "prod_start": "NODE_ENV=production nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -51,6 +51,6 @@
     "gulp": "^4.0.2"
   },
   "engines": {
-    "node": "14.x"
+    "node": ">=10.0.0"
   }
 }

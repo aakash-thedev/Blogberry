@@ -69,16 +69,17 @@
       height: 90%;
       width: 100%;
       position: relative;
-      overflow-y: scroll;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      overflow-y: scroll; }
       #popular_section_container #popular-blogs #popular-blogs-list ul {
-        height: 100%;
         width: 100%;
         display: flex;
+        position: relative;
+        overflow-y: scroll;
         flex-direction: column-reverse;
         align-items: flex-start; }
         #popular_section_container #popular-blogs #popular-blogs-list ul .popular-blog-item-card {
-          height: 35px;
+          height: 30px;
           overflow: hidden;
           width: 95%;
           margin-bottom: 2.5%;
