@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.PORT || 8009;
+const port = process.env.PORT || 8002;
 // create an express app
 const app = express();
 // cookieParser is used to access to and modify cookies in browser
@@ -69,7 +69,7 @@ const routers = require('./routes/index');
 // also mongoStore is used to store the session cookie in the db
 app.use(session({
     // name is name of cookie
-    name : 'codeconnect',
+    name : 'blogberry',
     // this secret field is the encrypted text which we will generate later during production / deployment
     secret : 'th980kl91278jkloip@kloaakash123%22',
     saveUninitialized : false,
