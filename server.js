@@ -1,5 +1,5 @@
 const express = require('express');
-const port = process.env.PORT || 8005;
+const port = process.env.PORT || 8009;
 // create an express app
 const app = express();
 // cookieParser is used to access to and modify cookies in browser
@@ -31,23 +31,21 @@ const customMiddleware = require('./config/customMiddleware');
 // for production we need to manage these hard coded paths into general
 const path = require('path');
 
-if(environment.name == 'development'){
-    app.use(sassMiddleware({
+app.use(sassMiddleware({
 
-        src : path.join(__dirname, environment.assets_path, 'scss'),
-        dest : path.join(__dirname, environment.assets_path, 'css'),
-        debug : true,
-        outputStyle : 'extended',
-        // prefix means inside which folder should server look for css files
-        prefix : '/assets/css'
-    
-    }));
-}
+    src : './assets/scss',
+    dest : './assets/css',
+    debug : true,
+    outputStyle : 'extended',
+    // prefix means inside which folder should server look for css files
+    prefix : '/assets/css'
+
+}));
 
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use('*/assets', express.static(environment.assets_path));
+app.use('*/assets', express.static('./assets'));
 
 // to use layouts
 app.use(expressLayouts);
@@ -66,7 +64,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(logger(environment.morgan.mode, environment.morgan.options));
 
 const routers = require('./routes/index');
-const { env } = require('process');
 
 // session middleware
 // also mongoStore is used to store the session cookie in the db
@@ -74,7 +71,7 @@ app.use(session({
     // name is name of cookie
     name : 'codeconnect',
     // this secret field is the encrypted text which we will generate later during production / deployment
-    secret : environment.session_cookie_key,
+    secret : 'th980kl91278jkloip@kloaakash123%22',
     saveUninitialized : false,
     resave : false,
     cookie : {

@@ -14,7 +14,6 @@ const development = {
     name: 'development',
     assets_path: './assets',
     session_cookie_key: 'th980kl91278jkloip@kloaakash123%22',
-    db: 'codeconnect_db',
     morgan: {
         mode: 'dev',
         options: {stream: accessLogStream}
