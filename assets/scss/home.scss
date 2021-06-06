@@ -774,7 +774,7 @@ main{
                         height: 40px;
                         text-align: left;
                         position: absolute;
-                        left: 9%;
+                        left: 14%;
                         top: 9px;
                         font-size: 16px;
                         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -789,14 +789,14 @@ main{
                     }
     
                     .post-content{
-                        width: 94%;
+                        width: 96%;
                         overflow-wrap: break-word;
                         margin-top: 64px;
                         margin-bottom: 2%;
                         min-height: 40px;
                         margin-left: 2%;
                         text-align: left;
-                        font-size: 17px;
+                        font-size: 14px;
                     }
     
                     // Like comment and share section
@@ -810,7 +810,7 @@ main{
                         align-items: center;
                         justify-content: space-around;
                         color: grey;
-                        font-size: 16.5px;
+                        font-size: 12.5px;
     
                         i{
                             cursor: pointer;
@@ -840,7 +840,7 @@ main{
                         position: relative;
     
                         .comment-section{
-                            margin-left: 14%;
+                            margin-left: 10%;
                             margin-top: 2.5%;
                             width: 73%;
                             height: auto;
@@ -850,7 +850,7 @@ main{
                                 position: absolute;
                                 height: 25px;
                                 border: none;
-                                left: 8%;
+                                left: 1%;
     
                                 img{
                                     height: 100%;
@@ -860,25 +860,26 @@ main{
                             }
     
                             .comment-author{
-                                font-size: 15px;
+                                font-size: 14px;
                                 font-weight: bolder;
                             }
     
                             .comment{
                                 height: auto;
                                 width: 100%;
-                                font-size: 14.5px;
+                                font-size: 13.5px;
                             }
     
                             .like-comment{
                                 position: absolute;
                                 min-width: 30px;
                                 width: auto;
-                                right: 6.5%;
+                                top: 20%;
+                                right: 9%;
                                 font-size: smaller;
                                 color: grey;
                                 display: inline-flex;
-                                justify-content: space-between;
+                                justify-content: space-around;
                                 cursor: pointer;
     
                                 .comment-likes-count{
@@ -893,6 +894,7 @@ main{
     
                             .delete-comment{
                                 position: absolute;
+                                top: 20%;
                                 right: 3%;
                                 font-size: small;
                                 color: grey;

@@ -570,7 +570,7 @@ main {
             height: 40px;
             text-align: left;
             position: absolute;
-            left: 9%;
+            left: 14%;
             top: 9px;
             font-size: 16px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -581,14 +581,14 @@ main {
               margin-top: 1px;
               font-weight: 400; }
           main #middle-home-posts #new-feeds .post-container .post-content {
-            width: 94%;
+            width: 96%;
             overflow-wrap: break-word;
             margin-top: 64px;
             margin-bottom: 2%;
             min-height: 40px;
             margin-left: 2%;
             text-align: left;
-            font-size: 17px; }
+            font-size: 14px; }
           main #middle-home-posts #new-feeds .post-container .likes-comment-share {
             height: 32px;
             width: 100%;
@@ -598,7 +598,7 @@ main {
             align-items: center;
             justify-content: space-around;
             color: grey;
-            font-size: 16.5px; }
+            font-size: 12.5px; }
             main #middle-home-posts #new-feeds .post-container .likes-comment-share i {
               cursor: pointer;
               height: 90%;
@@ -615,7 +615,7 @@ main {
           main #middle-home-posts #new-feeds .post-container .display-comments {
             position: relative; }
             main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
-              margin-left: 14%;
+              margin-left: 10%;
               margin-top: 2.5%;
               width: 73%;
               height: auto;
@@ -624,27 +624,28 @@ main {
                 position: absolute;
                 height: 25px;
                 border: none;
-                left: 8%; }
+                left: 1%; }
                 main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-profile-photo img {
                   height: 100%;
                   width: 25px;
                   border-radius: 50%; }
               main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-author {
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: bolder; }
               main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment {
                 height: auto;
                 width: 100%;
-                font-size: 14.5px; }
+                font-size: 13.5px; }
               main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .like-comment {
                 position: absolute;
                 min-width: 30px;
                 width: auto;
-                right: 6.5%;
+                top: 20%;
+                right: 9%;
                 font-size: smaller;
                 color: grey;
                 display: inline-flex;
-                justify-content: space-between;
+                justify-content: space-around;
                 cursor: pointer; }
                 main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .like-comment .comment-likes-count {
                   font-size: 14px;
@@ -653,6 +654,7 @@ main {
                 color: blue; }
               main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .delete-comment {
                 position: absolute;
+                top: 20%;
                 right: 3%;
                 font-size: small;
                 color: grey; }
