@@ -528,6 +528,7 @@ main{
     
     body{
         margin-top: 60px;
+        overflow-y: scroll;
     }
     
     main{
@@ -550,7 +551,7 @@ main{
             min-width: 0px;
             background-color: white;
             border-radius: 0px;
-            position: sticky;
+            position: relative;
             top: 0%;
             display: flex;
             justify-content: center;
@@ -842,7 +843,7 @@ main{
                         .comment-section{
                             margin-left: 10%;
                             margin-top: 2.5%;
-                            width: 73%;
+                            width: 90%;
                             height: auto;
                             overflow-wrap: break-word;
     
@@ -874,8 +875,6 @@ main{
                                 position: absolute;
                                 min-width: 30px;
                                 width: auto;
-                                top: 20%;
-                                right: 9%;
                                 font-size: smaller;
                                 color: grey;
                                 display: inline-flex;
@@ -884,7 +883,6 @@ main{
     
                                 .comment-likes-count{
                                     font-size: 14px;
-                                    margin-top: -10%;
                                 }
                             }
     
@@ -894,8 +892,6 @@ main{
     
                             .delete-comment{
                                 position: absolute;
-                                top: 20%;
-                                right: 3%;
                                 font-size: small;
                                 color: grey;
                             }
