@@ -23,7 +23,7 @@
 
         <span class="post-author">
 
-            <%= post.user.name %>
+            <a href="/user/profile/<%= post.user.id %>"> <%= post.user.name %> </a>
             
             <div id="post-time-date">
                 <%= String(post.createdAt).substring(4, 16) + " at " + String(post.createdAt).substring(16, 21)  %>
