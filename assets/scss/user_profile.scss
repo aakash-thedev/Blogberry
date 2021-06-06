@@ -796,7 +796,7 @@ body{
                 overflow-wrap: break-word;
     
                 .post-container{
-    
+        
                     height: auto;
                     width: 100%;
                     // I dont know why but this border property is super important dont remove it
@@ -807,23 +807,23 @@ body{
                     border-radius: 12px;
                     background-color: white;
                     overflow-x: hidden;
-    
+
                     .delete-post-btn{
                         position: absolute;
                         right: 3%;
                         top: 15px;
-    
+
                         .btn{
                             transition: none !important;
                         }
-    
+
                         .btn:focus{
                             box-shadow: none !important;
                             background-color: white !important;
                             outline: 0 !important;
-    
+
                         }
-    
+
                         .btn-secondary {
                             color: black !important;
                             background-color:white !important;
@@ -832,7 +832,7 @@ body{
                             outline: none;
                         }
                     }
-    
+
                     .post-profile-photo{
                         position: absolute;
                         height: 35px;
@@ -840,24 +840,24 @@ body{
                         border-radius: 50%;
                         left: 2%;
                         top: 12px;
-    
+
                         img{
                             height: 30px;
                             width: 30px;
                             border-radius: 50%;
                         }
                     }
-    
+
                     .post-author{
                         height: 40px;
                         text-align: left;
                         position: absolute;
-                        left: 9%;
+                        left: 14%;
                         top: 9px;
                         font-size: 16px;
                         font-family: Verdana, Geneva, Tahoma, sans-serif;
                         font-weight: 600;
-    
+
                         #post-time-date{
                             font-size: 11px;
                             color: grey;
@@ -865,20 +865,20 @@ body{
                             font-weight: 400;
                         }
                     }
-    
+
                     .post-content{
-                        width: 94%;
+                        width: 96%;
                         overflow-wrap: break-word;
                         margin-top: 64px;
                         margin-bottom: 2%;
                         min-height: 40px;
                         margin-left: 2%;
                         text-align: left;
-                        font-size: 17px;
+                        font-size: 14px;
                     }
-    
+
                     // Like comment and share section
-    
+
                     .likes-comment-share{
                         height: 32px;
                         width: 100%;
@@ -888,8 +888,8 @@ body{
                         align-items: center;
                         justify-content: space-around;
                         color: grey;
-                        font-size: 16.5px;
-    
+                        font-size: 12.5px;
+
                         i{
                             cursor: pointer;
                             height: 90%;
@@ -898,80 +898,77 @@ body{
                             align-items: center;
                             justify-content: center;
                         }
-    
+
                         i:hover{
                             background-color: rgb(240, 240, 240);
                         }
-    
+
                         span{
                             font-weight: 400;
                         }
-    
+
                         .liked{
                             color: red;
                         }
                     }
-    
+
                     // Comment display division
-    
+
                     .display-comments{
                         position: relative;
-    
+
                         .comment-section{
-                            margin-left: 14%;
+                            margin-left: 10%;
                             margin-top: 2.5%;
-                            width: 73%;
+                            width: 90%;
                             height: auto;
                             overflow-wrap: break-word;
-    
+
                             .comment-profile-photo{
                                 position: absolute;
                                 height: 25px;
                                 border: none;
-                                left: 8%;
-    
+                                left: 1%;
+
                                 img{
                                     height: 100%;
                                     width: 25px;
                                     border-radius: 50%;
                                 }
                             }
-    
+
                             .comment-author{
-                                font-size: 15px;
+                                font-size: 14px;
                                 font-weight: bolder;
                             }
-    
+
                             .comment{
                                 height: auto;
                                 width: 100%;
-                                font-size: 14.5px;
+                                font-size: 13.5px;
                             }
-    
+
                             .like-comment{
                                 position: absolute;
                                 min-width: 30px;
                                 width: auto;
-                                right: 6.5%;
                                 font-size: smaller;
                                 color: grey;
                                 display: inline-flex;
-                                justify-content: space-between;
+                                justify-content: space-around;
                                 cursor: pointer;
-    
+
                                 .comment-likes-count{
                                     font-size: 14px;
-                                    margin-top: -10%;
                                 }
                             }
-    
+
                             .liked{
                                 color: blue;
                             }
-    
+
                             .delete-comment{
                                 position: absolute;
-                                right: 3%;
                                 font-size: small;
                                 color: grey;
                             }
@@ -983,7 +980,7 @@ body{
                         height: 50px;
                         width: 100%;
                         position: relative;
-    
+
                         .comment-profile-photo{
                             position: absolute;
                             height: 25px;
@@ -993,7 +990,7 @@ body{
                             left: 1.5%;
                             top: 12px;
                         }
-    
+
                         .comment-content{
                             position: absolute;
                             left: 8%;
@@ -1009,7 +1006,7 @@ body{
                             border-bottom-left-radius: 12px;
                             overflow-wrap: break-word;
                         }
-    
+
                         .comment-btn{
                             height: 31px;
                             width : 50px;

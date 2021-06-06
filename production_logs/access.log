@@ -3268,3 +3268,12 @@
 [0mGET /uploads/posts/media-1622560102347 [33m404[0m 18.389 ms - 172[0m
 [0mGET /uploads/posts/media-1622559792484 [33m404[0m 8.542 ms - 172[0m
 [0mGET /uploads/posts/media-1622548887353 [33m404[0m 9.769 ms - 172[0m
+[0mGET /home [36m302[0m 334.215 ms - 46[0m
+[0mGET / [32m200[0m 612.001 ms - 3144[0m
+[0mGET /sign-in [32m200[0m 368.702 ms - 3258[0m
+[0mPOST /user/create-session [36m302[0m 799.678 ms - 54[0m
+[0mGET /home [32m200[0m 2565.525 ms - 44112[0m
+[0mGET /uploads/users/avatars/avatar-1622984432987 [33m404[0m 589.234 ms - 181[0m
+[0mGET /uploads/users/avatars/avatar-1622972966406 [33m404[0m 698.460 ms - 181[0m
+[0mGET /user/profile/60b77419b7d22f001535c0f8 [32m200[0m 2994.123 ms - 19386[0m
+[0mGET /uploads/users/avatars/avatar-1622984432987 [33m404[0m 830.162 ms - 181[0m
