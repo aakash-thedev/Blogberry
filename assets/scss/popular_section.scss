@@ -12,9 +12,9 @@
     border-radius: 12px;
 
     #popular-pages{
-        flex: 1;
         width: 100%;
         border-bottom: 1px solid rgb(236, 236, 236);
+        overflow-y: scroll;
 
         .popular-section-heading{
             height: 35px;

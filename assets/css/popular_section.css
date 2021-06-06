@@ -11,9 +11,9 @@
   padding: 2%;
   border-radius: 12px; }
   #popular_section_container #popular-pages {
-    flex: 1;
     width: 100%;
-    border-bottom: 1px solid #ececec; }
+    border-bottom: 1px solid #ececec;
+    overflow-y: scroll; }
     #popular_section_container #popular-pages .popular-section-heading {
       height: 35px;
       font-size: 20px;

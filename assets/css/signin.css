@@ -1,15 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400);
 *:focus {
   outline: none; }
-
-#bg {
-  height: 100%;
-  float: none;
-  position: absolute;
-  top: 0;
-  left: 14%;
-  z-index: -1;
-  filter: brightness(1.2) contrast(1.4) blur(4px); }
 
 body {
   padding: 0;
@@ -107,3 +99,80 @@ input[type="submit"]:active {
   text-decoration: none;
   font-weight: 500;
   color: #1481db; }
+
+@media screen and (max-width: 500px) {
+  *:focus {
+    outline: none; }
+  body {
+    font-size: 16px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    min-width: 100vw;
+    margin-top: 30px;
+    overflow: hidden; }
+  #login-box {
+    position: relative;
+    width: 50%;
+    height: 89vh;
+    background: #FFF;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: none; }
+  .main {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 85%; }
+  h1 {
+    margin: auto;
+    margin-bottom: 10%;
+    color: #221e1f;
+    font-weight: 800;
+    font-size: 28px; }
+  input[type="email"],
+  input[type="password"] {
+    color: #292a2c;
+    display: block;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 100%;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #AAA;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease; }
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-bottom: 2px solid #16a085;
+    color: #16a085;
+    transition: 0.2s ease; }
+  input[type="submit"] {
+    margin: auto;
+    margin-top: 7%;
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #221e1f;
+    border: none;
+    border-radius: 10px;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.1s ease;
+    cursor: pointer; }
+  input[type="submit"]:hover,
+  input[type="submit"]:focus {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease; }
+  input[type="submit"]:active {
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease; } }

@@ -123,3 +123,130 @@ body {
     }
   }
 }
+
+@media screen and (max-width: 500px){
+
+      @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+    *:focus {
+      outline: none;
+    }
+
+    body {
+      margin-top: 65px;
+      padding: 0;
+    }
+
+    #signup-box{
+      position: relative;
+      height: auto;
+      width: 40%;
+      min-height: 400px;
+      min-width: 500px;
+      margin: auto;
+      background: #FFF;
+      border-radius: 2px;
+      padding: 1%;
+      box-shadow: none;
+
+      #heading{
+        margin: auto;
+        margin-bottom: 5%;
+        color: rgb(34,30,31);
+        font-weight: 800;
+        font-size: 27px;
+      }
+
+      form{
+        height: auto;
+
+        .credential{
+          min-width: 200px;
+          height: 75px;
+
+          label{
+            font-size: medium;
+          }
+
+          input{
+            display: block;
+            height: 35px;
+            width: 70%;
+            margin-top: 1%;
+            margin-bottom: 3.1%;
+            border: none;
+            border-bottom: 1px solid rgb(204, 204, 204);
+            color: rgb(13,62,105);
+            font-size: 14px;
+          }
+        }
+
+        #birthday-wrapper{
+
+          margin-top: 2%;
+          margin-bottom: 2%;
+          position: relative;
+          height: 42px;
+          min-width: 320px;
+
+          select{
+            height: 90%;
+            width: 23%;
+            background-color: white;
+            border: 1px solid rgb(185, 185, 185);
+            border-radius: 10px;
+            text-align: center;
+            padding-left: 2%;
+          }
+
+        }
+
+        #gender-container{
+          // border: 1px solid rgb(185, 185, 185);
+          border-radius: 10px;
+          height: 42px;
+          width: 50%;
+          margin-top: 2%;
+          margin-left: -1%;
+          margin-bottom: 1.5%;
+
+          section{
+
+            height: 100%;
+            width: 29%;
+            display: inline-flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-left: 3%;
+
+            label{
+              color: rgb(87, 87, 87);
+              font-size: medium;
+            }
+
+            input[type=radio] {
+              width: 20%;
+            }
+          }
+        }
+
+        button {
+          position: absolute;
+          bottom: -5%;
+          left: 0%;
+          height: 42px;
+          width: 72%;
+          font-size: 15px;
+          background-color: rgb(34,30,31);
+          border: none;
+          border-radius: 0px;
+          color: #FFF;
+          font-family: 'Roboto', sans-serif;
+          font-weight: 500;
+          text-transform: uppercase;
+          transition: 0.1s ease;
+          cursor: pointer;
+        }
+      }
+    }
+
+}

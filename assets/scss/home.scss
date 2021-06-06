@@ -503,3 +503,465 @@ main{
         box-sizing: border-box;
     }
 }
+
+@media screen and (max-width: 500px) {
+
+    *:focus{
+        outline: none !important;
+    }
+    
+    html {
+        overflow: scroll;
+        overflow-x: hidden;
+        .show{
+            display: show;
+        }
+    }
+    ::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    /* Optional: show position indicator in red */
+    ::-webkit-scrollbar-thumb {
+        background: #FF0000;
+    }
+    
+    body{
+        margin-top: 60px;
+    }
+    
+    main{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+        position: relative;
+        background-color: rgb(241, 241, 241);
+    
+    
+        #left-home-create-post{
+            min-height: 0;
+            height: auto;
+            width: 100vw;
+            min-width: 0px;
+            background-color: white;
+            border-radius: 0px;
+            position: sticky;
+            top: 0%;
+            display: flex;
+            justify-content: center;
+            padding: 1.6%;
+    
+            #new-post-container{
+                position: relative;
+                height: auto;
+                min-height: 200px;
+                min-width: 100vw;
+                width: 100vw;
+                padding-bottom: 8%;
+                background-color: white;
+                // border-radius: 20px;
+    
+                #upper{
+    
+                    #profile-logo-wrapper{
+    
+                        height: 60px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+    
+                        #profile-logo{
+                            margin-left: 2%;
+                            margin-right: 10%;
+                            height: 50px;
+                            width: 50px;
+                            background: url('../images/Profile-pic.jpg');
+                            background-size: cover;
+                            border-radius: 50%;
+                        }
+    
+                        #create-heading{
+                            font-size: 18px;
+                            color: rgb(34,30,31);
+                            font-weight: 500;
+                            text-transform: uppercase;
+                        }
+                    }
+    
+                    form{
+                        width: 88%;
+                        overflow-x: hidden;
+                        margin: auto;
+                        margin-bottom: 1.5%;
+    
+                        #post-content{
+                            resize: none;
+                            min-height: 60%;
+                            height: auto;
+                            width: 100%;
+                            border: none;
+                            border-top: 1px solid rgb(228, 228, 228);
+                            border-bottom: 1px solid rgb(228, 228, 228);
+                            padding-top: 5%;
+                            font-size: 14px;
+                        }
+    
+                        #more-utilities{
+                            width: 22.5%;
+                            min-width: 80px;
+                            position: absolute;
+                            left: 3%;
+                            bottom: 1%;
+                            display: flex;
+                            justify-content: space-between;
+    
+                            #post-attatchment-file-label{
+                                cursor: pointer;
+                                height: 30px;
+                                width: 30px;
+                                padding: 5px;
+                                border-radius: 50%;
+                                background-color: rgb(251, 251, 251);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+        
+                                img{
+                                    height: 25px;
+                                    width: 25px;
+                                }
+        
+                                #post-attatchment-file{
+                                    display: none;
+                                }
+                            }
+        
+                            #user-location{
+                                display: none;
+                            }
+                        }
+    
+                        #post-button{
+                            bottom: -1%;
+            
+                        }
+                    }
+    
+                    #preview-container{
+                        height: 40px;
+                        width: 40px;
+                        margin-left: 5%;
+                        position: relative;
+    
+                        #close-preview{
+                            position: absolute;
+                            right: -44%;
+                            top: -8%;
+                            color: rgb(0, 0, 0);
+                            font-weight: 700;
+                            font-size: 26px;
+                            cursor: pointer;
+                        }
+    
+                        #post-attatchment-preview{
+                            height: 80px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    
+        #middle-home-posts{
+            height: 100%;
+            width: 100vw;
+            min-width: 0px;
+            position: relative;
+    
+            #heading{
+                height: 40px;
+                width: 100%;
+                text-align: left;
+                position: relative;
+                display: flex;
+                align-items: center;
+    
+                #heading-text{
+                    position: absolute;
+                    left: 2%;
+                    top: 9px;
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: rgb(34,30,31);
+                }
+            }
+    
+            #post-heading{
+                font-size: 18px;
+                font-weight: 600;
+                color: rgb(30, 39, 122);
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                text-align: left;
+            }
+    
+            #new-feeds{
+                height: auto;
+                width: 100%;
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+    
+                .post-container{
+    
+                    height: auto;
+                    width: 100%;
+                    // I dont know why but this border property is super important dont remove it
+                    border: 1px solid transparent;
+                    box-shadow: 0px 1px 4px 0px rgb(209, 206, 206);
+                    position: relative;
+                    margin-bottom: 14px;
+                    border-radius: 12px;
+                    background-color: white;
+                    overflow-x: hidden;
+    
+                    .delete-post-btn{
+                        position: absolute;
+                        right: 3%;
+                        top: 15px;
+    
+                        .btn{
+                            transition: none !important;
+                        }
+    
+                        .btn:focus{
+                            box-shadow: none !important;
+                            background-color: white !important;
+                            outline: 0 !important;
+    
+                        }
+    
+                        .btn-secondary {
+                            color: black !important;
+                            background-color:white !important;
+                            border-color: #ffffff !important;
+                            padding: 0 !important;
+                            outline: none;
+                        }
+                    }
+    
+                    .post-profile-photo{
+                        position: absolute;
+                        height: 35px;
+                        width: 35px;
+                        border-radius: 50%;
+                        left: 2%;
+                        top: 12px;
+    
+                        img{
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                        }
+                    }
+    
+                    .post-author{
+                        height: 40px;
+                        text-align: left;
+                        position: absolute;
+                        left: 9%;
+                        top: 9px;
+                        font-size: 16px;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-weight: 600;
+    
+                        #post-time-date{
+                            font-size: 11px;
+                            color: grey;
+                            margin-top: 1px;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .post-content{
+                        width: 94%;
+                        overflow-wrap: break-word;
+                        margin-top: 64px;
+                        margin-bottom: 2%;
+                        min-height: 40px;
+                        margin-left: 2%;
+                        text-align: left;
+                        font-size: 17px;
+                    }
+    
+                    // Like comment and share section
+    
+                    .likes-comment-share{
+                        height: 32px;
+                        width: 100%;
+                        border-top: 1px solid rgb(218, 218, 218);
+                        border-bottom: 1px solid rgb(218, 218, 218);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        color: grey;
+                        font-size: 16.5px;
+    
+                        i{
+                            cursor: pointer;
+                            height: 90%;
+                            width: 110px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+    
+                        i:hover{
+                            background-color: rgb(240, 240, 240);
+                        }
+    
+                        span{
+                            font-weight: 400;
+                        }
+    
+                        .liked{
+                            color: red;
+                        }
+                    }
+    
+                    // Comment display division
+    
+                    .display-comments{
+                        position: relative;
+    
+                        .comment-section{
+                            margin-left: 14%;
+                            margin-top: 2.5%;
+                            width: 73%;
+                            height: auto;
+                            overflow-wrap: break-word;
+    
+                            .comment-profile-photo{
+                                position: absolute;
+                                height: 25px;
+                                border: none;
+                                left: 8%;
+    
+                                img{
+                                    height: 100%;
+                                    width: 25px;
+                                    border-radius: 50%;
+                                }
+                            }
+    
+                            .comment-author{
+                                font-size: 15px;
+                                font-weight: bolder;
+                            }
+    
+                            .comment{
+                                height: auto;
+                                width: 100%;
+                                font-size: 14.5px;
+                            }
+    
+                            .like-comment{
+                                position: absolute;
+                                min-width: 30px;
+                                width: auto;
+                                right: 6.5%;
+                                font-size: smaller;
+                                color: grey;
+                                display: inline-flex;
+                                justify-content: space-between;
+                                cursor: pointer;
+    
+                                .comment-likes-count{
+                                    font-size: 14px;
+                                    margin-top: -10%;
+                                }
+                            }
+    
+                            .liked{
+                                color: blue;
+                            }
+    
+                            .delete-comment{
+                                position: absolute;
+                                right: 3%;
+                                font-size: small;
+                                color: grey;
+                            }
+                        }
+                    }
+                    
+                    // Post Comment Division
+                    .post-comments{
+                        height: 50px;
+                        width: 100%;
+                        position: relative;
+    
+                        .comment-profile-photo{
+                            position: absolute;
+                            height: 25px;
+                            width: 25px;
+                            border: 1px solid black;
+                            border-radius: 50%;
+                            left: 1.5%;
+                            top: 12px;
+                        }
+    
+                        .comment-content{
+                            position: absolute;
+                            left: 8%;
+                            height: auto;
+                            width: 81%;
+                            height: 31px;
+                            padding-left: 10px;
+                            top: 8.5px;
+                            resize: none;
+                            border: none;
+                            background: rgb(243, 243, 243);
+                            border-top-left-radius: 12px;
+                            border-bottom-left-radius: 12px;
+                            overflow-wrap: break-word;
+                        }
+    
+                        .comment-btn{
+                            height: 31px;
+                            width : 50px;
+                            background-color: rgb(243, 243, 243);
+                            border: none;
+                            cursor: pointer;
+                            position: absolute;
+                            right: 21px;
+                            border-top-right-radius: 12px;
+                            border-bottom-right-radius: 12px;
+                            top: 8.5px;
+                            font-size: 20px;
+                            // color: rgb(231, 58, 58);
+                            color: rgb(18, 106, 179);
+                            
+                            .fa-paper-plane{
+                                transform: rotate(45deg);
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        
+        #popular-section{
+            display: none;
+            position: sticky;
+            top: 3%;
+            box-sizing: border-box;
+        }
+    }
+
+}

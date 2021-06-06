@@ -10,7 +10,7 @@ a, a:visited{
 #header{
     position: fixed;
     top: 0;
-    z-index: 5;
+    z-index: 99;
     height: 60px;
     width: 100%;
     border-bottom: 1px solid rgba(34,30,31, 0.2);
@@ -75,6 +75,86 @@ a, a:visited{
             a:hover, a:visited{
                 text-decoration: underline;
                 transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 500px){
+    #header{
+        position: fixed;
+        top: 0;
+        z-index: 99;
+        height: 60px;
+        width: 100%;
+        border-bottom: 1px solid rgba(34,30,31, 0.2);
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Roboto', sans-serif;
+        background-color: white;
+    
+        #logo-section{
+            height: 100%;
+            width: auto;
+            display: flex;
+            align-items: center;
+            // border: 1px solid rgb(25, 0, 255);
+    
+            a{
+                width: 100%;
+                text-decoration: none;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+    
+                #logo{
+                    height: 50px;
+                    width: auto;
+                    z-index: 2;
+                    border-radius: 5px;
+                }
+        
+                span{
+                    font-size: 15px;
+                    margin-left: 4%;
+                }
+            }
+            
+        }
+    
+        .right-section{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 2%;
+    
+            span{
+                list-style: none;
+                display: flex;
+                align-items: center;
+                height: 50%;
+                background-color: rgb(238, 238, 238);
+                padding: 6%;
+                border-radius: 5px;
+        
+                a{
+                    text-decoration: none;
+                    font-size: small;
+                }
+    
+                #user-name{
+                    text-transform: capitalize;
+                }
+        
+                a:hover, a:visited{
+                    text-decoration: underline;
+                    transition: all 0.5s ease-in-out;
+                }
+            }
+
+            span:first-child{
+                margin-right: 4%;
             }
         }
     }

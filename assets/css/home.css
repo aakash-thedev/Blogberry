@@ -371,3 +371,334 @@ main {
     position: sticky;
     top: 3%;
     box-sizing: border-box; }
+
+@media screen and (max-width: 500px) {
+  *:focus {
+    outline: none !important; }
+  html {
+    overflow: scroll;
+    overflow-x: hidden; }
+    html .show {
+      display: show; }
+  ::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */ }
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #FF0000; }
+  body {
+    margin-top: 60px; }
+  main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    position: relative;
+    background-color: #f1f1f1; }
+    main #left-home-create-post {
+      min-height: 0;
+      height: auto;
+      width: 100vw;
+      min-width: 0px;
+      background-color: white;
+      border-radius: 0px;
+      position: sticky;
+      top: 0%;
+      display: flex;
+      justify-content: center;
+      padding: 1.6%; }
+      main #left-home-create-post #new-post-container {
+        position: relative;
+        height: auto;
+        min-height: 200px;
+        min-width: 100vw;
+        width: 100vw;
+        padding-bottom: 8%;
+        background-color: white; }
+        main #left-home-create-post #new-post-container #upper #profile-logo-wrapper {
+          height: 60px;
+          width: 100%;
+          display: flex;
+          align-items: center; }
+          main #left-home-create-post #new-post-container #upper #profile-logo-wrapper #profile-logo {
+            margin-left: 2%;
+            margin-right: 10%;
+            height: 50px;
+            width: 50px;
+            background: url("../images/Profile-pic.jpg");
+            background-size: cover;
+            border-radius: 50%; }
+          main #left-home-create-post #new-post-container #upper #profile-logo-wrapper #create-heading {
+            font-size: 18px;
+            color: #221e1f;
+            font-weight: 500;
+            text-transform: uppercase; }
+        main #left-home-create-post #new-post-container #upper form {
+          width: 88%;
+          overflow-x: hidden;
+          margin: auto;
+          margin-bottom: 1.5%; }
+          main #left-home-create-post #new-post-container #upper form #post-content {
+            resize: none;
+            min-height: 60%;
+            height: auto;
+            width: 100%;
+            border: none;
+            border-top: 1px solid #e4e4e4;
+            border-bottom: 1px solid #e4e4e4;
+            padding-top: 5%;
+            font-size: 14px; }
+          main #left-home-create-post #new-post-container #upper form #more-utilities {
+            width: 22.5%;
+            min-width: 80px;
+            position: absolute;
+            left: 3%;
+            bottom: 1%;
+            display: flex;
+            justify-content: space-between; }
+            main #left-home-create-post #new-post-container #upper form #more-utilities #post-attatchment-file-label {
+              cursor: pointer;
+              height: 30px;
+              width: 30px;
+              padding: 5px;
+              border-radius: 50%;
+              background-color: #fbfbfb;
+              display: flex;
+              justify-content: center;
+              align-items: center; }
+              main #left-home-create-post #new-post-container #upper form #more-utilities #post-attatchment-file-label img {
+                height: 25px;
+                width: 25px; }
+              main #left-home-create-post #new-post-container #upper form #more-utilities #post-attatchment-file-label #post-attatchment-file {
+                display: none; }
+            main #left-home-create-post #new-post-container #upper form #more-utilities #user-location {
+              display: none; }
+          main #left-home-create-post #new-post-container #upper form #post-button {
+            bottom: -1%; }
+        main #left-home-create-post #new-post-container #upper #preview-container {
+          height: 40px;
+          width: 40px;
+          margin-left: 5%;
+          position: relative; }
+          main #left-home-create-post #new-post-container #upper #preview-container #close-preview {
+            position: absolute;
+            right: -44%;
+            top: -8%;
+            color: black;
+            font-weight: 700;
+            font-size: 26px;
+            cursor: pointer; }
+          main #left-home-create-post #new-post-container #upper #preview-container #post-attatchment-preview {
+            height: 80px;
+            width: auto; }
+    main #middle-home-posts {
+      height: 100%;
+      width: 100vw;
+      min-width: 0px;
+      position: relative; }
+      main #middle-home-posts #heading {
+        height: 40px;
+        width: 100%;
+        text-align: left;
+        position: relative;
+        display: flex;
+        align-items: center; }
+        main #middle-home-posts #heading #heading-text {
+          position: absolute;
+          left: 2%;
+          top: 9px;
+          font-size: 18px;
+          font-weight: 600;
+          color: #221e1f; }
+      main #middle-home-posts #post-heading {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1e277a;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        text-align: left; }
+      main #middle-home-posts #new-feeds {
+        height: auto;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column; }
+        main #middle-home-posts #new-feeds .post-container {
+          height: auto;
+          width: 100%;
+          border: 1px solid transparent;
+          box-shadow: 0px 1px 4px 0px #d1cece;
+          position: relative;
+          margin-bottom: 14px;
+          border-radius: 12px;
+          background-color: white;
+          overflow-x: hidden; }
+          main #middle-home-posts #new-feeds .post-container .delete-post-btn {
+            position: absolute;
+            right: 3%;
+            top: 15px; }
+            main #middle-home-posts #new-feeds .post-container .delete-post-btn .btn {
+              transition: none !important; }
+            main #middle-home-posts #new-feeds .post-container .delete-post-btn .btn:focus {
+              box-shadow: none !important;
+              background-color: white !important;
+              outline: 0 !important; }
+            main #middle-home-posts #new-feeds .post-container .delete-post-btn .btn-secondary {
+              color: black !important;
+              background-color: white !important;
+              border-color: #ffffff !important;
+              padding: 0 !important;
+              outline: none; }
+          main #middle-home-posts #new-feeds .post-container .post-profile-photo {
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            left: 2%;
+            top: 12px; }
+            main #middle-home-posts #new-feeds .post-container .post-profile-photo img {
+              height: 30px;
+              width: 30px;
+              border-radius: 50%; }
+          main #middle-home-posts #new-feeds .post-container .post-author {
+            height: 40px;
+            text-align: left;
+            position: absolute;
+            left: 9%;
+            top: 9px;
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 600; }
+            main #middle-home-posts #new-feeds .post-container .post-author #post-time-date {
+              font-size: 11px;
+              color: grey;
+              margin-top: 1px;
+              font-weight: 400; }
+          main #middle-home-posts #new-feeds .post-container .post-content {
+            width: 94%;
+            overflow-wrap: break-word;
+            margin-top: 64px;
+            margin-bottom: 2%;
+            min-height: 40px;
+            margin-left: 2%;
+            text-align: left;
+            font-size: 17px; }
+          main #middle-home-posts #new-feeds .post-container .likes-comment-share {
+            height: 32px;
+            width: 100%;
+            border-top: 1px solid #dadada;
+            border-bottom: 1px solid #dadada;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            color: grey;
+            font-size: 16.5px; }
+            main #middle-home-posts #new-feeds .post-container .likes-comment-share i {
+              cursor: pointer;
+              height: 90%;
+              width: 110px;
+              display: flex;
+              align-items: center;
+              justify-content: center; }
+            main #middle-home-posts #new-feeds .post-container .likes-comment-share i:hover {
+              background-color: #f0f0f0; }
+            main #middle-home-posts #new-feeds .post-container .likes-comment-share span {
+              font-weight: 400; }
+            main #middle-home-posts #new-feeds .post-container .likes-comment-share .liked {
+              color: red; }
+          main #middle-home-posts #new-feeds .post-container .display-comments {
+            position: relative; }
+            main #middle-home-posts #new-feeds .post-container .display-comments .comment-section {
+              margin-left: 14%;
+              margin-top: 2.5%;
+              width: 73%;
+              height: auto;
+              overflow-wrap: break-word; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-profile-photo {
+                position: absolute;
+                height: 25px;
+                border: none;
+                left: 8%; }
+                main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-profile-photo img {
+                  height: 100%;
+                  width: 25px;
+                  border-radius: 50%; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment-author {
+                font-size: 15px;
+                font-weight: bolder; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .comment {
+                height: auto;
+                width: 100%;
+                font-size: 14.5px; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .like-comment {
+                position: absolute;
+                min-width: 30px;
+                width: auto;
+                right: 6.5%;
+                font-size: smaller;
+                color: grey;
+                display: inline-flex;
+                justify-content: space-between;
+                cursor: pointer; }
+                main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .like-comment .comment-likes-count {
+                  font-size: 14px;
+                  margin-top: -10%; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .liked {
+                color: blue; }
+              main #middle-home-posts #new-feeds .post-container .display-comments .comment-section .delete-comment {
+                position: absolute;
+                right: 3%;
+                font-size: small;
+                color: grey; }
+          main #middle-home-posts #new-feeds .post-container .post-comments {
+            height: 50px;
+            width: 100%;
+            position: relative; }
+            main #middle-home-posts #new-feeds .post-container .post-comments .comment-profile-photo {
+              position: absolute;
+              height: 25px;
+              width: 25px;
+              border: 1px solid black;
+              border-radius: 50%;
+              left: 1.5%;
+              top: 12px; }
+            main #middle-home-posts #new-feeds .post-container .post-comments .comment-content {
+              position: absolute;
+              left: 8%;
+              height: auto;
+              width: 81%;
+              height: 31px;
+              padding-left: 10px;
+              top: 8.5px;
+              resize: none;
+              border: none;
+              background: #f3f3f3;
+              border-top-left-radius: 12px;
+              border-bottom-left-radius: 12px;
+              overflow-wrap: break-word; }
+            main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn {
+              height: 31px;
+              width: 50px;
+              background-color: #f3f3f3;
+              border: none;
+              cursor: pointer;
+              position: absolute;
+              right: 21px;
+              border-top-right-radius: 12px;
+              border-bottom-right-radius: 12px;
+              top: 8.5px;
+              font-size: 20px;
+              color: #126ab3; }
+              main #middle-home-posts #new-feeds .post-container .post-comments .comment-btn .fa-paper-plane {
+                transform: rotate(45deg); }
+    main #popular-section {
+      display: none;
+      position: sticky;
+      top: 3%;
+      box-sizing: border-box; } }

@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 *:focus {
   outline: none; }
 
@@ -85,3 +86,93 @@ body {
     text-transform: uppercase;
     transition: 0.1s ease;
     cursor: pointer; }
+
+@media screen and (max-width: 500px) {
+  *:focus {
+    outline: none; }
+  body {
+    margin-top: 65px;
+    padding: 0; }
+  #signup-box {
+    position: relative;
+    height: auto;
+    width: 40%;
+    min-height: 400px;
+    min-width: 500px;
+    margin: auto;
+    background: #FFF;
+    border-radius: 2px;
+    padding: 1%;
+    box-shadow: none; }
+    #signup-box #heading {
+      margin: auto;
+      margin-bottom: 5%;
+      color: #221e1f;
+      font-weight: 800;
+      font-size: 27px; }
+    #signup-box form {
+      height: auto; }
+      #signup-box form .credential {
+        min-width: 200px;
+        height: 75px; }
+        #signup-box form .credential label {
+          font-size: medium; }
+        #signup-box form .credential input {
+          display: block;
+          height: 35px;
+          width: 70%;
+          margin-top: 1%;
+          margin-bottom: 3.1%;
+          border: none;
+          border-bottom: 1px solid #cccccc;
+          color: #0d3e69;
+          font-size: 14px; }
+      #signup-box form #birthday-wrapper {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        position: relative;
+        height: 42px;
+        min-width: 320px; }
+        #signup-box form #birthday-wrapper select {
+          height: 90%;
+          width: 23%;
+          background-color: white;
+          border: 1px solid #b9b9b9;
+          border-radius: 10px;
+          text-align: center;
+          padding-left: 2%; }
+      #signup-box form #gender-container {
+        border-radius: 10px;
+        height: 42px;
+        width: 50%;
+        margin-top: 2%;
+        margin-left: -1%;
+        margin-bottom: 1.5%; }
+        #signup-box form #gender-container section {
+          height: 100%;
+          width: 29%;
+          display: inline-flex;
+          justify-content: space-around;
+          align-items: center;
+          margin-left: 3%; }
+          #signup-box form #gender-container section label {
+            color: #575757;
+            font-size: medium; }
+          #signup-box form #gender-container section input[type=radio] {
+            width: 20%; }
+      #signup-box form button {
+        position: absolute;
+        bottom: -5%;
+        left: 0%;
+        height: 42px;
+        width: 72%;
+        font-size: 15px;
+        background-color: #221e1f;
+        border: none;
+        border-radius: 0px;
+        color: #FFF;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        transition: 0.1s ease;
+        cursor: pointer; } }

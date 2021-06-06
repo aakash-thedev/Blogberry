@@ -532,3 +532,507 @@ body{
         }
     }
 }
+
+@media screen and (max-width: 500px){
+
+
+    .blur {
+        filter: blur(10px);
+    }
+    
+    *:focus{
+        outline: none;
+    }
+    
+    body{
+    
+        main{
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+    
+            .profile-cover{
+        
+                .profile-display-photo{
+                    position: relative;
+                    border-radius: 50%;
+                    margin-top: -8%;
+        
+                    img{
+                        height: 90px;
+                        width: 90px;
+                        border-radius: 50%;
+                    }
+                }
+    
+                .user-name{
+                    margin-top: 2.3%;
+                    color: black;
+                }
+    
+                .profile-bio{
+                    color: black;
+                    display: none;
+                }
+        
+                .utilities{
+                    margin-top: 2%;
+                    padding-top: 0.5%;
+                    padding-bottom: 0.5%;
+                    width: 43%;
+                    min-width: 99vw;
+    
+                    .edit-profile{
+                        // background: rgb(35, 127, 189);
+                        background-color: rgb(34,30,31);
+                        color: white;
+                        font-size: 18px;
+                        border: none;
+                        height: 90%;
+                        width: 140px;
+                        box-shadow: 0px 2px 2px 0.6px rgb(219, 219, 219);
+                        border-radius: 10px;
+                        margin-right: 1%;
+                    }
+    
+                    .update-form{
+                        position: absolute;
+                        height: 90vh;
+                        width: 95vw;
+                        // box-shadow: 0px 4px 2px 1px rgb(219, 219, 219);
+                        border: 1px solid rgb(219, 219, 219);
+                        border-radius: 8px;
+                        left: 0%;
+                        top: 0%;
+                    }
+                }
+            }
+    
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 9; /* Sit on top */
+                border: 1px solid rgb(173, 173, 173);
+                left: 0.5%;
+                top: 20%;
+                width: 99vw; /* Full width */
+                height: 70vh; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: white;
+    
+                // header of update
+                .update-header{
+    
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+    
+                    // modal heading
+                    h3{
+                        // color: rgb(36, 131, 219);
+                        color: rgb(34,30,31);
+                        margin-top: 2%;
+                        margin-left: 2%;
+                    }
+    
+                        /* The Close Button */
+                    .close {
+                        color: #aaa;
+                        font-size: 36px;
+                        font-weight: bold;
+                        margin-right: 3%;
+                        margin-top: 0.5%;
+                    }
+                    
+                    .close:hover, .close:focus {
+                        color: black;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+    
+                }
+    
+                /* Modal Content/Box */
+                .modal-content {
+                    position: relative;
+                    background-color: #fefefe;
+                    padding: 20px;
+                    border: none;
+                    border-top: 1px solid rgb(209, 209, 209);
+                    width: 100%; /* Could be more or less, depending on screen size */
+                    height: 89%;
+    
+                    label{
+                        margin-bottom: 1.5%;
+                    }
+    
+                    input[type=text], input[type=email] {
+                        height: 38px;
+                        border-radius: 10px;
+                        padding-left: 1%;
+                        border: 1px solid rgb(216, 216, 216);
+                        width: 70%;
+                        margin-bottom: 4%;
+                    }
+    
+                    .profile-pic-upload-container{
+                        position: relative;
+                        display: flex;
+                        justify-content: space-around;
+                        height: 50px;
+                        width: 250px;
+                        cursor: pointer;
+                        border-radius: 50%;
+    
+                        .profile-input-label{
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 10%;
+    
+                            .file-input{
+                                display: none;
+                            }
+    
+                            .fa-plus-circle{
+                                font-size: 40px;
+                                margin-top: 10%;
+                                cursor: pointer;
+                                // color: rgb(36, 131, 219);
+                                color: rgb(34,30,31);
+                            }
+                        }
+    
+                        .profile-photo-preview{
+                            height: 120px;
+                            width: auto;
+                            box-shadow: -1px 2px 6px -4px rgb(223, 223, 223);
+                        }
+                    }
+    
+                    #update-btn {
+                        position: absolute;
+                        bottom: 3%;
+                        right: 2%;
+                        height: 40px;
+                        width: 120px;
+                        color: white;
+                        border: none;
+                        // background-color: rgb(36, 131, 219);
+                        background-color: rgb(34,30,31);
+                        border-radius: 10px;
+                    }
+                }
+            }
+    
+            .util-content{
+                position: sticky;
+                top: 2%;
+                width: auto;
+                display: inline-block;
+                vertical-align: top;
+                margin-left: 0%;
+                margin-top: 0%;
+        
+                .card{
+                    margin-top: 2%;
+                    height: auto;
+                    width: 100vw;
+                    box-shadow: 0px 1px 1px 0.4px rgb(219, 219, 219);
+                    border-radius: 8px;
+    
+                    span{
+                        height: 30px;
+                        width: 100%;
+                        font-size: 20px;
+                        font-weight: 500;
+                        padding-left: 12px;
+                        margin-top: 2%;
+                    }
+    
+                    .about-info-icon{
+                        height: 20px;
+                        margin-top: 2%;
+                        margin-bottom: 3%;
+    
+                        img{
+                            height: 20px;
+                            margin-left: 3%;
+                        }
+    
+                        small{
+                            font-size: 14px;
+                            font-weight: 600;
+                        }
+    
+                        .about-info{
+                            font-size: 13px;
+                            color: grey;
+                            margin-top: 100%;
+                        }
+                    }
+                }
+    
+                .about-section{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+    
+            .user-posts {
+                display: inline-block;
+                position: relative;
+                height: auto;
+                width: 100vw;
+                min-height: 500px;
+                min-width: 100vw;
+                margin-top: 1%;
+                margin-left: 0%;
+                border: 1px solid rgb(206, 202, 202);
+                border-radius: 7px;
+                box-shadow: 0px 1px 1px 0.4px rgb(219, 219, 219);
+                overflow-y: scroll;
+                overflow-x: hidden;
+                overflow-wrap: break-word;
+    
+                .post-container{
+    
+                    height: auto;
+                    width: 100%;
+                    // I dont know why but this border property is super important dont remove it
+                    border: 1px solid transparent;
+                    box-shadow: 0px 1px 4px 0px rgb(209, 206, 206);
+                    position: relative;
+                    margin-bottom: 14px;
+                    border-radius: 12px;
+                    background-color: white;
+                    overflow-x: hidden;
+    
+                    .delete-post-btn{
+                        position: absolute;
+                        right: 3%;
+                        top: 15px;
+    
+                        .btn{
+                            transition: none !important;
+                        }
+    
+                        .btn:focus{
+                            box-shadow: none !important;
+                            background-color: white !important;
+                            outline: 0 !important;
+    
+                        }
+    
+                        .btn-secondary {
+                            color: black !important;
+                            background-color:white !important;
+                            border-color: #ffffff !important;
+                            padding: 0 !important;
+                            outline: none;
+                        }
+                    }
+    
+                    .post-profile-photo{
+                        position: absolute;
+                        height: 35px;
+                        width: 35px;
+                        border-radius: 50%;
+                        left: 2%;
+                        top: 12px;
+    
+                        img{
+                            height: 30px;
+                            width: 30px;
+                            border-radius: 50%;
+                        }
+                    }
+    
+                    .post-author{
+                        height: 40px;
+                        text-align: left;
+                        position: absolute;
+                        left: 9%;
+                        top: 9px;
+                        font-size: 16px;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                        font-weight: 600;
+    
+                        #post-time-date{
+                            font-size: 11px;
+                            color: grey;
+                            margin-top: 1px;
+                            font-weight: 400;
+                        }
+                    }
+    
+                    .post-content{
+                        width: 94%;
+                        overflow-wrap: break-word;
+                        margin-top: 64px;
+                        margin-bottom: 2%;
+                        min-height: 40px;
+                        margin-left: 2%;
+                        text-align: left;
+                        font-size: 17px;
+                    }
+    
+                    // Like comment and share section
+    
+                    .likes-comment-share{
+                        height: 32px;
+                        width: 100%;
+                        border-top: 1px solid rgb(218, 218, 218);
+                        border-bottom: 1px solid rgb(218, 218, 218);
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        color: grey;
+                        font-size: 16.5px;
+    
+                        i{
+                            cursor: pointer;
+                            height: 90%;
+                            width: 110px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+    
+                        i:hover{
+                            background-color: rgb(240, 240, 240);
+                        }
+    
+                        span{
+                            font-weight: 400;
+                        }
+    
+                        .liked{
+                            color: red;
+                        }
+                    }
+    
+                    // Comment display division
+    
+                    .display-comments{
+                        position: relative;
+    
+                        .comment-section{
+                            margin-left: 14%;
+                            margin-top: 2.5%;
+                            width: 73%;
+                            height: auto;
+                            overflow-wrap: break-word;
+    
+                            .comment-profile-photo{
+                                position: absolute;
+                                height: 25px;
+                                border: none;
+                                left: 8%;
+    
+                                img{
+                                    height: 100%;
+                                    width: 25px;
+                                    border-radius: 50%;
+                                }
+                            }
+    
+                            .comment-author{
+                                font-size: 15px;
+                                font-weight: bolder;
+                            }
+    
+                            .comment{
+                                height: auto;
+                                width: 100%;
+                                font-size: 14.5px;
+                            }
+    
+                            .like-comment{
+                                position: absolute;
+                                min-width: 30px;
+                                width: auto;
+                                right: 6.5%;
+                                font-size: smaller;
+                                color: grey;
+                                display: inline-flex;
+                                justify-content: space-between;
+                                cursor: pointer;
+    
+                                .comment-likes-count{
+                                    font-size: 14px;
+                                    margin-top: -10%;
+                                }
+                            }
+    
+                            .liked{
+                                color: blue;
+                            }
+    
+                            .delete-comment{
+                                position: absolute;
+                                right: 3%;
+                                font-size: small;
+                                color: grey;
+                            }
+                        }
+                    }
+                    
+                    // Post Comment Division
+                    .post-comments{
+                        height: 50px;
+                        width: 100%;
+                        position: relative;
+    
+                        .comment-profile-photo{
+                            position: absolute;
+                            height: 25px;
+                            width: 25px;
+                            border: 1px solid black;
+                            border-radius: 50%;
+                            left: 1.5%;
+                            top: 12px;
+                        }
+    
+                        .comment-content{
+                            position: absolute;
+                            left: 8%;
+                            height: auto;
+                            width: 81%;
+                            height: 31px;
+                            padding-left: 10px;
+                            top: 8.5px;
+                            resize: none;
+                            border: none;
+                            background: rgb(243, 243, 243);
+                            border-top-left-radius: 12px;
+                            border-bottom-left-radius: 12px;
+                            overflow-wrap: break-word;
+                        }
+    
+                        .comment-btn{
+                            height: 31px;
+                            width : 50px;
+                            background-color: rgb(243, 243, 243);
+                            border: none;
+                            cursor: pointer;
+                            position: absolute;
+                            right: 21px;
+                            border-top-right-radius: 12px;
+                            border-bottom-right-radius: 12px;
+                            top: 8.5px;
+                            font-size: 20px;
+                            // color: rgb(231, 58, 58);
+                            color: rgb(18, 106, 179);
+                            
+                            .fa-paper-plane{
+                                transform: rotate(45deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

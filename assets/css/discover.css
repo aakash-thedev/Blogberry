@@ -65,3 +65,35 @@
       font-size: 15px; }
   #discover-page .dis-post:hover {
     transform: scale(1.05); }
+
+@media screen and (max-width: 500px) {
+  #recent-blog-heading {
+    font-size: 25px;
+    margin-top: 18%; }
+  #discover-page {
+    width: 100%; }
+    #discover-page .dis-post {
+      height: 200px;
+      min-width: 340px;
+      max-width: 400px; }
+      #discover-page .dis-post .username {
+        font-size: 16px; }
+      #discover-page .dis-post .blog-content {
+        position: relative;
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        height: 70%;
+        width: 90%;
+        margin: auto; }
+        #discover-page .dis-post .blog-content .blog-content-text {
+          width: 100%;
+          line-height: 24px;
+          max-height: 23%;
+          overflow: hidden;
+          margin-bottom: 2%; }
+      #discover-page .dis-post .blog-date-wrapper .blog-date {
+        color: grey;
+        font-size: 15px; }
+    #discover-page .dis-post:hover {
+      transform: scale(1.05); } }
